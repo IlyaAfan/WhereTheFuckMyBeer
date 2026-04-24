@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cua7gmg2dc840"]
+
+[ext_resource type="Script" uid="uid://2ygnwqrx3twi" path="res://Assets/scripts/death_screen.gd" id="1_wbrwl"]
+
+[node name="DeathScreen" type="Control" unique_id=466029685]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wbrwl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1405399458]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PopupMenu" type="MarginContainer" parent="NinePatchRect" unique_id=1255167826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.5
+offset_top = -238.0
+offset_right = 241.5
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="Panel" parent="NinePatchRect/PopupMenu" unique_id=697226120]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/PopupMenu" unique_id=595493564]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/PopupMenu/HBoxContainer" unique_id=1332191957]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NinePatchRect/PopupMenu/HBoxContainer/VBoxContainer" unique_id=940401255]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "BUSTED!!!"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="NinePatchRect/PopupMenu/HBoxContainer/VBoxContainer" unique_id=2111239193]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="tryAgain" type="Button" parent="NinePatchRect/PopupMenu/HBoxContainer/VBoxContainer" unique_id=1026168167]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="NinePatchRect/PopupMenu/HBoxContainer/VBoxContainer/tryAgain" to="." method="_on_try_again_pressed"]

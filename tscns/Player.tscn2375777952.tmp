@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cmp7udr0sb02j"]
+
+[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="SpriteFrames" uid="uid://dh86y2g04c8o6" path="res://Assets/CharSprites/ProgrammerArtDwarf/Idle.tres" id="2_a2x4d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2x4d"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1695094296]
+disable_mode = 1
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_kpjcp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1813337890]
+sprite_frames = ExtResource("2_a2x4d")
+animation = &"Idle"
+frame_progress = 0.13389398
+
+[node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=801922039]
+shape = SubResource("CircleShape2D_a2x4d")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2124228638]
+path_desired_distance = 16.0
+target_desired_distance = 8.0
+debug_enabled = true

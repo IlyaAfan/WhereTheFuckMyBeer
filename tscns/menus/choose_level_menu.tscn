@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dw7leftccwi7v"]
+
+[ext_resource type="Script" uid="uid://d23uywgwaggsy" path="res://Assets/scripts/choose_level_menu.gd" id="1_5wum5"]
+[ext_resource type="PackedScene" uid="uid://blowhkcf3gjq1" path="res://tscns/menus/level_button.tscn" id="2_5wum5"]
+
+[node name="Choose_level_menu" type="Control" unique_id=1119176650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5wum5")
+LevelButton = ExtResource("2_5wum5")
+
+[node name="base_container" type="MarginContainer" parent="." unique_id=48207608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="base_container" unique_id=1349411206]
+layout_mode = 2
+
+[node name="level_menu_label" type="Label" parent="base_container/VBoxContainer" unique_id=1406199243]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "																										CHOOSE LEVEL"
+horizontal_alignment = 1
+
+[node name="level_buttons" type="GridContainer" parent="base_container/VBoxContainer" unique_id=990296849]
+layout_mode = 2
+columns = 11
+
+[node name="back_to_main" type="Button" parent="base_container/VBoxContainer" unique_id=1997139773]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 60
+text = "BACK TO THE MAIN MENU"
+
+[connection signal="pressed" from="base_container/VBoxContainer/back_to_main" to="." method="_on_back_to_main_pressed"]

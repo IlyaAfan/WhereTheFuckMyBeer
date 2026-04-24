@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cmp7udr0sb02j"]
+
+[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/CharSprites/TestingSprite.png" id="1_xhfnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2x4d"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1695094296]
+disable_mode = 1
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_kpjcp")
+
+[node name="TestingSprite" type="Sprite2D" parent="." unique_id=693537573]
+texture = ExtResource("1_xhfnw")
+
+[node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=801922039]
+shape = SubResource("CircleShape2D_a2x4d")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2124228638]
+path_desired_distance = 16.0
+target_desired_distance = 8.0
+debug_enabled = true

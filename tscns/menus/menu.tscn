@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ctkhux68g8dlv"]
+
+[ext_resource type="Script" uid="uid://dcfm84rnsvril" path="res://Assets/scripts/menu.gd" id="1_frl4j"]
+
+[node name="menu" type="Control" unique_id=805156607]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_frl4j")
+
+[node name="HeadScreen" type="MarginContainer" parent="." unique_id=357115922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HeadScreen" unique_id=405792077]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HeadScreen/NinePatchRect" unique_id=1876315695]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -184.0
+offset_right = 294.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HeadScreen/NinePatchRect/HBoxContainer" unique_id=482466279]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer" unique_id=462852515]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 60
+text = "WHERE TF IS MY BEER???"
+
+[node name="play" type="Button" parent="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer" unique_id=2087873246]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="ChooseLevel" type="Button" parent="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer" unique_id=1105048467]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "CHOOSE LEVEL"
+
+[node name="quit" type="Button" parent="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer" unique_id=1394619745]
+modulate = Color(18.892, 1.223, 1.223, 1)
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer/ChooseLevel" to="." method="_on_choose_level_pressed"]
+[connection signal="pressed" from="HeadScreen/NinePatchRect/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dp4ati4agkdmp"]
+
+[ext_resource type="Script" uid="uid://dpr371qijq5j7" path="res://Assets/scripts/enemy.gd" id="1_2msnq"]
+[ext_resource type="Texture2D" uid="uid://ds8guqcsomrhw" path="res://Assets/CharSprites/TestingEnemy.png" id="2_h508e"]
+[ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="3_u8qfd"]
+[ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="4_cb2tf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
+radius = 4.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1695094296]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2msnq")
+
+[node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
+texture = ExtResource("2_h508e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801922039]
+shape = SubResource("CircleShape2D_wt2yf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2124228638]
+path_desired_distance = 8.0
+target_desired_distance = 2.0
+avoidance_enabled = true
+
+[node name="DoSee" parent="." unique_id=1184471678 node_paths=PackedStringArray("nagent") instance=ExtResource("4_cb2tf")]
+nagent = NodePath("../NavigationAgent2D")
+
+[node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
+radius = 5

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bexlhxmsdw7sk"]
+
+[ext_resource type="Script" uid="uid://ghao4e8bmpau" path="res://Assets/scripts/do_catch.gd" id="1_rnitr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cb2tf"]
+radius = 8.0
+
+[node name="DoCatch" type="Node2D" unique_id=545746488]
+script = ExtResource("1_rnitr")
+radius = 6
+
+[node name="Area2D" type="Area2D" parent="." unique_id=567101184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2100009319]
+shape = SubResource("CircleShape2D_cb2tf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

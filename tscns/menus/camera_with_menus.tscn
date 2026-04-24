@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dhbv5nllcw66r"]
+
+[ext_resource type="PackedScene" uid="uid://eywjy03rb1v1" path="res://tscns/menus/In_game_menu.tscn" id="1_utwbs"]
+[ext_resource type="PackedScene" uid="uid://cua7gmg2dc840" path="res://tscns/menus/death_screen.tscn" id="2_os6uh"]
+
+[node name="Camera2D" type="Camera2D" unique_id=947555020 groups=["Enemy", "Player"]]
+process_mode = 3
+zoom = Vector2(4, 4)
+
+[node name="in_game_menu" parent="." unique_id=942770950 instance=ExtResource("1_utwbs")]
+process_mode = 3
+offset_left = -138.0
+offset_top = -79.0
+offset_right = -138.0
+offset_bottom = -79.0
+scale = Vector2(0.24000062, 0.24)
+
+[node name="death_screen" parent="." unique_id=466029685 instance=ExtResource("2_os6uh")]
+process_mode = 3
+visible = false
+offset_left = -120.0
+offset_top = -64.0
+offset_right = -120.0
+offset_bottom = -64.0
+scale = Vector2(0.2, 0.2)
