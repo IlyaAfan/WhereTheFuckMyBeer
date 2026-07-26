@@ -40,15 +40,19 @@ texture = ExtResource("2_b64jn")
 texture = ExtResource("3_6036s")
 
 [node name="Exclamation" type="Sprite2D" parent="." unique_id=1570774463]
-visible = false
 z_index = 3
-position = Vector2(-4, -5)
+position = Vector2(-2, -8)
+texture = ExtResource("4_4fjq2")
+
+[node name="Exclamation2" type="Sprite2D" parent="." unique_id=1243516752]
+z_index = 3
+position = Vector2(-6, -8)
 texture = ExtResource("4_4fjq2")
 
 [node name="Question" type="Sprite2D" parent="." unique_id=33092152]
 visible = false
 z_index = 3
-position = Vector2(-4, -5)
+position = Vector2(-7, -8)
 texture = ExtResource("5_8u3u4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

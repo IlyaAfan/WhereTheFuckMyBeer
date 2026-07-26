@@ -6,7 +6,7 @@ var input_direction: Vector2
 
 func get_caught():
 	caught.emit()
-	process_mode = Node.PROCESS_MODE_DISABLED
+	speed = 0
 
 func get_tile_data(data_name: String):
 	var tile_map: TileMapLayer = get_tree().get_first_node_in_group("TileMap")
