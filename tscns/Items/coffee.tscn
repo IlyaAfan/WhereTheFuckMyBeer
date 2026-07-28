@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cv7qku6cjg3ol"]
+
+[ext_resource type="Texture2D" uid="uid://uax8i3kngpxr" path="res://Assets/ItemSprites/coffee.png" id="1_v65k5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 4.1231055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_riqys"]
+
+[node name="coffee" type="StaticBody2D" unique_id=533000137]
+
+[node name="Area" type="Area2D" parent="." unique_id=1315959376]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=910142859]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370068035]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_riqys")
+
+[node name="Coffee" type="Sprite2D" parent="." unique_id=1099947328]
+position = Vector2(6, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v65k5")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area" to="." method="_on_area_2d_body_shape_entered"]
