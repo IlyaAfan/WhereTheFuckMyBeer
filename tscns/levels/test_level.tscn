@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="5_82c75"]
 [ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://Assets/scripts/enemy_controller.gd" id="6_3mml8"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_i4lxh"]
+[ext_resource type="PackedScene" uid="uid://cv7qku6cjg3ol" path="res://tscns/Items/coffee.tscn" id="8_3mml8"]
+[ext_resource type="PackedScene" uid="uid://cxnoxo28no032" path="res://tscns/Items/pipe.tscn" id="9_0ttih"]
 
 [node name="TestLevel" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -34,5 +36,11 @@ script = ExtResource("6_3mml8")
 process_mode = 1
 position = Vector2(-8, -8)
 Player = NodePath("../../Player")
+
+[node name="Coffee" parent="." unique_id=1100486244 instance=ExtResource("8_3mml8")]
+position = Vector2(-88, 40)
+
+[node name="Pipe" parent="." unique_id=1481535046 instance=ExtResource("9_0ttih")]
+position = Vector2(-88, -57)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
