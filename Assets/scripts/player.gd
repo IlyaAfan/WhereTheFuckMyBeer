@@ -49,10 +49,9 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("change_input_dev"):
 		velocity = Vector2.ZERO
 		preffer_nav_input = !preffer_nav_input
-		print(preffer_nav_input)
-		
-	move_and_slide()
+		$destination.visible = false
 	
+	move_and_slide()
 	use_item()
 
 
@@ -85,5 +84,4 @@ func use_item():
 			"barbell":
 				$"../Barbell"._use_barbell()
 				name_item = "empty"
-				
 		name_item = "empty"

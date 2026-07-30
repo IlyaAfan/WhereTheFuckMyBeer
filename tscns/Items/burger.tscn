@@ -9,7 +9,7 @@ radius = 4.1231055
 [sub_resource type="CircleShape2D" id="CircleShape2D_sn0t7"]
 radius = 8.062258
 
-[node name="Burger" type="StaticBody2D" unique_id=533000137]
+[node name="Burger" type="Node2D" unique_id=763004578]
 script = ExtResource("1_rb55f")
 
 [node name="Area" type="Area2D" parent="." unique_id=1315959376]

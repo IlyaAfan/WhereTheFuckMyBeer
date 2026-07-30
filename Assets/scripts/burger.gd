@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 var have = false
 var active = false
@@ -28,7 +28,7 @@ func _use_burger(body: Node2D) -> void:
 
 func _on_area_push_body_entered(body: Node2D) -> void:
 	if active == true and body.is_in_group("Enemies"):
-		$"../Player".position += ($"../Player".position - body.position).normalized() * 30
+		body.position -= ($"../Player".position - body.position).normalized() * 30
 		$"../Player/PlayerBox".scale = Vector2(1,1)
 		$"../Player/Gnom".scale = Vector2(1,1)
 		await get_tree().create_timer(0.1).timeout

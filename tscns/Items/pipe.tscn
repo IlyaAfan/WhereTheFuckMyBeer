@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 4.1231055
 
-[node name="Pipe" type="StaticBody2D" unique_id=533000137]
+[node name="Pipe" type="Node2D" unique_id=1777342601]
 script = ExtResource("1_rwtx5")
 
 [node name="Area" type="Area2D" parent="." unique_id=1315959376]

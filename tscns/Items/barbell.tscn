@@ -9,7 +9,7 @@ height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 
-[node name="Barbell" type="StaticBody2D" unique_id=533000137]
+[node name="Barbell" type="Node2D" unique_id=453480369]
 script = ExtResource("1_6xrbw")
 
 [node name="Area" type="Area2D" parent="." unique_id=1315959376]
@@ -22,13 +22,13 @@ shape = SubResource("CapsuleShape2D_riqys")
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_c3hp2")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=763980247]
+[node name="AreaAttack" type="Area2D" parent="." unique_id=763980247]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=592639496]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack" unique_id=592639496]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_bhunq")
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered_attack"]
+[connection signal="body_entered" from="AreaAttack" to="." method="_on_area_2d_body_entered_attack"]

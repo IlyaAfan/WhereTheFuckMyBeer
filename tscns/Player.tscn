@@ -27,4 +27,5 @@ target_desired_distance = 1.0
 
 [node name="destination" type="Sprite2D" parent="." unique_id=371947627]
 top_level = true
+visibility_layer = 512
 texture = ExtResource("3_2y7wr")

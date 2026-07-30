@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="4_8mjju"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="5_oudig"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_n42k0"]
+[ext_resource type="PackedScene" uid="uid://chixvufhdj5jb" path="res://tscns/Items/barbell.tscn" id="7_km620"]
+[ext_resource type="PackedScene" uid="uid://cxd6ra58cpnbe" path="res://tscns/Items/burger.tscn" id="8_486hu"]
 
 [node name="TestLevel3" type="Node2D" unique_id=1476997527]
 script = ExtResource("1_6yft4")
@@ -32,5 +34,11 @@ position = Vector2(7, -56)
 [node name="Beer" parent="." unique_id=533000137 instance=ExtResource("6_n42k0")]
 position = Vector2(121, -9)
 where_to = "res://tscns/levels/test_level_3.tscn"
+
+[node name="Barbell" parent="." unique_id=437291976 instance=ExtResource("7_km620")]
+position = Vector2(-89, 8)
+
+[node name="Burger" parent="." unique_id=763004578 instance=ExtResource("8_486hu")]
+position = Vector2(-89, 23)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
