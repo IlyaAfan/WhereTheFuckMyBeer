@@ -3,7 +3,7 @@ extends Node2D
 signal iSee(target: Vector2)
 
 const Grace = 4 #grace-период в тиках таймера
-
+#писюны
 var target:Node2D
 var hear = false
 var see = false

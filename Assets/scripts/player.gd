@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal caught
 var input_direction: Vector2
 @export var speed = 50
+var name_item = "empty"
 
 func get_caught():
 	caught.emit()
@@ -32,3 +33,11 @@ func _physics_process(_delta: float) -> void:
 	velocity = input_direction * speed * get_tile_data("tile_speed")
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("use_item") and name_item != "empty":
+		match name_item:
+			"coffee":
+				$"../Coffee"._use_coffee($".")
+			"pipe":
+				$"../Pipe"._use_pipe()
+		name_item = "empty"

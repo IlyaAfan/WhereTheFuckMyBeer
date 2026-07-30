@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chixvufhdj5jb"]
+
+[ext_resource type="Texture2D" uid="uid://dxgcjtdc2ovye" path="res://Assets/ItemSprites/barbell.png" id="1_c3hp2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_riqys"]
+radius = 2.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
+radius = 2.0
+height = 10.0
+
+[node name="Barbell" type="StaticBody2D" unique_id=533000137]
+
+[node name="Area" type="Area2D" parent="." unique_id=1315959376]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=910142859]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_riqys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370068035]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="Barbell" type="Sprite2D" parent="." unique_id=105157082]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_c3hp2")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_shape_entered" from="Area" to="." method="_on_area_2d_body_shape_entered"]
