@@ -25,9 +25,11 @@ func _use_barbell():
 	await get_tree().create_timer(2.5).timeout #await $AnimationPlayer.animation_finished
 	visible = false
 	active = true
+	$"../Player".not_catchable = true
 	print("activeted")
 	
 	await get_tree().create_timer(7).timeout
+	$"../Player".not_catchable = false
 	active = false
 	queue_free()
 
@@ -38,3 +40,4 @@ func _on_area_2d_body_entered_attack(body: Node2D) -> void:
 		body.speed = 0
 		await get_tree().create_timer(3).timeout #Время действия оглушения
 		body.speed = common_speed
+		$"../Player".not_catchable = false

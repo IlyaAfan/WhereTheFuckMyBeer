@@ -22,7 +22,7 @@ func _use_burger(body: Node2D) -> void:
 	visible = false
 	active = true
 	body.speed /= 1.2
-	body.fat = true
+	body.not_catchable = true
 	$"../Player/Gnom".scale = Vector2(1.9,1.9)
 
 
@@ -32,5 +32,5 @@ func _on_area_push_body_entered(body: Node2D) -> void:
 		$"../Player/PlayerBox".scale = Vector2(1,1)
 		$"../Player/Gnom".scale = Vector2(1,1)
 		await get_tree().create_timer(0.1).timeout
-		$"../Player".fat = false
+		$"../Player".not_catchable = false
 		queue_free()

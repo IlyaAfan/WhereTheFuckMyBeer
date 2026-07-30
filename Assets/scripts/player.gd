@@ -4,7 +4,7 @@ signal caught
 var input_direction: Vector2
 var navigated: bool
 var name_item: String = "empty"
-var fat: bool
+var not_catchable: bool
 
 @export var preffer_nav_input = false as bool
 
