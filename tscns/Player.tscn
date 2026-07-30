@@ -15,7 +15,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_kpjcp")
 preffer_nav_input = true
 
-[node name="TestingSprite" type="Sprite2D" parent="." unique_id=693537573]
+[node name="Gnom" type="Sprite2D" parent="." unique_id=693537573]
 texture = ExtResource("1_xhfnw")
 
 [node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=801922039]

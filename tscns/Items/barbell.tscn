@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://chixvufhdj5jb"]
 
+[ext_resource type="Script" uid="uid://rulfgjsna3om" path="res://Assets/scripts/barbell.gd" id="1_6xrbw"]
 [ext_resource type="Texture2D" uid="uid://dxgcjtdc2ovye" path="res://Assets/ItemSprites/barbell.png" id="1_c3hp2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_riqys"]
-radius = 2.0
-height = 10.0
+radius = 3.0
+height = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
-radius = 2.0
-height = 10.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 
 [node name="Barbell" type="StaticBody2D" unique_id=533000137]
+script = ExtResource("1_6xrbw")
 
 [node name="Area" type="Area2D" parent="." unique_id=1315959376]
 
@@ -18,14 +18,17 @@ height = 10.0
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_riqys")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370068035]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_bhunq")
-
 [node name="Barbell" type="Sprite2D" parent="." unique_id=105157082]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_c3hp2")
 
-[connection signal="body_entered" from="Area" to="." method="_on_area_2d_body_entered"]
+[node name="Area2D" type="Area2D" parent="." unique_id=763980247]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=592639496]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_bhunq")
+
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
-[connection signal="body_shape_entered" from="Area" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered_attack"]

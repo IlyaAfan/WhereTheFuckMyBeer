@@ -18,6 +18,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 		have = true
 		
 func _use_pipe():
+	visible = false
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		if "speed" in enemy:
 			enemy.speed /= 2

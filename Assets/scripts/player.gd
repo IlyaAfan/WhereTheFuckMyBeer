@@ -3,7 +3,8 @@ extends Character
 signal caught
 var input_direction: Vector2
 var navigated: bool
-var name_item: String
+var name_item: String = "empty"
+var fat: bool
 
 @export var preffer_nav_input = false as bool
 
@@ -51,6 +52,8 @@ func _physics_process(_delta: float) -> void:
 		print(preffer_nav_input)
 		
 	move_and_slide()
+	
+	use_item()
 
 
 func input_movement() -> Vector2: 
@@ -63,3 +66,24 @@ func input_movement() -> Vector2:
 func put_destination(target):
 	$destination.position = target
 	$destination.visible = true
+
+func use_item():
+	if Input.is_action_just_pressed("use_item") and name_item != "empty":
+		match name_item:
+			"coffee":
+				$"../Coffee"._use_coffee($".")
+				name_item = "empty"
+			"pipe":
+				$"../Pipe"._use_pipe()
+				name_item = "empty"
+			"cats":
+				$"../Cats)"._use_cats()
+				name_item = "empty"
+			"burger":
+				$"../Burger"._use_burger($".")
+				name_item = "empty"
+			"barbell":
+				$"../Barbell"._use_barbell()
+				name_item = "empty"
+				
+		name_item = "empty"

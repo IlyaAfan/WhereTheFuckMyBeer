@@ -19,6 +19,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 		have = true
 		
 func _use_coffee(body: Node2D) -> void:
+	visible = false
 	body.speed = 100
 	print("coffee")
 	await get_tree().create_timer(2.5).timeout 
