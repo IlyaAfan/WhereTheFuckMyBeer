@@ -44,7 +44,12 @@ func _physics_process(_delta: float) -> void:
 			$destination.visible = false
 	else:
 		velocity = input_movement()
-	
+		
+	if Input.is_action_just_pressed("change_input_dev"):
+		velocity = Vector2.ZERO
+		preffer_nav_input = !preffer_nav_input
+		print(preffer_nav_input)
+		
 	move_and_slide()
 
 
