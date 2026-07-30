@@ -28,7 +28,7 @@ func _ready():
 	add_to_group("Player")
 	navigated = false
 	Navigation_Agent_Used = $NavigationAgent2D
-	
+	$destination.visible = false
 
 func _physics_process(_delta: float) -> void:
 	if preffer_nav_input:
@@ -36,10 +36,12 @@ func _physics_process(_delta: float) -> void:
 		
 		if Input.is_action_pressed("lmb"):
 			Navigation_Agent_Used.target_position = get_global_mouse_position()
+			put_destination(Navigation_Agent_Used.target_position)
 			navigated = true
 		
 		if Navigation_Agent_Used.is_navigation_finished():
 			navigated = false
+			$destination.visible = false
 	else:
 		velocity = input_movement()
 	
@@ -52,3 +54,7 @@ func input_movement() -> Vector2:
 	else:
 		input_direction = Vector2.ZERO
 	return input_direction * speed * get_tile_data("tile_speed")
+
+func put_destination(target):
+	$destination.position = target
+	$destination.visible = true

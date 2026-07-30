@@ -1,10 +1,9 @@
 extends Character
 
-@export var Player: Node2D
-
 func _ready() -> void:
-	add_to_group("Enemy")
 	Navigation_Agent_Used = $NavigationAgent2D
+	add_to_group("Enemy")
+	
 
 func _physics_process(_delta: float) -> void:
 	velocity = nav_movement()

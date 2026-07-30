@@ -27,8 +27,7 @@ path_desired_distance = 8.0
 target_desired_distance = 2.0
 avoidance_enabled = true
 
-[node name="DoSee" parent="." unique_id=1184471678 node_paths=PackedStringArray("nagent") instance=ExtResource("4_cb2tf")]
-nagent = NodePath("../NavigationAgent2D")
+[node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 
 [node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
 radius = 5

@@ -1,10 +1,6 @@
-extends CharacterBody2D
+extends Character
 
 signal iHearADude(target: Vector2)
-@export var Player: Node2D
-@export var speed = 10
-var direction : Vector2
-var navigated = false
 
 @onready var nagent = $NavigationAgent2D as NavigationAgent2D
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Character
 
-@export var speed = 60
+@export var speed = 50 #стандартная скорость -- скорость игрока
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
 var Navigation_Agent_Used: NavigationAgent2D

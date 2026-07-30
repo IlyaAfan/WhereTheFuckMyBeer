@@ -9,7 +9,15 @@ var navigated = false
 @export var nagent: NavigationAgent2D
 @export var radius = 56
 
+func on_parent_ready():
+	if get_parent().Navigation_Agent_Used:
+		nagent =get_parent().Navigation_Agent_Used
+	else:
+		print("the parent has no Navigation_Agent_Used")
+
+
 func _ready() -> void:
+	get_parent().connect("ready",on_parent_ready) 
 	$Exclamation.visible = false
 	$Area2D/CollisionShape2D.shape.radius = radius
 	$destination.visible = false

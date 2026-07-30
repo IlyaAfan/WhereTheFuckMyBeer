@@ -10,11 +10,22 @@ var see = false
 var navigated = false # означает что враг прямо сейчас бежит на игрока, "наведён" на него
 #ПЕРЕДЕЛАТЬ: используем дохуя булов чтобы обозначить состояния, нужна система состояний
 var i = 0 as int
-var GraceI = -1 as int #
+var GraceI = -1 as int #переменная для таймера grace периода
+
 @export var nagent: NavigationAgent2D
 @export var radius = 56
 
+
+func on_parent_ready():
+	if get_parent().Navigation_Agent_Used:
+		nagent =get_parent().Navigation_Agent_Used
+	else:
+		print("the parent has no Navigation_Agent_Used")
+
+
 func _ready() -> void:
+	get_parent().connect("ready",on_parent_ready) 
+	
 	$Area2D/CollisionShape2D.shape.radius = radius
 	$RayCast2D.target_position = Vector2 (radius, 0)
 	
@@ -28,10 +39,14 @@ func put_enemy_destination():
 	$destination.visible = true
 
 func navigate():
-	navigated = true
-	nagent.target_position = target.global_position
+	if nagent:
+		navigated = true
+		nagent.target_position = target.global_position
+	else:
+		print("parent has no navigation agent")
 
 func _on_timer_timeout() -> void: # С этой абоминацией надо будет разобраться получше
+	
 	if hear: 
 		$RayCast2D.look_at(target.global_position)
 		$RayCast2D.force_raycast_update()
