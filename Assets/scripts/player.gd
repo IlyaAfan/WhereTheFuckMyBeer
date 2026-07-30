@@ -1,9 +1,11 @@
-extends CharacterBody2D
+extends Character
 
 signal caught
 var input_direction: Vector2
-@export var speed = 50
-var name_item = "empty"
+var navigated: bool
+var name_item: String
+
+@export var preffer_nav_input = false as bool
 
 func get_caught():
 	caught.emit()
@@ -24,20 +26,29 @@ func get_tile_data(data_name: String):
 
 func _ready():
 	add_to_group("Player")
+	navigated = false
+	Navigation_Agent_Used = $NavigationAgent2D
+	
 
 func _physics_process(_delta: float) -> void:
+	if preffer_nav_input:
+		velocity = nav_movement()
+		
+		if Input.is_action_pressed("lmb"):
+			Navigation_Agent_Used.target_position = get_global_mouse_position()
+			navigated = true
+		
+		if Navigation_Agent_Used.is_navigation_finished():
+			navigated = false
+	else:
+		velocity = input_movement()
+	
+	move_and_slide()
+
+
+func input_movement() -> Vector2: 
 	if Input.get_vector("left", "right", "up", "down"):
 		input_direction = Input.get_vector("left", "right", "up", "down")
 	else:
 		input_direction = Vector2.ZERO
-	velocity = input_direction * speed * get_tile_data("tile_speed")
-
-	move_and_slide()
-	
-	if Input.is_action_just_pressed("use_item") and name_item != "empty":
-		match name_item:
-			"coffee":
-				$"../Coffee"._use_coffee($".")
-			"pipe":
-				$"../Pipe"._use_pipe()
-		name_item = "empty"
+	return input_direction * speed * get_tile_data("tile_speed")
