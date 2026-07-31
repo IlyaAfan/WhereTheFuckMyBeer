@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://Assets/scripts/enemy_controller.gd" id="6_8ur4l"]
 [ext_resource type="PackedScene" uid="uid://gn5c5lg6ug3y" path="res://tscns/fart_smella.tscn" id="7_txd0v"]
 [ext_resource type="PackedScene" uid="uid://dp4ati4agkdmp" path="res://tscns/Enemy.tscn" id="8_osaum"]
+[ext_resource type="PackedScene" uid="uid://cxd6ra58cpnbe" path="res://tscns/Items/burger.tscn" id="9_nhk6u"]
 
 [node name="TestLevelFS" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -34,20 +35,20 @@ script = ExtResource("6_8ur4l")
 [node name="FartSmella" parent="EnemyController" unique_id=2055584006 instance=ExtResource("7_txd0v")]
 position = Vector2(-8, -8)
 
-[node name="Enemy" parent="EnemyController" unique_id=1695094296 node_paths=PackedStringArray("Player") instance=ExtResource("8_osaum")]
+[node name="Enemy" parent="EnemyController" unique_id=1695094296 instance=ExtResource("8_osaum")]
 process_mode = 1
 position = Vector2(88, -56)
-Player = NodePath("../../Player")
 
-[node name="Enemy2" parent="EnemyController" unique_id=1826401265 node_paths=PackedStringArray("Player") instance=ExtResource("8_osaum")]
+[node name="Enemy2" parent="EnemyController" unique_id=1826401265 instance=ExtResource("8_osaum")]
 process_mode = 1
 position = Vector2(87, 40)
-Player = NodePath("../../Player")
 
-[node name="Enemy3" parent="EnemyController" unique_id=917195634 node_paths=PackedStringArray("Player") instance=ExtResource("8_osaum")]
+[node name="Enemy3" parent="EnemyController" unique_id=917195634 instance=ExtResource("8_osaum")]
 process_mode = 1
 position = Vector2(88, -8)
-Player = NodePath("../../Player")
+
+[node name="Burger" parent="." unique_id=1357206981 instance=ExtResource("9_nhk6u")]
+position = Vector2(-90, -11)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
 [connection signal="iHearADude" from="EnemyController/FartSmella" to="EnemyController" method="_on_fart_smella_hears"]

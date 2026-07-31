@@ -10,3 +10,7 @@ func _on_quit_pressed() -> void:
 
 func _on_choose_level_pressed() -> void:
 	get_tree().change_scene_to_file.bind("res://tscns/menus/choose_level_menu.tscn").call_deferred()
+
+
+func _on_optiion_pressed() -> void:
+	get_tree().change_scene_to_file("res://tscns/menus/option.tscn")

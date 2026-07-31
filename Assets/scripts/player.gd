@@ -6,8 +6,6 @@ var navigated: bool
 var name_item: String = "empty"
 var not_catchable: bool
 
-@export var preffer_nav_input = false as bool
-
 func get_caught():
 	caught.emit()
 	speed = 0
@@ -32,7 +30,7 @@ func _ready():
 	$destination.visible = false
 
 func _physics_process(_delta: float) -> void:
-	if preffer_nav_input:
+	if ConfigOption.type_control:
 		velocity = nav_movement()
 		
 		if Input.is_action_pressed("lmb"):
@@ -48,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("change_input_dev"):
 		velocity = Vector2.ZERO
-		preffer_nav_input = !preffer_nav_input
+		ConfigOption.type_control = not ConfigOption.type_control
 		$destination.visible = false
 	
 	move_and_slide()

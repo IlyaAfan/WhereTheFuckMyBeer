@@ -10,14 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Navigation Game"
+config/name="WhereMyBeer"
 run/main_scene="uid://ctkhux68g8dlv"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ConfigOption="*uid://shlto35sj8wr"
+
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [file_customization]

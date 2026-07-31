@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="4_8mjju"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="5_oudig"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_n42k0"]
+[ext_resource type="PackedScene" uid="uid://cxnoxo28no032" path="res://tscns/Items/pipe.tscn" id="7_4ounk"]
 
 [node name="TestLevel2" type="Node2D" unique_id=309823818]
 script = ExtResource("1_6yft4")
@@ -36,5 +37,8 @@ position = Vector2(-104, -8)
 [node name="Beer" parent="." unique_id=533000137 instance=ExtResource("6_n42k0")]
 position = Vector2(121, -9)
 where_to = "res://tscns/levels/test_level_fs.tscn"
+
+[node name="Pipe" parent="." unique_id=1329827713 instance=ExtResource("7_4ounk")]
+position = Vector2(-121, -7)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
