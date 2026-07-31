@@ -2,6 +2,7 @@ extends Node2D
 
 var have = false
 var active = false
+var holding_a_dude = false
 var common_speed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,18 +35,25 @@ func _use_barbell():
 	print("activeted")
 	
 	await get_tree().create_timer(7).timeout
-	$"../Player".not_catchable = false
+	if !holding_a_dude:
+		$"../Player".not_catchable = false
 	active = false
 	print("deactivated")
 	
 	await get_tree().create_timer(3).timeout
+	$"../Player".not_catchable = false
 	queue_free()
 
 
 func _on_area_2d_body_entered_attack(body: Node2D) -> void:
 	if active == true and body.is_in_group("Enemies"):
-		common_speed = body.speed
-		body.speed = 0
-		await get_tree().create_timer(3).timeout #Время действия оглушения
+		if !body.speed==0:
+			common_speed = body.speed
+			body.speed = 0
+		print("got the fucker")
+		holding_a_dude = true
+		$Timer.start()
+		await $Timer.timeout #Время действия оглушения
 		body.speed = common_speed
-		$"../Player".not_catchable = false
+		holding_a_dude = false
+		print("ungot da faggot")
