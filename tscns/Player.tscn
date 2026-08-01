@@ -23,8 +23,12 @@ shape = SubResource("CircleShape2D_a2x4d")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2124228638]
 path_desired_distance = 16.0
 target_desired_distance = 1.0
+avoidance_enabled = true
+avoidance_layers = 2
+avoidance_mask = 5
 
 [node name="destination" type="Sprite2D" parent="." unique_id=371947627]
+visible = false
 top_level = true
 visibility_layer = 512
 texture = ExtResource("3_2y7wr")

@@ -14,13 +14,13 @@ func GetAllFiles(path: String, require: String): #не раскрывать не
 		var FileName = dir.get_next()
 		while FileName != "":
 			if require in FileName:
-				files.append(path + "/" + FileName.replace(".remap",""))
+				files.append(path + "/" + FileName.replace(".remap","")) # я не ебу что такое ремап, не вздумайте меня спрашивать
 				$base_container/VBoxContainer/level_buttons.add_child(LevelButton.instantiate())
 				buttons = $base_container/VBoxContainer/level_buttons.get_children()
 				buttons[i].whereto = files[i]
 				buttons[i].text = FileName.replace(".remap","").replace(".tscn","")
-				FileName = dir.get_next()
 				i+=1
+			FileName = dir.get_next() #нам повезло что я увидел что это говно находится в if до того как это сломало всё к хуям через 2 года. Сейчас этот баг занял у меня всего 2 часа на поиск причины, через год мне было бы проще переписать экран уровней.
 		#это очень уродливо, хотя теперь не разбросано на 3 разных цикла, но всё же
 		#но мне поебать, оно остаётся так пока кто-нибудь это не исправит
 		#в ready оно должно заспавнить кнопки соответсвующие всем уровням в папке levels, пробежав по папке, сделав кнопки и назвав их соответсвующе
