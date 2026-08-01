@@ -1,7 +1,5 @@
 [gd_resource type="TileSet" format=3 uid="uid://begsvkejl3eqk"]
 
-[ext_resource type="Texture2D" uid="uid://dvujmhju74fjm" path="res://Assets/Tiles/TestTiles.png" id="1_xls7w"]
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xls7w"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
@@ -14,8 +12,11 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a5y80"]
+load_path = "res://.godot/imported/TestTiles.png-fb468670c4dd3e00c3400a57b53d89b0.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0ued"]
-texture = ExtResource("1_xls7w")
+texture = SubResource("CompressedTexture2D_a5y80")
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_xls7w")
 0:0/0/custom_data_0 = 1.0
@@ -25,6 +26,7 @@ texture = ExtResource("1_xls7w")
 2:0/0 = 0
 2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_k3j7h")
 2:0/0/custom_data_0 = 2.0
+0:1/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 2
