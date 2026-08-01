@@ -24,13 +24,15 @@ func _use_burger(body: Node2D) -> void:
 	body.speed /= 1.2
 	body.not_catchable = true
 	$"../Player/Gnom".scale = Vector2(1.9,1.9)
+	await get_tree().create_timer(7).timeout
+	$"../Player/PlayerBox".scale = Vector2(1,1)
+	$"../Player/Gnom".scale = Vector2(1,1)
+	$"../Player".not_catchable = false
+	queue_free()
 
 
 func _on_area_push_body_entered(body: Node2D) -> void:
 	if active == true and body.is_in_group("Enemies"):
 		body.position -= ($"../Player".position - body.position).normalized() * 30
-		$"../Player/PlayerBox".scale = Vector2(1,1)
-		$"../Player/Gnom".scale = Vector2(1,1)
-		await get_tree().create_timer(0.1).timeout
-		$"../Player".not_catchable = false
-		queue_free()
+		
+		
