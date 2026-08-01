@@ -3,9 +3,15 @@ var active_body: Character
 var active_body_speed: int
 
 func use_jump_pad():
-	var vect = (get_global_mouse_position()-global_position).normalized() * 48
+	var vect = (get_global_mouse_position()-global_position).normalized() * 90
 	$RayCast2D.target_position = vect
-	active_body.global_position += vect 
+	print($RayCast2D.is_colliding())
+	if $RayCast2D.is_colliding():
+		var the_point: Vector2 = $RayCast2D.get_collision_point()
+		print("yo there's shit in front ", the_point)
+		active_body.global_position = the_point
+	else:
+		active_body.global_position += vect 
 	active_body.speed = active_body_speed
 	active_body = null
 
