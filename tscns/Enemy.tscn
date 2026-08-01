@@ -27,6 +27,8 @@ shape = SubResource("CircleShape2D_wt2yf")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2124228638]
 path_desired_distance = 8.0
 target_desired_distance = 2.0
+avoidance_enabled = true
+avoidance_mask = 6
 
 [node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 

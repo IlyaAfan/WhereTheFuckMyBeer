@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func toggle_pause():
 	get_tree().paused = not get_tree().paused
 

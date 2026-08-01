@@ -19,6 +19,7 @@ func save_game():
 	config.save(path_to_save_file)
 
 func load_game():
+	pass
 	config = ConfigFile.new()
 	config.load(path_to_save_file)
 	type_control = config.get_value(section_name,"TypeControl",type_control)

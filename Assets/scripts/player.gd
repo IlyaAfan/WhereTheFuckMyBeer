@@ -10,23 +10,12 @@ func get_caught():
 	caught.emit()
 	speed = 0
 
-func get_tile_data(data_name: String):
-	var tile_map: TileMapLayer = get_tree().get_first_node_in_group("TileMap")
-	if not tile_map:
-		return 1
-	
-	var cell:= tile_map.local_to_map(position)
-	var data: TileData = tile_map.get_cell_tile_data(cell)
-	
-	if data:
-		return data.get_custom_data(data_name)
-	return 1
-
 
 func _ready():
 	add_to_group("Player")
 	navigated = false
 	Navigation_Agent_Used = $NavigationAgent2D
+	TileMap_I_Am_Standing_On = get_tree().get_first_node_in_group("TileMap")
 	$destination.visible = false
 
 func _physics_process(_delta: float) -> void:
