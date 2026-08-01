@@ -17,7 +17,3 @@ func toggle():
 	$CollisionShape2D.disabled = !$CollisionShape2D.disabled
 	$Closed.visible = !$Closed.visible
 	TileMap_I_Am_Standing_On.set_cell(cell,0, Vector2i(0,!is_passable))
-	
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("use_item"):
-		toggle()

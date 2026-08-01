@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="4_xiwwp"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="5_hojpq"]
 [ext_resource type="PackedScene" uid="uid://cnyvdr8mbaben" path="res://tscns/door.tscn" id="6_5dd7a"]
+[ext_resource type="Script" uid="uid://d367ucy8xmolu" path="res://tscns/levels/button.gd" id="7_rr1fp"]
+[ext_resource type="Texture2D" uid="uid://rv3th5tdq1jt" path="res://Assets/CharSprites/buttonPressed.png" id="8_curpn"]
+[ext_resource type="Texture2D" uid="uid://cl7narxhfm8oc" path="res://Assets/CharSprites/button.png" id="9_scc4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 8)
 
 [node name="level_empty" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -29,4 +35,21 @@ position = Vector2(-104, -8)
 position = Vector2(121, -9)
 where_to = "res://tscns/levels/test_level.tscn"
 
+[node name="Button" type="Area2D" parent="." unique_id=1883149285 node_paths=PackedStringArray("door")]
+position = Vector2(-8, -56)
+script = ExtResource("7_rr1fp")
+door = NodePath("../Door")
+
+[node name="pressed" type="Sprite2D" parent="Button" unique_id=47755450]
+texture = ExtResource("8_curpn")
+
+[node name="unpressed" type="Sprite2D" parent="Button" unique_id=656854890]
+texture = ExtResource("9_scc4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" unique_id=621226009]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_g4v7s")
+
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
+[connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
+[connection signal="body_exited" from="Button" to="Button" method="_on_body_exited"]
