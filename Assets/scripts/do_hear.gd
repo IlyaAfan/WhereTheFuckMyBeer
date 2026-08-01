@@ -12,8 +12,6 @@ var navigated = false
 func on_parent_ready():
 	if get_parent().Navigation_Agent_Used:
 		nagent =get_parent().Navigation_Agent_Used
-	else:
-		print("the parent has no Navigation_Agent_Used")
 
 
 func _ready() -> void:

@@ -42,8 +42,6 @@ func navigate():
 	if nagent:
 		navigated = true
 		nagent.target_position = target.global_position
-	else:
-		print("parent has no navigation agent")
 
 func _on_timer_timeout() -> void: # С этой абоминацией надо будет разобраться получше
 	
