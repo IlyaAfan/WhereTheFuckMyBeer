@@ -6,8 +6,6 @@ func _ready() -> void:
 	var fartsmellas = get_children_with_prefix("FartSmella")
 	var enemies = get_children_with_prefix("Enemy")
 	if len(fartsmellas) and len(enemies):
-		for fs in fartsmellas:
-			fs.iHearADude.connect(_on_fart_smella_hears)
 		for e in enemies:
 			e.connect_ears(self, "FartSmellaHeard")
 
