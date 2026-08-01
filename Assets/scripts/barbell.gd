@@ -49,6 +49,7 @@ func _on_area_2d_body_entered_attack(body: Node2D) -> void:
 			common_speed = body.speed
 			body.speed = 0
 		holding_a_dude = true
-		await get_tree().create_timer(3).timeout #Время действия оглушения
+		$Timer.start()
+		await $Timer.timeout #Время действия оглушения
 		body.speed = common_speed
 		holding_a_dude = false

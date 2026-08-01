@@ -24,8 +24,6 @@ func _use_burger(body: Node2D) -> void:
 	body.speed /= 1.2
 	body.not_catchable = true
 	$"../Player/Gnom".scale = Vector2(1.9,1.9)
-	await get_tree().create_timer(7).timeout
-	
 
 
 func _on_area_push_body_entered(body: Node2D) -> void:
