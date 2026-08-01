@@ -28,11 +28,17 @@ func _use_burger(body: Node2D) -> void:
 	$"../Player/PlayerBox".scale = Vector2(1,1)
 	$"../Player/Gnom".scale = Vector2(1,1)
 	$"../Player".not_catchable = false
+	active = false
+	await get_tree().create_timer(1).timeout
 	queue_free()
 
 
 func _on_area_push_body_entered(body: Node2D) -> void:
+	var common_speed 
 	if active == true and body.is_in_group("Enemies"):
 		body.position -= ($"../Player".position - body.position).normalized() * 30
-		
+		common_speed = body.speed
+		body.speed = 0
+		await get_tree().create_timer(0.5).timeout
+		body.speed = common_speed
 		
