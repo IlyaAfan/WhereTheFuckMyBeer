@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cac6q5ivboifu" path="res://tscns/dos/do_hear.tscn" id="3_awf0j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
-radius = 4.0
+radius = 1.0
 
 [node name="FartSmella" type="CharacterBody2D" unique_id=1695094296]
 collision_layer = 2

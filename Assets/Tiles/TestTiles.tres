@@ -9,6 +9,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_d6b7n"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)])
+agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ktby2"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -35,12 +39,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, 8, 8, 8, 8, -8, -8,
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_k3j7h"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_8tb7o"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -76,6 +74,7 @@ texture = ExtResource("1_xls7w")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 2:1/0 = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8tb7o")
 <<<<<<< Updated upstream
@@ -83,6 +82,8 @@ texture = ExtResource("1_xls7w")
 =======
 2:1/0/custom_data_0 = 1.0
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 6a33061 (AAAAA)
 0:2/0 = 0
 0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ktby2")
 0:2/0/custom_data_0 = 1.0
