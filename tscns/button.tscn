@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dnlo0evr3ijy6"]
+
+[ext_resource type="Script" uid="uid://d367ucy8xmolu" path="res://tscns/levels/button.gd" id="1_3shv6"]
+[ext_resource type="Texture2D" uid="uid://rv3th5tdq1jt" path="res://Assets/CharSprites/buttonPressed.png" id="2_dcl3c"]
+[ext_resource type="Texture2D" uid="uid://cl7narxhfm8oc" path="res://Assets/CharSprites/button.png" id="3_dbvx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 8)
+
+[node name="Button" type="Area2D" unique_id=961410626]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_3shv6")
+
+[node name="pressed" type="Sprite2D" parent="." unique_id=597679815]
+texture = ExtResource("2_dcl3c")
+
+[node name="unpressed" type="Sprite2D" parent="." unique_id=1611573988]
+texture = ExtResource("3_dbvx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313591465]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
