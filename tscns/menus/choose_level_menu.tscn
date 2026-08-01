@@ -36,7 +36,9 @@ horizontal_alignment = 1
 
 [node name="level_buttons" type="GridContainer" parent="base_container/VBoxContainer" unique_id=990296849]
 layout_mode = 2
-columns = 11
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 6
 
 [node name="back_to_main" type="Button" parent="base_container/VBoxContainer" unique_id=1997139773]
 layout_mode = 2

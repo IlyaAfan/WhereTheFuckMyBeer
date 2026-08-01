@@ -5,12 +5,14 @@ var is_pressed: bool = false
 
 func press():
 	$unpressed.visible = false
-	door.open()
+	if door:
+		door.open()
 	is_pressed = true
 
 func unpress():
 	$unpressed.visible = true
-	door.close()
+	if door:
+		door.close()
 	is_pressed = false
 
 

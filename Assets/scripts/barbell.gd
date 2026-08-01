@@ -32,13 +32,11 @@ func _use_barbell():
 	active = true
 	$"../Player".not_catchable = true
 	$"../Player".speed = 60
-	print("activeted")
 	
 	await get_tree().create_timer(7).timeout
 	if !holding_a_dude:
 		$"../Player".not_catchable = false
 	active = false
-	print("deactivated")
 	
 	await get_tree().create_timer(3).timeout
 	$"../Player".not_catchable = false
@@ -50,10 +48,8 @@ func _on_area_2d_body_entered_attack(body: Node2D) -> void:
 		if !body.speed==0:
 			common_speed = body.speed
 			body.speed = 0
-		print("got the fucker")
 		holding_a_dude = true
 		$Timer.start()
 		await $Timer.timeout #Время действия оглушения
 		body.speed = common_speed
 		holding_a_dude = false
-		print("ungot da faggot")
