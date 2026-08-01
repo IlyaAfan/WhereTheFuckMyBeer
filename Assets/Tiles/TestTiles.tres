@@ -78,7 +78,11 @@ texture = ExtResource("1_xls7w")
 <<<<<<< HEAD
 =======
 2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_8tb7o")
+<<<<<<< Updated upstream
 >>>>>>> a79d03bd10e652c3708da2b4a0a7622eb6c4f58a
+=======
+2:1/0/custom_data_0 = 1.0
+>>>>>>> Stashed changes
 0:2/0 = 0
 0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ktby2")
 0:2/0/custom_data_0 = 1.0
