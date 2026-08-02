@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv7qku6cjg3ol"]
 
 [ext_resource type="Script" uid="uid://cdwsn02gqaixb" path="res://Assets/scripts/coffee.gd" id="1_oyhma"]
-[ext_resource type="Texture2D" uid="uid://uax8i3kngpxr" path="res://Assets/ItemSprites/coffee.png" id="1_v65k5"]
+[ext_resource type="Texture2D" uid="uid://uax8i3kngpxr" path="res://Assets/Sprites/ItemSprites/coffee.png" id="1_v65k5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 4.0

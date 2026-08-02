@@ -35,6 +35,7 @@ func _physics_process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("change_input_dev"):
 		velocity = Vector2.ZERO
+		stop_navigation()
 		ConfigOption.type_control = not ConfigOption.type_control
 		$destination.visible = false
 	

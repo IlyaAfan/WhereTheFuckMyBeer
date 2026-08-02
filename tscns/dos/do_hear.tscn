@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cac6q5ivboifu"]
 
 [ext_resource type="Script" uid="uid://btfds010xaoe4" path="res://Assets/scripts/do_hear.gd" id="1_wt3xb"]
-[ext_resource type="Texture2D" uid="uid://bx1o04pviltk" path="res://Assets/CharSprites/enemy/AreaIndicator2.png" id="2_ds38f"]
+[ext_resource type="Texture2D" uid="uid://bx1o04pviltk" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator2.png" id="2_ds38f"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="2_t1ur7"]
-[ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/CharSprites/enemy/Exclamation.png" id="3_4xiqd"]
+[ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="3_4xiqd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_88262"]
 radius = 56.0

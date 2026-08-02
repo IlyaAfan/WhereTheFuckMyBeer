@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uax8i3kngpxr"
-path="res://.godot/imported/coffee.png-55442025488557ace01dd73c6f2a8dd8.ctex"
+uid="uid://bx1o04pviltk"
+path="res://.godot/imported/AreaIndicator2.png-592aecf404c356433f8507e67ca76b4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemSprites/coffee.png"
-dest_files=["res://.godot/imported/coffee.png-55442025488557ace01dd73c6f2a8dd8.ctex"]
+source_file="res://Assets/Sprites/CharSprites/enemy/AreaIndicator2.png"
+dest_files=["res://.godot/imported/AreaIndicator2.png-592aecf404c356433f8507e67ca76b4a.ctex"]
 
 [params]
 

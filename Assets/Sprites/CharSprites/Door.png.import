@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxgcjtdc2ovye"
-path="res://.godot/imported/barbell.png-12d8e9e5c7c073c428633048ee1a0da6.ctex"
+uid="uid://dc54l0a0n0rxu"
+path="res://.godot/imported/Door.png-0fb15878d4240bbe546a8bb7b0cb8a6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemSprites/barbell.png"
-dest_files=["res://.godot/imported/barbell.png-12d8e9e5c7c073c428633048ee1a0da6.ctex"]
+source_file="res://Assets/Sprites/CharSprites/Door.png"
+dest_files=["res://.godot/imported/Door.png-0fb15878d4240bbe546a8bb7b0cb8a6e.ctex"]
 
 [params]
 

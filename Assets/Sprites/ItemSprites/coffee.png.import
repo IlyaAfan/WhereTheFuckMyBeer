@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://isfaqdr7yufa"
-path="res://.godot/imported/Exclamation.png-b89f624ff99a8e38eb5fbf6ccd20b320.ctex"
+uid="uid://uax8i3kngpxr"
+path="res://.godot/imported/coffee.png-e03d7aa74e7b13a7f09fcc9e6229f5a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/enemy/Exclamation.png"
-dest_files=["res://.godot/imported/Exclamation.png-b89f624ff99a8e38eb5fbf6ccd20b320.ctex"]
+source_file="res://Assets/Sprites/ItemSprites/coffee.png"
+dest_files=["res://.godot/imported/coffee.png-e03d7aa74e7b13a7f09fcc9e6229f5a8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6gl0ypwdp0mo"
-path="res://.godot/imported/Cats).png-ea609b1e77c042e5946bac1d3a2d503e.ctex"
+uid="uid://bmym8vvvoh12r"
+path="res://.godot/imported/point.png-fbccfea7b1abd099d26882ca79a13c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemSprites/Cats).png"
-dest_files=["res://.godot/imported/Cats).png-ea609b1e77c042e5946bac1d3a2d503e.ctex"]
+source_file="res://Assets/Sprites/CharSprites/enemy/point.png"
+dest_files=["res://.godot/imported/point.png-fbccfea7b1abd099d26882ca79a13c17.ctex"]
 
 [params]
 

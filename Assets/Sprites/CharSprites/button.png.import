@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx1o04pviltk"
-path="res://.godot/imported/AreaIndicator2.png-e37c94f9f70d5ea29f769fbf4c40a02a.ctex"
+uid="uid://cl7narxhfm8oc"
+path="res://.godot/imported/button.png-0d027e2ffa4020875b373fc2384bb617.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/enemy/AreaIndicator2.png"
-dest_files=["res://.godot/imported/AreaIndicator2.png-e37c94f9f70d5ea29f769fbf4c40a02a.ctex"]
+source_file="res://Assets/Sprites/CharSprites/button.png"
+dest_files=["res://.godot/imported/button.png-0d027e2ffa4020875b373fc2384bb617.ctex"]
 
 [params]
 

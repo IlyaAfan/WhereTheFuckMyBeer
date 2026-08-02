@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b5b0ygjroqfhv"]
+
+[ext_resource type="Script" uid="uid://dnn4kkgfpjtkp" path="res://Assets/scripts/jump_pad.gd" id="1_782d4"]
+[ext_resource type="Texture2D" uid="uid://hqqwxypfs0kq" path="res://Assets/Sprites/CharSprites/JumpPad.png" id="2_fcff8"]
+[ext_resource type="Texture2D" uid="uid://bfa51yecavgm6" path="res://Assets/Sprites/DottedLine.png" id="3_f08mk"]
+[ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="4_fcff8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(12, 12)
+
+[node name="JumpPad" type="Area2D" unique_id=294162388]
+script = ExtResource("1_782d4")
+jump_range = 63
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1272668440]
+texture = ExtResource("2_fcff8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=939710267]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1531920260]
+collision_mask = 6
+
+[node name="Line2D" type="Line2D" parent="." unique_id=840825759]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+texture = ExtResource("3_f08mk")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Goal" type="Sprite2D" parent="." unique_id=1190042107]
+visible = false
+texture = ExtResource("4_fcff8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gn5c5lg6ug3y"]
 
 [ext_resource type="Script" uid="uid://q4xbpf78l16q" path="res://Assets/scripts/fart_smella.gd" id="1_41l6w"]
-[ext_resource type="Texture2D" uid="uid://byuh6m8sj4epe" path="res://Assets/CharSprites/FartSmella.png" id="2_je4nv"]
+[ext_resource type="Texture2D" uid="uid://byuh6m8sj4epe" path="res://Assets/Sprites/CharSprites/FartSmella.png" id="2_je4nv"]
 [ext_resource type="PackedScene" uid="uid://cac6q5ivboifu" path="res://tscns/dos/do_hear.tscn" id="3_awf0j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpgqe6ig8isuk"
-path="res://.godot/imported/TestingSprite.png-5962a285890eacb7b15412af5492fb4a.ctex"
+uid="uid://bfa51yecavgm6"
+path="res://.godot/imported/DottedLine.png-458a22d25503404a5c956d7f7e96b194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/TestingSprite.png"
-dest_files=["res://.godot/imported/TestingSprite.png-5962a285890eacb7b15412af5492fb4a.ctex"]
+source_file="res://Assets/Sprites/DottedLine.png"
+dest_files=["res://.godot/imported/DottedLine.png-458a22d25503404a5c956d7f7e96b194.ctex"]
 
 [params]
 
