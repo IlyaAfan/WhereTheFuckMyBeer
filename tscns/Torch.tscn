@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bry4ip3wuf8fo"]
+
+[ext_resource type="Texture2D" uid="uid://c4v6k2aepsay" path="res://Тестовые_штуки/a_Сделай_в_полностью_ж.png" id="1_rcdn8"]
+[ext_resource type="Texture2D" uid="uid://jfox5y0pip1i" path="res://Тестовые_штуки/Torch_1.png" id="2_3vekm"]
+
+[node name="Torch" type="PointLight2D" unique_id=804697877]
+texture_filter = 1
+color = Color(0.57964355, 0.41907805, 0.08307219, 1)
+range_z_max = 10
+texture = ExtResource("1_rcdn8")
+texture_scale = 0.08
+
+[node name="Torch" type="Sprite2D" parent="." unique_id=1281014200]
+texture_filter = 1
+texture = ExtResource("2_3vekm")

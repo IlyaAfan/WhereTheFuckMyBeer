@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cgg58vg744uja" path="res://Assets/scripts/level_button.gd" id="1_j61p1"]
 
 [node name="level_button" type="Button" unique_id=2078693814]
-z_index = 10
+z_index = 1000
 custom_minimum_size = Vector2(100, 100)
 theme_override_font_sizes/font_size = 30
 text = "level 1"

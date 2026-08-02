@@ -48,6 +48,6 @@ process_mode = 1
 position = Vector2(88, -8)
 
 [node name="Coffee" parent="." unique_id=573625924 instance=ExtResource("9_nhk6u")]
-position = Vector2(-89, -55)
+position = Vector2(-88, -55)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]

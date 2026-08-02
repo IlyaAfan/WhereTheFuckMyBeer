@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cb540ge84qmqh" path="res://Assets/scripts/in_game_menu.gd" id="1_ya557"]
 
 [node name="InGameMenu" type="Control" unique_id=942770950]
-z_index = 10
+z_index = 1000
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

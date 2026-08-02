@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="4_8mjju"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="5_oudig"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_n42k0"]
-[ext_resource type="PackedScene" uid="uid://dv86bemfcv5bh" path="res://tscns/point_light_2d.tscn" id="7_km620"]
+[ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="7_km620"]
 
 [node name="TestLevel3" type="Node2D" unique_id=1476997527]
 script = ExtResource("1_6yft4")
@@ -34,7 +34,9 @@ position = Vector2(7, -56)
 position = Vector2(121, -9)
 where_to = "res://tscns/levels/test_level_3.tscn"
 
-[node name="PointLight2D" parent="." unique_id=804697877 instance=ExtResource("7_km620")]
-position = Vector2(-55, 24)
+[node name="Torch" parent="." unique_id=804697877 instance=ExtResource("7_km620")]
+z_index = -1
+position = Vector2(-50, 30)
+height = 61.0
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
