@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgkb2enw6dqfm"
-path="res://.godot/imported/SmartFella.png-360dc2c0916a36b1211534c22b1c9369.ctex"
+uid="uid://byuh6m8sj4epe"
+path="res://.godot/imported/FartSmella.png-4219af5c8f264e78858c1afffc4d6263.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/SmartFella.png"
-dest_files=["res://.godot/imported/SmartFella.png-360dc2c0916a36b1211534c22b1c9369.ctex"]
+source_file="res://Assets/Sprites/CharSprites/FartSmella.png"
+dest_files=["res://.godot/imported/FartSmella.png-4219af5c8f264e78858c1afffc4d6263.ctex"]
 
 [params]
 

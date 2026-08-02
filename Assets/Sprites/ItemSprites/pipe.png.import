@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1ee8phpdnmw"
-path="res://.godot/imported/Question.png-33be0ff094987a76f73549212b5af13e.ctex"
+uid="uid://boeh44u4o6o3m"
+path="res://.godot/imported/pipe.png-55e521f6bbeef7e06f8e5f0de904fdda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/enemy/Question.png"
-dest_files=["res://.godot/imported/Question.png-33be0ff094987a76f73549212b5af13e.ctex"]
+source_file="res://Assets/Sprites/ItemSprites/pipe.png"
+dest_files=["res://.godot/imported/pipe.png-55e521f6bbeef7e06f8e5f0de904fdda.ctex"]
 
 [params]
 

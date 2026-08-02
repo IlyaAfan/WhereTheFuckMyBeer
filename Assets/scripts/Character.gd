@@ -25,3 +25,6 @@ func nav_movement() -> Vector2: # возвращает нужную скорос
 	else:
 		direction = Vector2.ZERO
 	return (direction * speed * get_tile_data("tile_speed"))
+
+func stop_navigation():
+	Navigation_Agent_Used.target_position = position

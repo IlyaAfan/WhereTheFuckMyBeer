@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmym8vvvoh12r"
-path="res://.godot/imported/point.png-95c285674f06b95f543ee939ba8f3c79.ctex"
+uid="uid://dxgcjtdc2ovye"
+path="res://.godot/imported/barbell.png-5b2c4debcc1c7e46b41cd27d1d276343.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/enemy/point.png"
-dest_files=["res://.godot/imported/point.png-95c285674f06b95f543ee939ba8f3c79.ctex"]
+source_file="res://Assets/Sprites/ItemSprites/barbell.png"
+dest_files=["res://.godot/imported/barbell.png-5b2c4debcc1c7e46b41cd27d1d276343.ctex"]
 
 [params]
 

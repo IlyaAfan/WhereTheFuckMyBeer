@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boeh44u4o6o3m"
-path="res://.godot/imported/pipe.png-207e5679293c68d8188258a1d721a4c7.ctex"
+uid="uid://pjjb0nonx6a5"
+path="res://.godot/imported/DwarfIdleD.png-375be95ac0567b9e0c40f35c1d30c71f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemSprites/pipe.png"
-dest_files=["res://.godot/imported/pipe.png-207e5679293c68d8188258a1d721a4c7.ctex"]
+source_file="res://Assets/Sprites/CharSprites/ProgrammerArtDwarf/DwarfIdleD.png"
+dest_files=["res://.godot/imported/DwarfIdleD.png-375be95ac0567b9e0c40f35c1d30c71f.ctex"]
 
 [params]
 

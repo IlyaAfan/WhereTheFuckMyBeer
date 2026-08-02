@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b744j46ot3q31"
-path="res://.godot/imported/destination.png-8c6c9a751877fa38ed91689bda5691a7.ctex"
+uid="uid://pq18g1nd7v0f"
+path="res://.godot/imported/DoorOpen.png-5117a178af84815f9faa4a1177810faf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/enemy/destination.png"
-dest_files=["res://.godot/imported/destination.png-8c6c9a751877fa38ed91689bda5691a7.ctex"]
+source_file="res://Assets/Sprites/CharSprites/DoorOpen.png"
+dest_files=["res://.godot/imported/DoorOpen.png-5117a178af84815f9faa4a1177810faf.ctex"]
 
 [params]
 

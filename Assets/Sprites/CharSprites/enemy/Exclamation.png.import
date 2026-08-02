@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pq18g1nd7v0f"
-path="res://.godot/imported/DoorOpen.png-aea6836b89acb2e1e6fdd4c833da6b6e.ctex"
+uid="uid://isfaqdr7yufa"
+path="res://.godot/imported/Exclamation.png-5b61e4d3d431b5beaf653894fb6f02ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/DoorOpen.png"
-dest_files=["res://.godot/imported/DoorOpen.png-aea6836b89acb2e1e6fdd4c833da6b6e.ctex"]
+source_file="res://Assets/Sprites/CharSprites/enemy/Exclamation.png"
+dest_files=["res://.godot/imported/Exclamation.png-5b61e4d3d431b5beaf653894fb6f02ad.ctex"]
 
 [params]
 

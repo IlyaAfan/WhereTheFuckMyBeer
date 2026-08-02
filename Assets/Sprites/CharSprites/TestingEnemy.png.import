@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coj0nf4cprlwx"
-path="res://.godot/imported/burger.png-22451e6cef2351fdc9348b7786db6c91.ctex"
+uid="uid://ds8guqcsomrhw"
+path="res://.godot/imported/TestingEnemy.png-3fc7f1d2b7f0280e26ee6a5333da8ddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ItemSprites/burger.png"
-dest_files=["res://.godot/imported/burger.png-22451e6cef2351fdc9348b7786db6c91.ctex"]
+source_file="res://Assets/Sprites/CharSprites/TestingEnemy.png"
+dest_files=["res://.godot/imported/TestingEnemy.png-3fc7f1d2b7f0280e26ee6a5333da8ddc.ctex"]
 
 [params]
 

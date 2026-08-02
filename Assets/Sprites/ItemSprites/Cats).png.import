@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byuh6m8sj4epe"
-path="res://.godot/imported/FartSmella.png-730da42588f2fe03a2120d9cce97918c.ctex"
+uid="uid://c6gl0ypwdp0mo"
+path="res://.godot/imported/Cats).png-df35bff9f6992e2c3850623d367041a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/FartSmella.png"
-dest_files=["res://.godot/imported/FartSmella.png-730da42588f2fe03a2120d9cce97918c.ctex"]
+source_file="res://Assets/Sprites/ItemSprites/Cats).png"
+dest_files=["res://.godot/imported/Cats).png-df35bff9f6992e2c3850623d367041a5.ctex"]
 
 [params]
 

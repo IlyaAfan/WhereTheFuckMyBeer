@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pjjb0nonx6a5"
-path="res://.godot/imported/DwarfIdleD.png-ab0d1cc8ac6e5c1aa1156b2bbeb8025d.ctex"
+uid="uid://b744j46ot3q31"
+path="res://.godot/imported/destination.png-0065eb4f123a06bbbb77ec86bf709fbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharSprites/ProgrammerArtDwarf/DwarfIdleD.png"
-dest_files=["res://.godot/imported/DwarfIdleD.png-ab0d1cc8ac6e5c1aa1156b2bbeb8025d.ctex"]
+source_file="res://Assets/Sprites/CharSprites/enemy/destination.png"
+dest_files=["res://.godot/imported/destination.png-0065eb4f123a06bbbb77ec86bf709fbf.ctex"]
 
 [params]
 

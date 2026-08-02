@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://dh86y2g04c8o6"]
 
-[ext_resource type="Texture2D" uid="uid://pjjb0nonx6a5" path="res://Assets/CharSprites/ProgrammerArtDwarf/DwarfIdleD.png" id="1_2073m"]
+[ext_resource type="Texture2D" uid="uid://pjjb0nonx6a5" path="res://Assets/Sprites/CharSprites/ProgrammerArtDwarf/DwarfIdleD.png" id="1_2073m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6eue"]
 atlas = ExtResource("1_2073m")

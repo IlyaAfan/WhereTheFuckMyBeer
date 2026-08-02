@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kiffcj5np8n6"]
 
-[ext_resource type="Texture2D" uid="uid://c6gl0ypwdp0mo" path="res://Assets/ItemSprites/Cats).png" id="1_xynok"]
+[ext_resource type="Texture2D" uid="uid://c6gl0ypwdp0mo" path="res://Assets/Sprites/ItemSprites/Cats).png" id="1_xynok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 4.1231055
