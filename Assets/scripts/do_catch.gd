@@ -9,7 +9,8 @@ func _ready() -> void:
 	$Area2D/CollisionShape2D.shape.radius = radius
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	body_last_seen = body
+	if body.is_in_group("Player"):
+		body_last_seen = body
 	if body.is_in_group("Player") and body.not_catchable == false and !caught:
 		body.get_caught()
 		get_parent().speed = 0

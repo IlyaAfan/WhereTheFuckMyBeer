@@ -8,8 +8,6 @@
 [ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://Assets/scripts/enemy_controller.gd" id="6_02k1w"]
 [ext_resource type="PackedScene" uid="uid://gn5c5lg6ug3y" path="res://tscns/fart_smella.tscn" id="7_jv0gq"]
 [ext_resource type="PackedScene" uid="uid://dp4ati4agkdmp" path="res://tscns/Enemy.tscn" id="8_6hax4"]
-[ext_resource type="PackedScene" uid="uid://chixvufhdj5jb" path="res://tscns/Items/barbell.tscn" id="9_mq01l"]
-[ext_resource type="PackedScene" uid="uid://cxd6ra58cpnbe" path="res://tscns/Items/burger.tscn" id="10_cuhgp"]
 
 [node name="TestLevelFS2" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -52,11 +50,5 @@ position = Vector2(-56, -72)
 [node name="Enemy3" parent="EnemyController" unique_id=774688858 instance=ExtResource("8_6hax4")]
 process_mode = 1
 position = Vector2(8, 24)
-
-[node name="Barbell" parent="." unique_id=1088664882 instance=ExtResource("9_mq01l")]
-position = Vector2(-136, 9)
-
-[node name="Burger" parent="." unique_id=837120907 instance=ExtResource("10_cuhgp")]
-position = Vector2(-136, -9)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
