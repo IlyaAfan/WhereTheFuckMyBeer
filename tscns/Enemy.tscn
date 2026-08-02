@@ -31,6 +31,7 @@ avoidance_enabled = true
 avoidance_mask = 6
 
 [node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
+visibility_layer = 7
 
 [node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
 radius = 5
