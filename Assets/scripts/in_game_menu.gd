@@ -7,7 +7,6 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		toggle_menu($NinePatchRect/PopupMenu)
 		get_tree().paused = not get_tree().paused
-		print("toggled")
 
 func toggle_menu(object: Control):
 	object.visible = !object.visible

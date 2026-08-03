@@ -39,8 +39,11 @@ func _physics_process(_delta: float) -> void:
 		ConfigOption.type_control = not ConfigOption.type_control
 		$destination.visible = false
 	
-	move_and_slide()
-	use_item()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	else:
+		move_and_slide()
+		use_item()
 
 
 func input_movement() -> Vector2: 

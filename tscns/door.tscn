@@ -7,6 +7,8 @@
 size = Vector2(16, 16)
 
 [node name="Door" type="StaticBody2D" unique_id=2084573501]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_i8cot")
 
 [node name="Closed" type="Sprite2D" parent="." unique_id=442625005]

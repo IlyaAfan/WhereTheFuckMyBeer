@@ -9,6 +9,7 @@
 size = Vector2(12, 12)
 
 [node name="JumpPad" type="Area2D" unique_id=294162388]
+collision_layer = 4
 script = ExtResource("1_782d4")
 jump_range = 63
 
@@ -19,7 +20,7 @@ texture = ExtResource("2_fcff8")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1531920260]
-collision_mask = 6
+collision_mask = 4
 
 [node name="Line2D" type="Line2D" parent="." unique_id=840825759]
 visible = false

@@ -20,6 +20,7 @@ scale = Vector2(0.24000062, 0.24)
 
 [node name="death_screen" parent="." unique_id=466029685 instance=ExtResource("2_os6uh")]
 process_mode = 3
+visible = false
 z_as_relative = false
 offset_left = -120.0
 offset_top = -64.0

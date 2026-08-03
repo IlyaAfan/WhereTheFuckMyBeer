@@ -16,7 +16,6 @@ func use_jump_pad():
 
 func _physics_process(_delta):
 	if active_body:
-		print(holding)
 		if holding:
 			vect = (get_global_mouse_position()-global_position).normalized() * jump_range
 			$RayCast2D.target_position = vect
