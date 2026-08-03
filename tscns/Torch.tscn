@@ -7,6 +7,9 @@
 texture_filter = 1
 color = Color(0.57964355, 0.41907805, 0.08307219, 1)
 range_z_max = 10
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
 texture = ExtResource("1_rcdn8")
 texture_scale = 0.08
 

@@ -13,6 +13,7 @@ config_version=5
 config/name="WhereMyBeer"
 run/main_scene="uid://ctkhux68g8dlv"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.007347472, 0.32759434, 0.3897251, 1)
 config/icon="res://icon.svg"
 
 [autoload]

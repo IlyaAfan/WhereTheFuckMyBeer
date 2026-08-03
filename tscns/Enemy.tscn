@@ -17,6 +17,7 @@ script = ExtResource("1_2msnq")
 speed = 70
 
 [node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
+z_index = 101
 texture = ExtResource("2_h508e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801922039]

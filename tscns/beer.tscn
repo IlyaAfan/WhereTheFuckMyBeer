@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgxh4kpjf2nca" path="res://Assets/Sprites/ItemSprites/beer.png" id="2_t5241"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4oy6"]
-size = Vector2(6, 6)
+size = Vector2(10, 10)
 
 [node name="Beer" type="Area2D" unique_id=5119092]
 script = ExtResource("1_sa3wj")

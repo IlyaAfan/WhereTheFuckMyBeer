@@ -29,7 +29,7 @@ position = Vector2(-32, -15)
 
 [node name="Beer" parent="." unique_id=533000137 instance=ExtResource("5_6i1rt")]
 position = Vector2(105, -72)
-where_to = "res://tscns/menus/menu.tscn"
+where_to = "res://tscns/levels/level_jumppad.tscn"
 
 [node name="EnemyController" type="Node2D" parent="." unique_id=2123642731]
 script = ExtResource("6_02k1w")

@@ -81,7 +81,7 @@ func _on_timer_timeout() -> void: # С этой абоминацией надо 
 	
 	i+=1
 	if i >= 10:
-		$AreaIndicator.visible = !$AreaIndicator.visible
+		#$AreaIndicator.visible = !$AreaIndicator.visible
 		i = 0
 	
 
