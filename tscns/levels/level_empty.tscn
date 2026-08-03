@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dnn4kkgfpjtkp" path="res://Assets/scripts/jump_pad.gd" id="6_hcl3q"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="6_rr1fp"]
 [ext_resource type="Texture2D" uid="uid://hqqwxypfs0kq" path="res://Assets/Sprites/CharSprites/JumpPad.png" id="7_ft0jp"]
+[ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="10_curpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(12, 12)
@@ -50,6 +51,12 @@ end_cap_mode = 2
 visible = false
 texture = ExtResource("6_rr1fp")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="JumpPad" unique_id=881065404]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(63, -39)
+color = Color(0.7261715, 0.8030372, 0.9093077, 1)
+
 [node name="Player" parent="." unique_id=1195571827 groups=["Player"] instance=ExtResource("3_4p5th")]
 process_mode = 1
 position = Vector2(-104, -8)
@@ -59,6 +66,9 @@ position = Vector2(-104, -8)
 [node name="Beer" parent="." unique_id=533000137 instance=ExtResource("5_hojpq")]
 position = Vector2(121, -9)
 where_to = "res://tscns/levels/test_level.tscn"
+
+[node name="Torch" parent="." unique_id=804697877 instance=ExtResource("10_curpn")]
+position = Vector2(-8, -57)
 
 [connection signal="body_entered" from="JumpPad" to="JumpPad" method="_on_body_entered"]
 [connection signal="body_exited" from="JumpPad" to="JumpPad" method="_on_body_exited"]

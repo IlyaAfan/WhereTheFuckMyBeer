@@ -59,12 +59,14 @@ texture = ExtResource("2_b64jn")
 show_behind_parent = true
 light_mask = 2
 z_index = 1000
-energy = 0.7
+texture_filter = 1
+energy = 0.3
 blend_mode = 1
 range_z_max = 100
+range_item_cull_mask = 2
 shadow_enabled = true
 shadow_filter = 1
-shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 2
 texture = ExtResource("6_8u3u4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
