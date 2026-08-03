@@ -9,7 +9,6 @@ var cell_data: TileData
 func on_parent_ready():
 	TileMap_I_Am_Standing_On = get_parent()
 	if TileMap_I_Am_Standing_On:
-		var pol = NavigationPolygon.new()
 		cell = TileMap_I_Am_Standing_On.local_to_map(position)
 		cell_data = TileMap_I_Am_Standing_On.get_cell_tile_data(cell)
 

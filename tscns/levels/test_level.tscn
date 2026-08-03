@@ -43,15 +43,17 @@ process_mode = 1
 position = Vector2(-8, -8)
 
 [node name="Torch" parent="." unique_id=804697877 instance=ExtResource("8_3mml8")]
-position = Vector2(-40, 48)
+position = Vector2(-40, 40)
+rotation = 3.1415927
 
 [node name="Torch2" parent="." unique_id=1601622120 instance=ExtResource("8_3mml8")]
-position = Vector2(40, -64)
+position = Vector2(40, -56)
 
 [node name="Torch3" parent="." unique_id=1100673794 instance=ExtResource("8_3mml8")]
-position = Vector2(-40, -64)
+position = Vector2(-40, -56)
 
 [node name="Torch4" parent="." unique_id=1186531541 instance=ExtResource("8_3mml8")]
-position = Vector2(40, 48)
+position = Vector2(39, 40)
+rotation = 3.1415927
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
