@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bx1o04pviltk" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator2.png" id="2_ds38f"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="2_t1ur7"]
 [ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="3_4xiqd"]
+[ext_resource type="Texture2D" uid="uid://r3tv31ybhtvu" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator.png" id="5_sbj60"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_88262"]
 radius = 56.0
@@ -21,6 +22,7 @@ visible = false
 top_level = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1421351804]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=731559026]
 shape = SubResource("CircleShape2D_88262")
@@ -32,6 +34,10 @@ texture = ExtResource("2_ds38f")
 z_index = 2
 position = Vector2(-5, -5)
 texture = ExtResource("3_4xiqd")
+
+[node name="AreaIndicator" type="Sprite2D" parent="." unique_id=762618376]
+z_index = 101
+texture = ExtResource("5_sbj60")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="destination" to="." method="_on_destination_body_entered"]

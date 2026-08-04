@@ -3,18 +3,23 @@
 [ext_resource type="Script" uid="uid://dpr371qijq5j7" path="res://Assets/scripts/enemy.gd" id="1_2msnq"]
 [ext_resource type="Texture2D" uid="uid://ds8guqcsomrhw" path="res://Assets/Sprites/CharSprites/TestingEnemy.png" id="2_h508e"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="3_u8qfd"]
+[ext_resource type="Texture2D" uid="uid://bmbueuq1slfj6" path="res://Assets/Sprites/SharpLightTexture.png" id="4_6iqid"]
 [ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="4_cb2tf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
 radius = 4.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1695094296 groups=["Enemies"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8u3u4"]
+radius = 56.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1695094296 node_paths=PackedStringArray("Navigation_Agent_Used") groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_2msnq")
 speed = 70
+Navigation_Agent_Used = NodePath("NavigationAgent2D")
 
 [node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
 z_index = 101
@@ -31,8 +36,23 @@ target_desired_distance = 2.0
 avoidance_enabled = true
 avoidance_mask = 6
 
-[node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
+[node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 visibility_layer = 7
+AreaShape = SubResource("CircleShape2D_8u3u4")
 
-[node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
+[node name="PointLight2D" type="PointLight2D" parent="do_see" unique_id=1843472030]
+show_behind_parent = true
+light_mask = 2
+z_index = 1000
+texture_filter = 1
+energy = 0.3
+blend_mode = 1
+range_z_max = 100
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_filter = 1
+shadow_item_cull_mask = 2
+texture = ExtResource("4_6iqid")
+
+[node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
 radius = 5

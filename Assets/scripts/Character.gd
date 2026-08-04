@@ -4,7 +4,7 @@ class_name Character
 @export var speed = 50 #стандартная скорость -- скорость игрока
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
-var Navigation_Agent_Used: NavigationAgent2D
+@export var Navigation_Agent_Used: NavigationAgent2D
 
 func get_tile_data(data_name: String): # вернёт значение нужных данных для тайла на котором стоит персонаж, например tile_speed
 	if not TileMap_I_Am_Standing_On:
@@ -28,3 +28,9 @@ func nav_movement() -> Vector2: # возвращает нужную скорос
 
 func stop_navigation():
 	Navigation_Agent_Used.target_position = position
+
+func heard_a_call(target: Vector2): #должна вызываться когда кто-то извне дал наводку на игрока(например fart smella)
+	Navigation_Agent_Used.target_position = target
+
+func connect_ears(emitter:Node2D, signl: String):#присоединяет метод выше к сигналу:
+	emitter.connect(signl, heard_a_call)

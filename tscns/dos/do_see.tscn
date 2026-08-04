@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://r3tv31ybhtvu" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator.png" id="2_b64jn"]
 [ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="4_4fjq2"]
 [ext_resource type="Texture2D" uid="uid://dc1ee8phpdnmw" path="res://Assets/Sprites/CharSprites/enemy/Question.png" id="5_8u3u4"]
-[ext_resource type="Texture2D" uid="uid://bmbueuq1slfj6" path="res://Assets/Sprites/SharpLightTexture.png" id="6_8u3u4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_88262"]
-radius = 56.0
 
 [node name="DoSee" type="Node2D" unique_id=1184471678]
 z_index = -1
@@ -19,10 +15,8 @@ wait_time = 0.05
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=187617037]
-visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=375452967]
-shape = SubResource("CircleShape2D_88262")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1457220330]
 
 [node name="destination" parent="." unique_id=503758647 instance=ExtResource("2_8u3u4")]
 visible = false
@@ -54,18 +48,6 @@ texture = ExtResource("5_8u3u4")
 [node name="AreaIndicator" type="Sprite2D" parent="." unique_id=1869260334]
 visible = false
 texture = ExtResource("2_b64jn")
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=44702501]
-show_behind_parent = true
-light_mask = 2
-z_index = 1000
-energy = 0.7
-blend_mode = 1
-range_z_max = 100
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 1.0
-texture = ExtResource("6_8u3u4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

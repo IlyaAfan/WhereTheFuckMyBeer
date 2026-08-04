@@ -10,7 +10,7 @@ var navigated = false
 @export var radius = 56
 
 func on_parent_ready():
-	if get_parent().Navigation_Agent_Used:
+	if get_parent().Navigation_Agent_Used and !nagent:
 		nagent =get_parent().Navigation_Agent_Used
 
 

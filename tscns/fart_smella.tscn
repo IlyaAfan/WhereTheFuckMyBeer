@@ -3,17 +3,20 @@
 [ext_resource type="Script" uid="uid://q4xbpf78l16q" path="res://Assets/scripts/fart_smella.gd" id="1_41l6w"]
 [ext_resource type="Texture2D" uid="uid://byuh6m8sj4epe" path="res://Assets/Sprites/CharSprites/FartSmella.png" id="2_je4nv"]
 [ext_resource type="PackedScene" uid="uid://cac6q5ivboifu" path="res://tscns/dos/do_hear.tscn" id="3_awf0j"]
+[ext_resource type="PackedScene" uid="uid://d1jcnbfi8xfje" path="res://tscns/dos/do_shout.tscn" id="4_je4nv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
 radius = 1.0
 
-[node name="FartSmella" type="CharacterBody2D" unique_id=1695094296]
+[node name="FartSmella" type="CharacterBody2D" unique_id=1679017292 node_paths=PackedStringArray("Navigation_Agent_Used")]
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_41l6w")
 speed = 0
+Navigation_Agent_Used = NodePath("NavigationAgent2D")
+metadata/_custom_type_script = "uid://bwkiv0ra46tx1"
 
 [node name="TestingFartSmella" type="Sprite2D" parent="." unique_id=1835231928]
 texture = ExtResource("2_je4nv")
@@ -26,9 +29,6 @@ path_desired_distance = 8.0
 target_desired_distance = 2.0
 avoidance_enabled = true
 
-[node name="DoHear" parent="." unique_id=146642522 node_paths=PackedStringArray("nagent") instance=ExtResource("3_awf0j")]
-nagent = NodePath("../NavigationAgent2D")
+[node name="DoHear" parent="." unique_id=146642522 instance=ExtResource("3_awf0j")]
 
-[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
-[connection signal="path_changed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_path_changed"]
-[connection signal="iHear" from="DoHear" to="." method="_on_do_hear"]
+[node name="do_shout" parent="." unique_id=79768491 instance=ExtResource("4_je4nv")]

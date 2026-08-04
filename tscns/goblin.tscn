@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bxlth1lsqc1nr"]
+
+[ext_resource type="Script" uid="uid://cdsiq38g36br8" path="res://Assets/scripts/goblin.gd" id="1_thnai"]
+[ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="2_xw3cb"]
+[ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="3_372fx"]
+[ext_resource type="Texture2D" uid="uid://dc8rtxi48wtu7" path="res://Assets/Sprites/CharSprites/test_goblin.png" id="4_laisx"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6iqid"]
+points = PackedVector2Array(16, 54, 7, 56, -7, 56, -16, 54, -33, 44, 0, 0, 33, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(6, 6)
+
+[node name="Goblin" type="CharacterBody2D" unique_id=2007969219]
+script = ExtResource("1_thnai")
+speed = 40
+metadata/_custom_type_script = "uid://bwkiv0ra46tx1"
+
+[node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("2_xw3cb")]
+
+[node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("3_372fx")]
+AreaShape = SubResource("ConvexPolygonShape2D_6iqid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332576803]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="TestGoblin" type="Sprite2D" parent="." unique_id=584827968]
+position = Vector2(0, -1)
+texture = ExtResource("4_laisx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1379997479]
