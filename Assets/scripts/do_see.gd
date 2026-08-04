@@ -1,13 +1,14 @@
 extends Node2D
 
-signal iSee(target: Vector2)
+signal iFound(target: Character)
 
 const Grace = 4 #grace-период в тиках таймера
 #писюны
 var target:Node2D
-var hear = false
-var see = false
-var navigated = false # означает что враг прямо сейчас бежит на игрока, "наведён" на него
+var target_last_seen_at: Vector2
+var hear:bool = false
+var see:bool = false
+var navigated:bool = false # означает что враг прямо сейчас бежит на игрока, "наведён" на него
 #ПЕРЕДЕЛАТЬ: используем дохуя булов чтобы обозначить состояния, нужна система состояний
 var i = 0 as int
 var GraceI = -1 as int #переменная для таймера grace периода
@@ -19,7 +20,7 @@ var GraceI = -1 as int #переменная для таймера grace пер�
 func on_parent_ready():
 	if get_parent().Navigation_Agent_Used and !nagent:
 		nagent =get_parent().Navigation_Agent_Used
-	
+		
 	$Area2D/CollisionShape2D.shape = AreaShape
 
 
@@ -45,12 +46,13 @@ func navigate():
 func _on_timer_timeout() -> void: # С этой абоминацией надо будет разобраться получше
 	
 	if hear: 
+		$RayCast2D.target_position = $RayCast2D.to_local(target.global_position)
 		$RayCast2D.look_at(target.global_position)
 		$RayCast2D.force_raycast_update()
-		if $RayCast2D.is_colliding() and $RayCast2D.get_collider().name == ("Player"): 
+		if !$RayCast2D.is_colliding(): 
 		# Hear And See
 			if navigated: #Смотрим нужен ли Grace-период, если он уже бежит за игроком, то период не нужен.
-				iSee.emit(target.global_position)
+				iFound.emit(target)
 				navigate()
 			else: 
 				if see:
@@ -58,7 +60,7 @@ func _on_timer_timeout() -> void: # С этой абоминацией надо 
 						$Question.visible = false
 						$Exclamation.visible = true
 						$Exclamation2.visible = true
-						iSee.emit(target.global_position)
+						iFound.emit(target)
 						navigate()
 				else:
 					$Question.visible = true
@@ -67,11 +69,12 @@ func _on_timer_timeout() -> void: # С этой абоминацией надо 
 					see = true
 					GraceI = (i + Grace)%10 # grace-период определяется здесь. I - тики таймера от 0 до 9
 			
-		else: 
 		# Hear No See
+		else: 
 			if navigated: 
 			# Hear No See But Was Seen Earlier
 				navigated = false
+				target_last_seen_at = target.global_position
 				put_enemy_destination()
 			see = false
 			$Exclamation.visible = false
@@ -100,5 +103,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		navigated = false
 
 func _on_destination_hit(body: Node2D) -> void:
-	if $destination.visible and body == get_parent():
+	if $destination.visible and body.is_in_group("Enemies"):
 		$destination.visible = false

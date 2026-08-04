@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/Sprites/CharSprites/TestingSprite.png" id="1_j31hh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljibn"]
-size = Vector2(9, 9)
+size = Vector2(16, 16)
 
 [node name="Area2D" type="Area2D" unique_id=1734225441]
 collision_mask = 3
