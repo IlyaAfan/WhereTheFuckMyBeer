@@ -14,18 +14,18 @@ var GraceI = -1 as int #переменная для таймера grace пер�
 
 @export var nagent: NavigationAgent2D
 @export var radius = 56
-
+@export var AreaShape: Shape2D
 
 func on_parent_ready():
-	
 	if get_parent().Navigation_Agent_Used and !nagent:
 		nagent =get_parent().Navigation_Agent_Used
+	
+	$Area2D/CollisionShape2D.shape = AreaShape
 
 
 func _ready() -> void:
 	get_parent().connect("ready",on_parent_ready) 
 	
-	$Area2D/CollisionShape2D.shape.radius = radius
 	$RayCast2D.target_position = Vector2 (radius, 0)
 	
 	$destination.visible = false

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="6_rr1fp"]
 [ext_resource type="Texture2D" uid="uid://hqqwxypfs0kq" path="res://Assets/Sprites/CharSprites/JumpPad.png" id="7_ft0jp"]
 [ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="10_curpn"]
+[ext_resource type="PackedScene" uid="uid://bxlth1lsqc1nr" path="res://tscns/goblin.tscn" id="11_scc4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(12, 12)
@@ -69,6 +70,9 @@ where_to = "res://tscns/levels/test_level.tscn"
 
 [node name="Torch" parent="." unique_id=804697877 instance=ExtResource("10_curpn")]
 position = Vector2(-8, -57)
+
+[node name="Goblin" parent="." unique_id=2007969219 instance=ExtResource("11_scc4t")]
+position = Vector2(-40, -56)
 
 [connection signal="body_entered" from="JumpPad" to="JumpPad" method="_on_body_entered"]
 [connection signal="body_exited" from="JumpPad" to="JumpPad" method="_on_body_exited"]

@@ -5,7 +5,6 @@ signal SomeoneShouted(target:Vector2)
 func _ready() -> void:
 	var shouters = get_children_with_do("do_shout")
 	var enemies = get_children_with_do("do_catch")
-	print(shouters, enemies)
 	if len(shouters) and len(enemies):
 		for s:Node2D in shouters:
 			s.find_child("do_shout").iHearADude.connect(_on_fart_smella_hears)
