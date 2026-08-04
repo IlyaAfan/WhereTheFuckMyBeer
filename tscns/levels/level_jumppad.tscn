@@ -55,10 +55,6 @@ position = Vector2(-119, 8)
 [node name="Camera2D" parent="." unique_id=947555020 instance=ExtResource("8_xnlk1")]
 position = Vector2(-7, 9)
 
-[node name="Beer" parent="." unique_id=533000137 instance=ExtResource("9_vybs1")]
-position = Vector2(120, 8)
-where_to = "res://tscns/menus/menu.tscn"
-
 [node name="Pipe" parent="." unique_id=1777342601 instance=ExtResource("11_66w77")]
 position = Vector2(-104, -55)
 
@@ -78,5 +74,23 @@ rotation = 3.1415927
 
 [node name="Torch3" parent="Torch/Torch2/Torch2" unique_id=1755935669 instance=ExtResource("12_66w77")]
 position = Vector2(-79, 7.6293945e-06)
+
+[node name="Torch3" parent="Torch/Torch2" unique_id=906772090 instance=ExtResource("12_66w77")]
+position = Vector2(45, 69.99999)
+rotation = 3.1415927
+
+[node name="Torch2" parent="Torch/Torch2/Torch3" unique_id=829804991 instance=ExtResource("12_66w77")]
+position = Vector2(-85, 128)
+rotation = 3.1415927
+
+[node name="Torch3" parent="Torch/Torch2/Torch3" unique_id=98478196 instance=ExtResource("12_66w77")]
+position = Vector2(-79, 7.6293945e-06)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1046842203]
+color = Color(0.117109306, 0.11710932, 0.117109306, 1)
+
+[node name="Beer" parent="CanvasModulate" unique_id=533000137 instance=ExtResource("9_vybs1")]
+position = Vector2(120, 8)
+where_to = "res://tscns/menus/menu.tscn"
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
