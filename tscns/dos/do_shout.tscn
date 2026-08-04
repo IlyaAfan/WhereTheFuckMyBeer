@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1jcnbfi8xfje"]
+
+[ext_resource type="Script" uid="uid://15fbjg6mjted" path="res://Assets/scripts/do_shout.gd" id="1_vx5vu"]
+
+[node name="do_shout" type="Node2D" unique_id=79768491]
+script = ExtResource("1_vx5vu")

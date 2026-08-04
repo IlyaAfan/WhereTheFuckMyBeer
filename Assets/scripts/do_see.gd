@@ -17,10 +17,9 @@ var GraceI = -1 as int #переменная для таймера grace пер�
 
 
 func on_parent_ready():
-	if get_parent().Navigation_Agent_Used:
+	
+	if get_parent().Navigation_Agent_Used and !nagent:
 		nagent =get_parent().Navigation_Agent_Used
-	else:
-		print("the parent has no Navigation_Agent_Used")
 
 
 func _ready() -> void:

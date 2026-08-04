@@ -4,7 +4,7 @@ class_name Character
 @export var speed = 50 #стандартная скорость -- скорость игрока
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
-var Navigation_Agent_Used: NavigationAgent2D
+@export var Navigation_Agent_Used: NavigationAgent2D
 
 func get_tile_data(data_name: String): # вернёт значение нужных данных для тайла на котором стоит персонаж, например tile_speed
 	if not TileMap_I_Am_Standing_On:

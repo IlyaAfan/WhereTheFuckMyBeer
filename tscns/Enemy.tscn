@@ -8,13 +8,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
 radius = 4.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1695094296 groups=["Enemies"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=1695094296 node_paths=PackedStringArray("Navigation_Agent_Used") groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_2msnq")
 speed = 70
+Navigation_Agent_Used = NodePath("NavigationAgent2D")
 
 [node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
 z_index = 101
@@ -31,8 +32,8 @@ target_desired_distance = 2.0
 avoidance_enabled = true
 avoidance_mask = 6
 
-[node name="DoSee" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
+[node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 visibility_layer = 7
 
-[node name="DoCatch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
+[node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
 radius = 5

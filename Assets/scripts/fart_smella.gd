@@ -6,8 +6,5 @@ signal iHearADude(target: Vector2)
 
 
 func _physics_process(_delta: float) -> void:
-	pass
-
-
-func _on_do_hear(target: Vector2) -> void:
-	iHearADude.emit(target)
+	velocity = nav_movement()
+	move_and_slide()
