@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://7gekkhro8h0n"]
+
+[ext_resource type="Script" uid="uid://ddjxeq3v20i51" path="res://Assets/scripts/do_seek.gd" id="1_5ir68"]
+
+[node name="do_seek" type="Node2D" unique_id=2076959112]
+script = ExtResource("1_5ir68")
+
+[node name="Timer" type="Timer" parent="." unique_id=1447349939]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

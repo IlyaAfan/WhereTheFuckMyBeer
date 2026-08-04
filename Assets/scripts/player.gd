@@ -4,10 +4,11 @@ signal caught
 var input_direction: Vector2
 var navigated: bool
 var name_item: String = "empty"
-var not_catchable: bool
+var not_catchable: bool = false
 
 func get_caught():
 	caught.emit()
+	get_tree().paused
 	speed = 0
 
 

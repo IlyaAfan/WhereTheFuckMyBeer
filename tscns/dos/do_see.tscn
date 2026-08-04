@@ -23,9 +23,8 @@ visible = false
 top_level = true
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1599647]
-visible = false
 target_position = Vector2(56, 0)
-collision_mask = 7
+collision_mask = 6
 
 [node name="Exclamation" type="Sprite2D" parent="." unique_id=1570774463]
 visible = false

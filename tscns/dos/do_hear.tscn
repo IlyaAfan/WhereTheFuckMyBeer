@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_88262"]
 radius = 56.0
 
-[node name="DoHear" type="Node2D" unique_id=146642522]
+[node name="do_hear" type="Node2D" unique_id=146642522]
 z_index = -1
 script = ExtResource("1_wt3xb")
 

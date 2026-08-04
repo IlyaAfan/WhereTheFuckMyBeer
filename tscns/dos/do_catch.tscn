@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cb2tf"]
 radius = 8.0
 
-[node name="DoCatch" type="Node2D" unique_id=545746488]
+[node name="do_catch" type="Node2D" unique_id=545746488]
 script = ExtResource("1_rnitr")
 radius = 6
 
