@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c1s64bst4u0f2"]
+
+[ext_resource type="Script" uid="uid://cgh5vqnixpeud" path="res://tscns/kazino.gd" id="1_cisny"]
+[ext_resource type="Texture2D" uid="uid://7otihdryxorq" path="res://Тестовые_штуки/Kazino.png" id="1_lqom5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 29.0
+
+[node name="Kazino" type="Node2D" unique_id=1787733872]
+script = ExtResource("1_cisny")
+
+[node name="Kazino" type="Sprite2D" parent="." unique_id=311210195]
+texture = ExtResource("1_lqom5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=598695401]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2757202]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Button" type="Button" parent="." unique_id=350565943]
+visible = false
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 8
+text = "Крутить"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=827557350]
+visible = false
+offset_left = -40.0
+offset_top = -45.0
+offset_right = 40.0
+offset_bottom = -25.0
+theme_override_font_sizes/font_size = 8
+text = "Баланс: 0 монет"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
