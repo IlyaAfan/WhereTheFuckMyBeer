@@ -1,7 +1,7 @@
 extends Node2D
 
 signal WhatIsThat()
-signal iFound(target: Character)
+signal iFound(target: Vector2)
 signal iLost(target: Character)
 
 var target:Node2D
@@ -12,13 +12,13 @@ var i: int
 @export var grace_ticks: int = 0
 @export var radius = 56
 
-func _ready() -> void:
-	$Area2D/CollisionShape2D.shape.radius = radius
-	$destination.visible = false
+func on_parent_ready():
+	get_parent().connect_ears(self, "iFound")
 
-func put_enemy_destination(dest):
-	$destination.position = dest
-	$destination.visible = true
+
+func _ready() -> void:
+	get_parent().connect("ready",on_parent_ready) 
+	$Area2D/CollisionShape2D.shape.radius = radius
 
 
 func _on_timer_timeout() -> void:
@@ -29,8 +29,8 @@ func _on_timer_timeout() -> void:
 				i-=1
 			else:
 				found = true 
-				iFound.emit(target)
-		else: iFound.emit(target)
+				iFound.emit(target.global_position)
+		else: iFound.emit(target.global_position)
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -38,7 +38,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		hear = true
 		target = body
 		i = grace_ticks
-	
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == target:
@@ -46,9 +45,3 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		hear = true
 		found = false 
 		iLost.emit(target)
-		put_enemy_destination(target.global_position)
-
-
-func _on_destination_body_entered(body: Node2D) -> void:
-	if $destination.visible and body.is_in_group("Enenemies"):
-		$destination.visible = false

@@ -34,4 +34,5 @@ func heard_a_call(target: Vector2): #должна вызываться когд�
 	Navigation_Agent_Used.target_position = target
 
 func connect_ears(emitter:Node2D, signl: String):#присоединяет метод выше к сигналу:
-	emitter.connect(signl, heard_a_call)
+	if !emitter.is_connected(signl, heard_a_call):
+		emitter.connect(signl, heard_a_call)

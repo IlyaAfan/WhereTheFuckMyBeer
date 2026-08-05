@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bug765rqul378"]
 
-[ext_resource type="Script" uid="uid://bsqfhmty3qtj3" path="res://Assets/scripts/beer.gd" id="1_sa3wj"]
+[ext_resource type="Script" uid="uid://bsqfhmty3qtj3" path="res://scripts/misc/beer.gd" id="1_sa3wj"]
 [ext_resource type="Texture2D" uid="uid://bgxh4kpjf2nca" path="res://Assets/Sprites/ItemSprites/beer.png" id="2_t5241"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4oy6"]

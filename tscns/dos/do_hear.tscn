@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cac6q5ivboifu"]
 
-[ext_resource type="Script" uid="uid://btfds010xaoe4" path="res://Assets/scripts/do_hear.gd" id="1_wt3xb"]
+[ext_resource type="Script" uid="uid://btfds010xaoe4" path="res://scripts/misc/do_hear.gd" id="1_wt3xb"]
 [ext_resource type="Texture2D" uid="uid://bx1o04pviltk" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator2.png" id="2_ds38f"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="2_t1ur7"]
 [ext_resource type="Texture2D" uid="uid://r3tv31ybhtvu" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator.png" id="5_sbj60"]
@@ -11,15 +11,12 @@ radius = 56.0
 [node name="do_hear" type="Node2D" unique_id=146642522]
 z_index = -1
 script = ExtResource("1_wt3xb")
-grace_time = null
-radius = null
 
 [node name="Timer" type="Timer" parent="." unique_id=1453429407]
 wait_time = 0.05
 autostart = true
 
 [node name="destination" parent="." unique_id=1734225441 instance=ExtResource("2_t1ur7")]
-visible = false
 top_level = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1421351804]

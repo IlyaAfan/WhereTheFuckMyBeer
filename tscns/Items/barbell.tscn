@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chixvufhdj5jb"]
 
-[ext_resource type="Script" uid="uid://rulfgjsna3om" path="res://Assets/scripts/barbell.gd" id="1_6xrbw"]
+[ext_resource type="Script" uid="uid://rulfgjsna3om" path="res://scripts/misc/barbell.gd" id="1_6xrbw"]
 [ext_resource type="Texture2D" uid="uid://dxgcjtdc2ovye" path="res://Assets/Sprites/ItemSprites/barbell.png" id="1_c3hp2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_riqys"]

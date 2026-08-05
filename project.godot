@@ -29,7 +29,10 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://Assets/": "green",
 "res://Assets/Tiles/": "blue",
-"res://Assets/scripts/": "yellow",
+"res://scripts/": "yellow",
+"res://scripts/Classes/": "red",
+"res://scripts/Classes/States/": "blue",
+"res://scripts/misc/": "green",
 "res://tscns/": "red",
 "res://tscns/dos/": "blue",
 "res://tscns/levels/": "orange",
