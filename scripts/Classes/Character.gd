@@ -3,7 +3,6 @@ class_name Character
 
 @export var Navigation_Agent_Used: NavigationAgent2D
 @export var speed = 50 #стандартная скорость -- скорость игрока
-@export var unseekable: bool = false
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
 

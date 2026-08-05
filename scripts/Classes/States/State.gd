@@ -2,7 +2,8 @@ extends Node
 
 class_name State
 
-signal Transitioned(state_old: State,state_new_name: String)
+signal Transition(state_old: State,state_new_name: String)
+@export var MyCharacter: Character
 
 func enter():
 	pass
@@ -10,8 +11,8 @@ func enter():
 func exit():
 	pass
 
-func update():
+func update(delta:float) -> void:
 	pass
 
-func physics_update():
+func physics_update(delta:) -> void:
 	pass

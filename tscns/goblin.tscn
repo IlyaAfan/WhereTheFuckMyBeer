@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="6_07ig6"]
 [ext_resource type="Texture2D" uid="uid://dc1ee8phpdnmw" path="res://Assets/Sprites/CharSprites/enemy/Question.png" id="7_ncsxy"]
 [ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="8_inrn8"]
+[ext_resource type="Script" uid="uid://brgl8rkx1tn5u" path="res://scripts/Classes/States/State_Machine.gd" id="9_07ig6"]
+[ext_resource type="Script" uid="uid://bl7r1j30x1cbr" path="res://scripts/Classes/States/Idle.gd" id="10_ncsxy"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6iqid"]
-points = PackedVector2Array(16, 54, 7, 56, -7, 56, -16, 54, -33, 44, 0, 0, 33, 44)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_b64jn"]
+points = PackedVector2Array(52, -21, 56, -7, 56, 7, 52, 21, 44, 33, 0, 0, 44, -33)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cb2tf"]
 radius = 3.0
@@ -25,7 +27,8 @@ speed = 40
 [node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("2_xw3cb")]
 
 [node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("3_372fx")]
-AreaShape = SubResource("ConvexPolygonShape2D_6iqid")
+AreaShape = SubResource("ConvexPolygonShape2D_b64jn")
+Do_Connect_Ears_On_Ready = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332576803]
 shape = SubResource("CircleShape2D_cb2tf")
@@ -62,6 +65,17 @@ visible = false
 position = Vector2(-5, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_inrn8")
+
+[node name="StateMachine" type="Node" parent="." unique_id=861745161 node_paths=PackedStringArray("start_state")]
+script = ExtResource("9_07ig6")
+start_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=493655404 node_paths=PackedStringArray("do_see")]
+script = ExtResource("10_ncsxy")
+patrol = null
+do_see = NodePath("../../do_see")
+patience_time = 4.0
+metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
 
 [connection signal="WhatIsThat" from="do_see" to="testGoblin" method="_on_do_see_what_is_that"]
 [connection signal="iCantHear" from="do_see" to="testGoblin" method="_on_do_see_i_cant_hear"]

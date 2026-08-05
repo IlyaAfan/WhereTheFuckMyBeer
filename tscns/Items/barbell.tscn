@@ -30,9 +30,5 @@ collision_mask = 2
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_bhunq")
 
-[node name="Timer" type="Timer" parent="." unique_id=1507047228]
-wait_time = 3.0
-one_shot = true
-
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_area_2d_body_entered_attack"]

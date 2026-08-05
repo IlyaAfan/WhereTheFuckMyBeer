@@ -35,7 +35,8 @@ func _on_timer_timeout() -> void:
 	
 	if hear:
 		#Hear
-		RayCast.target_position = target.global_position - global_position
+		RayCast.target_position = RayCast.to_local(target.global_position)
+		RayCast.look_at(target.global_position)
 		RayCast.force_raycast_update()
 		if !RayCast.is_colliding():
 			#See
