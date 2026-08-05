@@ -59,12 +59,9 @@ position = Vector2(39, 40)
 rotation = 3.1415927
 
 [node name="Kazino" parent="." unique_id=1787733872 instance=ExtResource("10_82c75")]
-position = Vector2(-63, 15)
+position = Vector2(-88, 32)
 
 [node name="Coffee" parent="." unique_id=573625924 instance=ExtResource("10_i4lxh")]
 position = Vector2(-86, -24)
-
-[node name="Coffee2" parent="." unique_id=1131844502 instance=ExtResource("10_i4lxh")]
-position = Vector2(-89, -36)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
