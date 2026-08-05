@@ -1,106 +1,70 @@
 extends Node2D
 
+signal WhatIsThat()
+signal iHear()
+signal iCantHear()
 signal iFound(target: Character)
+signal iLost(target: Character)
 
-const Grace = 4 #grace-период в тиках таймера
-#писюны
-var target:Node2D
+
+var target:Character
 var target_last_seen_at: Vector2
 var hear:bool = false
-var see:bool = false
-var navigated:bool = false # означает что враг прямо сейчас бежит на игрока, "наведён" на него
-#ПЕРЕДЕЛАТЬ: используем дохуя булов чтобы обозначить состояния, нужна система состояний
-var i = 0 as int
-var GraceI = -1 as int #переменная для таймера grace периода
+var found:bool = false
 
-@export var nagent: NavigationAgent2D
+var i = 0 as int 
+@export var RayCast: RayCast2D 
+@export var grace_ticks:int = 3
 @export var radius = 56
 @export var AreaShape: Shape2D
 
 func on_parent_ready():
-	if get_parent().Navigation_Agent_Used and !nagent:
-		nagent =get_parent().Navigation_Agent_Used
-		
 	$Area2D/CollisionShape2D.shape = AreaShape
 
 
 func _ready() -> void:
 	get_parent().connect("ready",on_parent_ready) 
 	
-	$RayCast2D.target_position = Vector2 (radius, 0)
-	
+	RayCast.target_position = Vector2 (radius, 0)
 	$destination.visible = false
-	$Exclamation.visible = false
-	$Exclamation2.visible = false
-	$Question.visible = false
 
-func put_enemy_destination():
-	$destination.position = target.position
+func put_enemy_destination(dest:Vector2):
+	$destination.position = dest
 	$destination.visible = true
 
-func navigate():
-	if nagent:
-		navigated = true
-		nagent.target_position = target.global_position
-
-func _on_timer_timeout() -> void: # С этой абоминацией надо будет разобраться получше
+func _on_timer_timeout() -> void:
 	
-	if hear: 
-		$RayCast2D.target_position = $RayCast2D.to_local(target.global_position)
-		$RayCast2D.look_at(target.global_position)
-		$RayCast2D.force_raycast_update()
-		if !$RayCast2D.is_colliding(): 
-		# Hear And See
-			if navigated: #Смотрим нужен ли Grace-период, если он уже бежит за игроком, то период не нужен.
-				iFound.emit(target)
-				navigate()
-			else: 
-				if see:
-					if i == GraceI:
-						$Question.visible = false
-						$Exclamation.visible = true
-						$Exclamation2.visible = true
-						iFound.emit(target)
-						navigate()
+	if hear:
+		#Hear
+		RayCast.target_position = target.position
+		if !RayCast.is_colliding():
+			#See
+			if !found:
+				if i > 0:
+					i-=1
 				else:
-					$Question.visible = true
-					$Exclamation.visible = true
-					$Exclamation2.visible = false
-					see = true
-					GraceI = (i + Grace)%10 # grace-период определяется здесь. I - тики таймера от 0 до 9
-			
-		# Hear No See
-		else: 
-			if navigated: 
-			# Hear No See But Was Seen Earlier
-				navigated = false
-				target_last_seen_at = target.global_position
-				put_enemy_destination()
-			see = false
-			$Exclamation.visible = false
-			$Exclamation2.visible = false
-			$Question.visible = true
-	
-	i+=1
-	if i >= 10:
-		#$AreaIndicator.visible = !$AreaIndicator.visible
-		i = 0
+					found = true 
+					iFound.emit(target)
+			else: iFound.emit(target)
+		elif found:
+			#Seen earlier, but lost
+			iLost.emit()
+			found = false
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		hear = true
 		target = body
-
+		iHear.emit()
+		i = grace_ticks
+	
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		$Question.visible = false
-		$Exclamation.visible = false
-		$Exclamation2.visible = false
+	if body == target:
+		i = 0
 		hear = false 
-		see = false
-		navigated = false
+		found = false
 
 func _on_destination_hit(body: Node2D) -> void:
 	if $destination.visible and body.is_in_group("Enemies"):

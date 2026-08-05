@@ -3,12 +3,11 @@
 [ext_resource type="Script" uid="uid://ujxys7h3xg8v" path="res://Assets/scripts/do_see.gd" id="1_lb0dj"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="2_8u3u4"]
 [ext_resource type="Texture2D" uid="uid://r3tv31ybhtvu" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator.png" id="2_b64jn"]
-[ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="4_4fjq2"]
-[ext_resource type="Texture2D" uid="uid://dc1ee8phpdnmw" path="res://Assets/Sprites/CharSprites/enemy/Question.png" id="5_8u3u4"]
 
-[node name="DoSee" type="Node2D" unique_id=1184471678]
+[node name="DoSee" type="Node2D" unique_id=1184471678 node_paths=PackedStringArray("RayCast")]
 z_index = -1
 script = ExtResource("1_lb0dj")
+RayCast = NodePath("RayCast2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=1267175334]
 wait_time = 0.05
@@ -25,24 +24,6 @@ top_level = true
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1599647]
 target_position = Vector2(56, 0)
 collision_mask = 6
-
-[node name="Exclamation" type="Sprite2D" parent="." unique_id=1570774463]
-visible = false
-z_index = 3
-position = Vector2(-2, -8)
-texture = ExtResource("4_4fjq2")
-
-[node name="Exclamation2" type="Sprite2D" parent="." unique_id=1243516752]
-visible = false
-z_index = 3
-position = Vector2(-6, -8)
-texture = ExtResource("4_4fjq2")
-
-[node name="Question" type="Sprite2D" parent="." unique_id=33092152]
-visible = false
-z_index = 3
-position = Vector2(-7, -8)
-texture = ExtResource("5_8u3u4")
 
 [node name="AreaIndicator" type="Sprite2D" parent="." unique_id=1869260334]
 visible = false

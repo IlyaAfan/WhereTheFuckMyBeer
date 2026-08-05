@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bxlth1lsqc1nr"]
 
 [ext_resource type="Script" uid="uid://cdsiq38g36br8" path="res://Assets/scripts/goblin.gd" id="1_thnai"]
-[ext_resource type="PackedScene" uid="uid://7gekkhro8h0n" path="res://tscns/dos/do_seek.tscn" id="2_372fx"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="2_xw3cb"]
 [ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="3_372fx"]
 [ext_resource type="Texture2D" uid="uid://dc8rtxi48wtu7" path="res://Assets/Sprites/CharSprites/test_goblin.png" id="4_laisx"]
@@ -19,9 +18,6 @@ collision_mask = 7
 script = ExtResource("1_thnai")
 speed = 40
 metadata/_custom_type_script = "uid://bwkiv0ra46tx1"
-
-[node name="do_seek" parent="." unique_id=2076959112 instance=ExtResource("2_372fx")]
-ticks = 2
 
 [node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("2_xw3cb")]
 

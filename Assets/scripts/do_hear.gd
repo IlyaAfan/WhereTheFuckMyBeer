@@ -1,22 +1,18 @@
 extends Node2D
 
-signal iHear(target: Vector2)
+signal WhatIsThat()
+signal iFound(target: Character)
+signal iLost(target: Character)
 
 var target:Node2D
+var hear = false
 var found = false
-var navigated = false
+var i: int
 
-@export var nagent: NavigationAgent2D
+@export var grace_ticks: int = 0
 @export var radius = 56
 
-func on_parent_ready():
-	if get_parent().Navigation_Agent_Used and !nagent:
-		nagent =get_parent().Navigation_Agent_Used
-
-
 func _ready() -> void:
-	get_parent().connect("ready",on_parent_ready) 
-	$Exclamation.visible = false
 	$Area2D/CollisionShape2D.shape.radius = radius
 	$destination.visible = false
 
@@ -24,32 +20,33 @@ func put_enemy_destination(dest):
 	$destination.position = dest
 	$destination.visible = true
 
-func navigate():
-	$destination.visible = false
-	navigated = true
-	nagent.target_position = target.global_position
 
 func _on_timer_timeout() -> void:
-	if found:
-		$Exclamation.visible = true
-		iHear.emit(target.global_position)
-		navigate()
-	else:
-		if navigated:
-			navigated = false
-			put_enemy_destination(nagent.target_position)
-		$Exclamation.visible = false
+	if hear:
+		if !found:
+			if i > 0:
+				WhatIsThat.emit()
+				i-=1
+			else:
+				found = true 
+				iFound.emit(target)
+		else: iFound.emit(target)
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		found = true
+		hear = true
 		target = body
-
+		i = grace_ticks
+	
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body == target:
+		i = 0
+		hear = true
 		found = false 
+		iLost.emit(target)
+		put_enemy_destination(target.global_position)
 
 
 func _on_destination_body_entered(body: Node2D) -> void:

@@ -1,9 +1,46 @@
 [gd_scene format=3 uid="uid://7gekkhro8h0n"]
 
-[ext_resource type="Script" uid="uid://ddjxeq3v20i51" path="res://Assets/scripts/do_seek.gd" id="1_5ir68"]
+[sub_resource type="GDScript" id="GDScript_j3edp"]
+script/source = "extends Node2D
+
+@export var nagent: NavigationAgent2D
+@export var ticks: int = 5
+@export var seeked: Character
+var ticks_left: int
+
+func on_parent_ready():
+	if get_parent().Navigation_Agent_Used and !nagent:
+		nagent = get_parent().Navigation_Agent_Used
+		if nagent:
+			nagent.navigation_finished.connect(seek)
+		
+	var Dohear = get_parent().find_child(\"do_hear\", false)
+	var Dosee = get_parent().find_child(\"do_see\", false)
+	if Dohear:
+		Dohear.iFound.connect(on_found)
+	elif Dosee:
+		Dosee.iFound.connect(on_found)
+
+func _ready() -> void:
+	get_parent().connect(\"ready\",on_parent_ready) 
+
+func on_found(target:Node2D):
+	ticks_left = ticks
+	seeked = target
+
+func seek(t:int = ticks):
+	if ticks_left:
+		print(ticks_left)
+		ticks_left = t
+		nagent.target_position = seeked.position
+		$Timer.start()
+
+func _on_timer_timeout() -> void:
+	seek(ticks_left-1)
+"
 
 [node name="do_seek" type="Node2D" unique_id=2076959112]
-script = ExtResource("1_5ir68")
+script = SubResource("GDScript_j3edp")
 
 [node name="Timer" type="Timer" parent="." unique_id=1447349939]
 wait_time = 0.05
