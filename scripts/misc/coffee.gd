@@ -7,7 +7,7 @@ var player: Character
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if have == true:
-		player.position = position + Vector2(0,-7)
+		position = player.position + Vector2(0,-7)
 	
 
 

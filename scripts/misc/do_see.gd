@@ -11,14 +11,17 @@ var target:Character
 var hear:bool = false
 var found:bool = false
 
+@onready var RayCast: RayCast2D  = $RayCast2D
+
 var i = 0 as int 
-@export var RayCast: RayCast2D 
 @export var grace_ticks:int = 3
 @export var radius = 56
 @export var AreaShape: Shape2D
+@export var Do_Connect_Ears_On_Ready:bool = true
 
 func on_parent_ready():
-	get_parent().connect_ears(self, "iFound")
+	if Do_Connect_Ears_On_Ready:
+		get_parent().connect_ears(self, "iFound")
 	$Area2D/CollisionShape2D.shape = AreaShape
 
 
@@ -33,6 +36,7 @@ func _on_timer_timeout() -> void:
 	if hear:
 		#Hear
 		RayCast.target_position = target.global_position - global_position
+		RayCast.force_raycast_update()
 		if !RayCast.is_colliding():
 			#See
 			if !found:
@@ -47,6 +51,7 @@ func _on_timer_timeout() -> void:
 			#Seen earlier, but lost
 			iLost.emit(target)
 			found = false
+			i = grace_ticks
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

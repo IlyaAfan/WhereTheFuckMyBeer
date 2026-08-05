@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://ujxys7h3xg8v" path="res://scripts/misc/do_see.gd" id="1_lb0dj"]
 [ext_resource type="Texture2D" uid="uid://r3tv31ybhtvu" path="res://Assets/Sprites/CharSprites/enemy/AreaIndicator.png" id="2_b64jn"]
 
-[node name="DoSee" type="Node2D" unique_id=1184471678 node_paths=PackedStringArray("RayCast")]
+[node name="DoSee" type="Node2D" unique_id=1184471678]
 z_index = -1
 script = ExtResource("1_lb0dj")
-RayCast = NodePath("RayCast2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=1267175334]
 wait_time = 0.05

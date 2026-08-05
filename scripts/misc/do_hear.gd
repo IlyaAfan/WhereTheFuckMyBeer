@@ -42,6 +42,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == target:
 		i = 0
-		hear = true
+		hear = false
 		found = false 
 		iLost.emit(target)

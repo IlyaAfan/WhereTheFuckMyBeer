@@ -76,6 +76,10 @@ position = Vector2(-72, -56)
 position = Vector2(79, 128)
 rotation = -3.1415925
 
+[node name="Torch5" parent="Torch" unique_id=834915555 instance=ExtResource("12_66w77")]
+position = Vector2(140, 65)
+rotation = -3.1415925
+
 [node name="Torch3" parent="Torch" unique_id=536012889 instance=ExtResource("12_66w77")]
 position = Vector2(0, 128)
 rotation = -3.1415925

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdsiq38g36br8" path="res://scripts/misc/goblin.gd" id="1_thnai"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="2_xw3cb"]
 [ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="3_372fx"]
-[ext_resource type="Texture2D" uid="uid://ds8guqcsomrhw" path="res://Assets/Sprites/CharSprites/TestingEnemy.png" id="4_uk4ff"]
+[ext_resource type="Texture2D" uid="uid://dc8rtxi48wtu7" path="res://Assets/Sprites/CharSprites/test_goblin.png" id="4_uk4ff"]
 [ext_resource type="Script" uid="uid://dybmojoagq43b" path="res://scripts/misc/DetectionLevels.gd" id="5_7qqut"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="6_07ig6"]
 [ext_resource type="Texture2D" uid="uid://dc1ee8phpdnmw" path="res://Assets/Sprites/CharSprites/enemy/Question.png" id="7_ncsxy"]

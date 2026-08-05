@@ -61,10 +61,10 @@ target_desired_distance = 2.0
 path_postprocessing = 1
 avoidance_enabled = true
 avoidance_mask = 7
-debug_enabled = true
 
 [node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 visibility_layer = 7
+grace_ticks = 4
 AreaShape = SubResource("CircleShape2D_8u3u4")
 
 [node name="PointLight2D" type="PointLight2D" parent="do_see" unique_id=1843472030]

@@ -14,8 +14,8 @@ collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_41l6w")
-speed = 0
 Navigation_Agent_Used = NodePath("NavigationAgent2D")
+speed = 0
 metadata/_custom_type_script = "uid://bwkiv0ra46tx1"
 
 [node name="TestingFartSmella" type="Sprite2D" parent="." unique_id=1835231928]
@@ -29,6 +29,6 @@ path_desired_distance = 8.0
 target_desired_distance = 2.0
 avoidance_enabled = true
 
-[node name="DoHear" parent="." unique_id=146642522 instance=ExtResource("3_awf0j")]
+[node name="do_hear" parent="." unique_id=146642522 instance=ExtResource("3_awf0j")]
 
 [node name="do_shout" parent="." unique_id=79768491 instance=ExtResource("4_je4nv")]
