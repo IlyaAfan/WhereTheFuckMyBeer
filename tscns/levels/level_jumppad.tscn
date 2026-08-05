@@ -93,6 +93,6 @@ position = Vector2(-79, 7.6293945e-06)
 
 [node name="Beer" parent="." unique_id=5119092 instance=ExtResource("9_vybs1")]
 position = Vector2(120, 8)
-where_to = "res://tscns/menus/menu.tscn"
+where_to = "res://tscns/menus/result.tscn"
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
