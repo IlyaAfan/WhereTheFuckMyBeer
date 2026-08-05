@@ -45,7 +45,6 @@ func load_game_stat():
 	gold = config.get_value(section_stats,"gold",gold)
 	
 func save_game_stat():
-	config.save(path_to_save_file)
 	config.set_value(section_stats,"pipe",pipe)
 	config.set_value(section_stats,"coffee",coffee)
 	config.set_value(section_stats,"cats",cats)
@@ -53,5 +52,5 @@ func save_game_stat():
 	config.set_value(section_stats,"barbell",barbell)
 	config.set_value(section_stats,"beer",beer)
 	config.set_value(section_stats,"gold",gold)
-	
+	config.save(path_to_save_file)
 		

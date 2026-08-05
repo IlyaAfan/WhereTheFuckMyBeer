@@ -38,7 +38,9 @@ func _on_button_pressed() -> void:
 		_machine_random()
 		
 func _machine_random():
+	ConfigOption.load_game_stat()
 	ConfigOption.gold -= 1
+	ConfigOption.save_game_stat()
 	ivent = randi_range(0,7)
 	twist = true
 	await get_tree().create_timer(3).timeout
