@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://cubdpshb1kcav"]
 
-[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://Assets/scripts/root.gd" id="1_nrsro"]
+[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://scripts/misc/root.gd" id="1_nrsro"]
 [ext_resource type="PackedScene" uid="uid://dnlo0evr3ijy6" path="res://tscns/button.tscn" id="2_50h3q"]
 [ext_resource type="TileSet" uid="uid://418731k4flur" path="res://Assets/Tiles/Beers_Tiles.tres" id="3_nrsro"]
 [ext_resource type="PackedScene" uid="uid://cnyvdr8mbaben" path="res://tscns/door.tscn" id="4_21rue"]
-[ext_resource type="Script" uid="uid://dhcckg7esbwg6" path="res://Assets/scripts/TileMapScript.gd" id="4_50h3q"]
+[ext_resource type="Script" uid="uid://dhcckg7esbwg6" path="res://scripts/misc/TileMapScript.gd" id="4_50h3q"]
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="5_pd5la"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="6_synks"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="7_qkn13"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5b0ygjroqfhv"]
 
-[ext_resource type="Script" uid="uid://dnn4kkgfpjtkp" path="res://Assets/scripts/jump_pad.gd" id="1_782d4"]
+[ext_resource type="Script" uid="uid://dnn4kkgfpjtkp" path="res://scripts/misc/jump_pad.gd" id="1_782d4"]
 [ext_resource type="Texture2D" uid="uid://hqqwxypfs0kq" path="res://Assets/Sprites/CharSprites/JumpPad.png" id="2_fcff8"]
 [ext_resource type="Texture2D" uid="uid://bfa51yecavgm6" path="res://Assets/Sprites/DottedLine.png" id="3_f08mk"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="4_fcff8"]

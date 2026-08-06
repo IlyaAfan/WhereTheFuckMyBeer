@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ck52mydnwx3j0"]
+
+[ext_resource type="Texture2D" uid="uid://7otihdryxorq" path="res://Тестовые_штуки/Kazino.png" id="1_ca7qw"]
+[ext_resource type="Script" uid="uid://ckri8anck4yyr" path="res://Assets/scripts/window_kazino.gd" id="1_x3oiq"]
+
+[node name="WindowKazino" type="Popup" unique_id=964459375]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(695, 400)
+visible = true
+script = ExtResource("1_x3oiq")
+
+[node name="Kazino" type="Sprite2D" parent="." unique_id=1197708877]
+position = Vector2(317.00003, 190.99998)
+scale = Vector2(7.476563, 5.5849996)
+texture = ExtResource("1_ca7qw")
+
+[node name="Button" type="Button" parent="Kazino" unique_id=1365412321]
+offset_left = -21.80146
+offset_top = -29.543423
+offset_right = 21.19854
+offset_bottom = -7.5434227
+theme_override_font_sizes/font_size = 10
+text = "Крутка"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=241423341]
+offset_left = 2.0
+offset_top = -18.0
+offset_right = 671.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 60
+text = "БАЛАНС ЗОЛОТА: 0"
+
+[node name="Button" type="Button" parent="." unique_id=1680676451]
+offset_left = 615.0
+offset_top = 3.0
+offset_right = 688.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 60
+text = "*"
+flat = true
+
+[connection signal="pressed" from="Kazino/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed_not_open"]

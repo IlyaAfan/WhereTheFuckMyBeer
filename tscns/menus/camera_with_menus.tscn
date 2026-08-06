@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://eywjy03rb1v1" path="res://tscns/menus/In_game_menu.tscn" id="1_utwbs"]
 [ext_resource type="PackedScene" uid="uid://cua7gmg2dc840" path="res://tscns/menus/death_screen.tscn" id="2_os6uh"]
 
-[node name="Camera2D" type="Camera2D" unique_id=947555020 groups=["Enemy", "Player"]]
+[node name="Camera2D" type="Camera2D" unique_id=947555020]
 process_mode = 3
 z_index = 1000
 z_as_relative = false

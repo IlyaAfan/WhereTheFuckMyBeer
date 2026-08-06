@@ -1,20 +1,19 @@
 extends Node2D
 
 var have = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var player: Character
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if have == true:
-		position = $"../Player".position + Vector2(0,-7)
+		position = player.position + Vector2(0,-7)
 	
 
 
 func _on_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.name_item == "empty":
+		player = body
 		body.name_item = "coffee"
 		have = true
 		
