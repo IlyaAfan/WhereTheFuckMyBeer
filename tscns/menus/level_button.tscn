@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blowhkcf3gjq1"]
 
-[ext_resource type="Script" uid="uid://cgg58vg744uja" path="res://Assets/scripts/level_button.gd" id="1_j61p1"]
+[ext_resource type="Script" uid="uid://cgg58vg744uja" path="res://scripts/misc/level_button.gd" id="1_j61p1"]
 
 [node name="level_button" type="Button" unique_id=2078693814]
 z_index = 1000

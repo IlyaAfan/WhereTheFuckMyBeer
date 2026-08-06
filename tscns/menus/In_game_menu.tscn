@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eywjy03rb1v1"]
 
-[ext_resource type="Script" uid="uid://cb540ge84qmqh" path="res://Assets/scripts/in_game_menu.gd" id="1_ya557"]
+[ext_resource type="Script" uid="uid://cb540ge84qmqh" path="res://scripts/misc/in_game_menu.gd" id="1_ya557"]
 
 [node name="InGameMenu" type="Control" unique_id=942770950]
 z_index = 1000

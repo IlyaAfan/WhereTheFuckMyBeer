@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dp4ati4agkdmp"]
 
-[ext_resource type="Script" uid="uid://dpr371qijq5j7" path="res://Assets/scripts/enemy.gd" id="1_2msnq"]
+[ext_resource type="Script" uid="uid://dpr371qijq5j7" path="res://scripts/misc/enemy.gd" id="1_2msnq"]
 [ext_resource type="Texture2D" uid="uid://ds8guqcsomrhw" path="res://Assets/Sprites/CharSprites/TestingEnemy.png" id="2_h508e"]
+[ext_resource type="Script" uid="uid://dybmojoagq43b" path="res://scripts/misc/DetectionLevels.gd" id="3_co0kn"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="3_u8qfd"]
+[ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="4_0rc6h"]
 [ext_resource type="Texture2D" uid="uid://bmbueuq1slfj6" path="res://Assets/Sprites/SharpLightTexture.png" id="4_6iqid"]
 [ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="4_cb2tf"]
+[ext_resource type="Texture2D" uid="uid://dc1ee8phpdnmw" path="res://Assets/Sprites/CharSprites/enemy/Question.png" id="4_j5okl"]
+[ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="5_0rc6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2yf"]
 radius = 4.0
@@ -24,6 +28,27 @@ speed = 70
 [node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
 z_index = 101
 texture = ExtResource("2_h508e")
+script = ExtResource("3_co0kn")
+
+[node name="destination" parent="TestingEnemy" unique_id=1734225441 instance=ExtResource("4_0rc6h")]
+
+[node name="Question" type="Sprite2D" parent="TestingEnemy" unique_id=171536271]
+visible = false
+position = Vector2(-5, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_j5okl")
+
+[node name="Exclamation" type="Sprite2D" parent="TestingEnemy" unique_id=515785187]
+visible = false
+position = Vector2(-3, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_0rc6h")
+
+[node name="Exclamation2" type="Sprite2D" parent="TestingEnemy" unique_id=1534059209]
+visible = false
+position = Vector2(-5, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_0rc6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801922039]
 light_mask = 17
@@ -39,6 +64,7 @@ avoidance_mask = 7
 
 [node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 visibility_layer = 7
+grace_ticks = 4
 AreaShape = SubResource("CircleShape2D_8u3u4")
 
 [node name="PointLight2D" type="PointLight2D" parent="do_see" unique_id=1843472030]
@@ -46,6 +72,7 @@ show_behind_parent = true
 light_mask = 2
 z_index = 1000
 texture_filter = 1
+position = Vector2(0, 1)
 energy = 0.3
 blend_mode = 1
 range_z_max = 100
@@ -57,3 +84,10 @@ texture = ExtResource("4_6iqid")
 
 [node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("3_u8qfd")]
 radius = 5
+
+[connection signal="WhatIsThat" from="do_see" to="TestingEnemy" method="_on_do_see_what_is_that"]
+[connection signal="iCantHear" from="do_see" to="TestingEnemy" method="_on_do_see_i_cant_hear"]
+[connection signal="iFound" from="do_see" to="." method="heard_a_call"]
+[connection signal="iFound" from="do_see" to="TestingEnemy" method="_on_do_see_i_found"]
+[connection signal="iHear" from="do_see" to="TestingEnemy" method="_on_do_see_i_hear"]
+[connection signal="iLost" from="do_see" to="TestingEnemy" method="_on_do_see_i_lost"]

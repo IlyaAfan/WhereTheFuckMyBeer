@@ -3,7 +3,6 @@ class_name Character
 
 @export var Navigation_Agent_Used: NavigationAgent2D
 @export var speed = 50 #стандартная скорость -- скорость игрока
-@export var unseekable: bool = false
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
 
@@ -30,8 +29,12 @@ func nav_movement() -> Vector2: # возвращает нужную скорос
 func stop_navigation():
 	Navigation_Agent_Used.target_position = position
 
-func heard_a_call(target: Vector2): #должна вызываться когда кто-то извне дал наводку на игрока(например fart smella)
-	Navigation_Agent_Used.target_position = target
+func heard_a_call(target): #должна вызываться когда кто-то извне дал наводку на игрока(например fart smella)
+	if target is Vector2:
+		Navigation_Agent_Used.target_position = target
+	if target is Character:
+		Navigation_Agent_Used.target_position = target.global_position
 
 func connect_ears(emitter:Node2D, signl: String):#присоединяет метод выше к сигналу:
-	emitter.connect(signl, heard_a_call)
+	if !emitter.is_connected(signl, heard_a_call):
+		emitter.connect(signl, heard_a_call)

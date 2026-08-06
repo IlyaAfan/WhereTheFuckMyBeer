@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://jvjphvkbg7qb"]
 
 [ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/Sprites/CharSprites/TestingSprite.png" id="1_j31hh"]
+[ext_resource type="Script" uid="uid://bdoiwpibnp2wx" path="res://scripts/misc/destination.gd" id="1_ljibn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljibn"]
 size = Vector2(16, 16)
 
-[node name="Area2D" type="Area2D" unique_id=1734225441]
+[node name="destination" type="Area2D" unique_id=1734225441]
+visible = false
+top_level = true
 collision_mask = 3
+script = ExtResource("1_ljibn")
 
 [node name="Destination" type="Sprite2D" parent="." unique_id=1166689152]
 modulate = Color(1, 1, 1, 0.3529412)
@@ -14,3 +18,5 @@ texture = ExtResource("1_j31hh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=571869873]
 shape = SubResource("RectangleShape2D_ljibn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

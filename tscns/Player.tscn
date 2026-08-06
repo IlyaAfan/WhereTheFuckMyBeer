@@ -1,13 +1,310 @@
 [gd_scene format=3 uid="uid://cmp7udr0sb02j"]
 
+
 [ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/Sprites/CharSprites/TestingSprite.png" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://wuaxq0eg7cff" path="res://Assets/Sprites/CharSprites/Dwarf_Sprites.png" id="2_2y7wr"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="3_2y7wr"]
+[ext_resource type="Script" uid="uid://d3mlfwg7gp3xl" path="res://tscns/player_animation.gd" id="4_o6qfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxyh8"]
+atlas = ExtResource("2_2y7wr")
+region = Rect2(0, 0, 12, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2x4d"]
 radius = 4.0
 
+[sub_resource type="Animation" id="Animation_rmf6e"]
+resource_name = "DwarfIdleDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_kxyh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gnom:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(12, 0, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_7o0af"]
+resource_name = "DwarfIdleLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_kxyh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gnom:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(36, 0, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_ulqjv"]
+resource_name = "DwarfIdleRight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_kxyh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gnom:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_q8m7j"]
+resource_name = "DwarfIdleUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_kxyh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gnom:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(24, 0, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_5jcl5"]
+resource_name = "DwarfWalkDown"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(12, 0, 12, 12), Rect2(12, 12, 12, 12), Rect2(12, 0, 12, 12), Rect2(12, 24, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_hgcxw"]
+resource_name = "DwarfWalkLeft"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(36, 0, 12, 12), Rect2(36, 12, 12, 12), Rect2(36, 0, 12, 12), Rect2(36, 24, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_brabj"]
+resource_name = "DwarfWalkRight"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333336, 0.099999994, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 12, 12), Rect2(0, 12, 12, 12), Rect2(0, 0, 12, 12), Rect2(0, 24, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_vstqw"]
+resource_name = "DwarfWalkUp"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(24, 0, 12, 12), Rect2(24, 12, 12, 12), Rect2(24, 0, 12, 12), Rect2(24, 24, 12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_5veoc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gnom:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_kxyh8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gnom:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 12, 12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylav1"]
+_data = {
+&"DwarfIdleDown": SubResource("Animation_rmf6e"),
+&"DwarfIdleLeft": SubResource("Animation_7o0af"),
+&"DwarfIdleRight": SubResource("Animation_ulqjv"),
+&"DwarfIdleUp": SubResource("Animation_q8m7j"),
+&"DwarfWalkDown": SubResource("Animation_5jcl5"),
+&"DwarfWalkLeft": SubResource("Animation_hgcxw"),
+&"DwarfWalkRight": SubResource("Animation_brabj"),
+&"DwarfWalkUp": SubResource("Animation_vstqw"),
+&"RESET": SubResource("Animation_5veoc")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wra30"]
+animation = &"DwarfIdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hpvbh"]
+animation = &"DwarfIdleUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7y7g4"]
+animation = &"DwarfIdleDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7m22x"]
+animation = &"DwarfIdleRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_847ve"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_wra30")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_0/name = &"DwarfIdleLeft"
+blend_point_1/node = SubResource("AnimationNodeAnimation_hpvbh")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"DwarfIdleUp"
+blend_point_2/node = SubResource("AnimationNodeAnimation_7y7g4")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_2/name = &"DwarfIdleDown"
+blend_point_3/node = SubResource("AnimationNodeAnimation_7m22x")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"DwarfIdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0blh7"]
+animation = &"DwarfWalkDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ftuyc"]
+animation = &"DwarfWalkLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l54vl"]
+animation = &"DwarfWalkRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w347q"]
+animation = &"DwarfWalkUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_42tg4"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_0blh7")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"DwarfWalkDown"
+blend_point_1/node = SubResource("AnimationNodeAnimation_ftuyc")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_1/name = &"DwarfWalkLeft"
+blend_point_2/node = SubResource("AnimationNodeAnimation_l54vl")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"DwarfWalkRight"
+blend_point_3/node = SubResource("AnimationNodeAnimation_w347q")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"DwarfWalkUp"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d5mvr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vmoje"]
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o6qfh"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bhunq"]
+states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_847ve")
+states/IDLE/position = Vector2(410, 100)
+states/RUN/node = SubResource("AnimationNodeBlendSpace2D_42tg4")
+states/RUN/position = Vector2(566, 100)
+states/Start/position = Vector2(202, 100)
+transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_d5mvr"), "IDLE", "RUN", SubResource("AnimationNodeStateMachineTransition_vmoje"), "RUN", "IDLE", SubResource("AnimationNodeStateMachineTransition_o6qfh")]
+graph_offset = Vector2(-61, -43)
+
 [node name="Player" type="CharacterBody2D" unique_id=1695094296]
+
 disable_mode = 1
 collision_mask = 7
 motion_mode = 1
@@ -15,7 +312,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_kpjcp")
 
 [node name="Gnom" type="Sprite2D" parent="." unique_id=693537573]
-texture = ExtResource("1_xhfnw")
+texture = SubResource("AtlasTexture_kxyh8")
 
 [node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=801922039]
 shape = SubResource("CircleShape2D_a2x4d")
@@ -26,9 +323,26 @@ target_desired_distance = 1.0
 avoidance_enabled = true
 avoidance_layers = 2
 avoidance_mask = 5
+debug_enabled = true
 
 [node name="destination" type="Sprite2D" parent="." unique_id=371947627]
 visible = false
 top_level = true
 visibility_layer = 512
 texture = ExtResource("3_2y7wr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1677539490]
+libraries/ = SubResource("AnimationLibrary_ylav1")
+speed_scale = 0.6
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=964504659]
+tree_root = SubResource("AnimationNodeStateMachine_bhunq")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/run = false
+parameters/IDLE/blend_position = Vector2(0.05364287, 0.4063927)
+parameters/RUN/blend_position = Vector2(-0.67007303, 0.07762551)
+
+[node name="PlayerAnimation" type="Node2D" parent="." unique_id=237866873 node_paths=PackedStringArray("animation_tree")]
+script = ExtResource("4_o6qfh")
+animation_tree = NodePath("../AnimationTree")

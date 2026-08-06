@@ -4,37 +4,43 @@ var active_body_speed: int
 var vect: Vector2
 var holding: bool
 @export var jump_range: int = 64
+
+@onready var RayCast = $RayCast2D
+@onready var Line = $Line2D
+@onready var Goal = $Goal
+
 func use_jump_pad():
-	if $RayCast2D.is_colliding():
-		active_body.global_position = $RayCast2D.get_collision_point()
+	if RayCast.is_colliding():
+		active_body.global_position = RayCast.get_collision_point()
 	else:
 		active_body.global_position += vect 
 	
 	active_body.speed = active_body_speed
-	active_body.Navigation_Agent_Used.target_position = get_global_mouse_position()
+	if active_body.is_in_group("Player"):
+		active_body.Navigation_Agent_Used.target_position = get_global_mouse_position()
 	active_body = null
 
 func _physics_process(_delta):
 	if active_body:
 		if holding:
 			vect = (get_global_mouse_position()-global_position).normalized() * jump_range
-			$RayCast2D.target_position = vect
-			$RayCast2D.force_update_transform()
-			if $RayCast2D.is_colliding():
-				$Line2D.points = [Vector2.ZERO,$RayCast2D.get_collision_point()-global_position]
+			RayCast.target_position = vect
+			RayCast.force_raycast_update()
+			if RayCast.is_colliding():
+				Line.points = [Vector2.ZERO,RayCast.get_collision_point()-global_position]
 			else:
-				$Line2D.points = [Vector2.ZERO, vect]
-			$Goal.position = $Line2D.points[1]
+				Line.points = [Vector2.ZERO, vect]
+			Goal.position = Line.points[1]
 		
 		if Input.is_action_pressed("lmb"):
-			$Line2D.visible = true
-			$Goal.visible = true
+			Line.visible = true
+			Goal.visible = true
 			holding = true
 		
 		if holding and Input.is_action_just_released("lmb"):
 			use_jump_pad()
-			$Line2D.visible = false
-			$Goal.visible = false
+			Line.visible = false
+			Goal.visible = false
 			holding = false
 	
 func _on_body_entered(body: Node2D) -> void:
