@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdsiq38g36br8" path="res://scripts/misc/goblin.gd" id="1_thnai"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="2_xw3cb"]
 [ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="3_372fx"]
+[ext_resource type="Texture2D" uid="uid://bmbueuq1slfj6" path="res://Assets/Sprites/SharpLightTexture.png" id="4_inrn8"]
 [ext_resource type="Texture2D" uid="uid://dc8rtxi48wtu7" path="res://Assets/Sprites/CharSprites/test_goblin.png" id="4_uk4ff"]
 [ext_resource type="Script" uid="uid://dybmojoagq43b" path="res://scripts/misc/DetectionLevels.gd" id="5_7qqut"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="6_07ig6"]
@@ -10,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://isfaqdr7yufa" path="res://Assets/Sprites/CharSprites/enemy/Exclamation.png" id="8_inrn8"]
 [ext_resource type="Script" uid="uid://brgl8rkx1tn5u" path="res://scripts/Classes/States/State_Machine.gd" id="9_07ig6"]
 [ext_resource type="Script" uid="uid://bl7r1j30x1cbr" path="res://scripts/Classes/States/Idle.gd" id="10_ncsxy"]
+[ext_resource type="Script" uid="uid://cp7mw2ou5e5x8" path="res://scripts/Classes/States/Chase.gd" id="11_ncsxy"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_b64jn"]
 points = PackedVector2Array(52, -21, 56, -7, 56, 7, 52, 21, 44, 33, 0, 0, 44, -33)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g4v7s"]
+polygon = PackedVector2Array(4, -3, -3, -3, -3, 3, 4, 3, -1, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cb2tf"]
 radius = 3.0
@@ -30,6 +35,24 @@ speed = 40
 AreaShape = SubResource("ConvexPolygonShape2D_b64jn")
 Do_Connect_Ears_On_Ready = false
 
+[node name="PointLight2D" type="PointLight2D" parent="do_see" unique_id=101423904]
+show_behind_parent = true
+light_mask = 2
+z_index = 1000
+texture_filter = 1
+energy = 0.3
+blend_mode = 1
+range_z_max = 100
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_filter = 1
+shadow_item_cull_mask = 2
+texture = ExtResource("4_inrn8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="do_see" unique_id=1348185604]
+occluder = SubResource("OccluderPolygon2D_g4v7s")
+occluder_light_mask = 6
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332576803]
 shape = SubResource("CircleShape2D_cb2tf")
 
@@ -43,6 +66,7 @@ debug_enabled = true
 
 [node name="testGoblin" type="Sprite2D" parent="." unique_id=1484806881]
 z_index = 101
+position = Vector2(0, -1)
 texture = ExtResource("4_uk4ff")
 script = ExtResource("5_7qqut")
 
@@ -70,12 +94,19 @@ texture = ExtResource("8_inrn8")
 script = ExtResource("9_07ig6")
 start_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=493655404 node_paths=PackedStringArray("do_see")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=493655404 node_paths=PackedStringArray("MyCharacter", "do_see")]
 script = ExtResource("10_ncsxy")
-patrol = null
+MyCharacter = NodePath("../..")
+do_see = NodePath("../../do_see")
+patience_time = 1.0
+metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
+
+[node name="Chase" type="Node" parent="StateMachine" unique_id=1020284266 node_paths=PackedStringArray("MyCharacter", "do_see")]
+script = ExtResource("11_ncsxy")
+MyCharacter = NodePath("../..")
 do_see = NodePath("../../do_see")
 patience_time = 4.0
-metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
+metadata/_custom_type_script = "uid://cp7mw2ou5e5x8"
 
 [connection signal="WhatIsThat" from="do_see" to="testGoblin" method="_on_do_see_what_is_that"]
 [connection signal="iCantHear" from="do_see" to="testGoblin" method="_on_do_see_i_cant_hear"]

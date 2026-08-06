@@ -3,11 +3,12 @@ extends Node2D
 signal WhatIsThat()
 signal iHear()
 signal iCantHear()
-signal iFound(target: Vector2)
+signal iFound(target: Character)
 signal iLost(target: Character)
 
 
 var target:Character
+var target_last_seen_position: Vector2
 var hear:bool = false
 var found:bool = false
 
@@ -46,8 +47,10 @@ func _on_timer_timeout() -> void:
 					i-=1
 				else:
 					found = true 
-					iFound.emit(target.global_position)
-			else: iFound.emit(target.global_position)
+					iFound.emit(target)
+			else:
+				target_last_seen_position = target.global_position 
+				iFound.emit(target)
 		elif found:
 			#Seen earlier, but lost
 			iLost.emit(target)

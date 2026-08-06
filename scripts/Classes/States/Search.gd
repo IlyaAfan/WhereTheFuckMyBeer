@@ -1,27 +1,25 @@
 extends State
-class_name Idle
+class_name Search
 
-@export var patrol: bool = false
+var last_seen_position: Vector2
+var last_seen_velocity: Vector2
 
 func enter():
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On
 
 	patience_left = patience_time
-	
 	if !do_see.is_connected("iFound", found):
 		do_see.iFound.connect(found)
-	#if !do_see.is_connected("iHear", heard):
-		#do_see.iHear.connect(heard)
+	if !do_see.is_connected("iHear", heard):
+		do_see.iHear.connect(heard)
+		
+	last_seen_position = do_see.target.global_position
+	last_seen_velocity = do_see.target.velocity
 	should_look_at = do_see.rotation
 
 
 func update(delta):
-	if patrol:
-		return
-	
-	if do_see.hear:
-		heard()
-	
+
 	if patience_left > 0:
 		patience_left -= delta
 	else:
