@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://brgl8rkx1tn5u" path="res://scripts/Classes/States/State_Machine.gd" id="9_07ig6"]
 [ext_resource type="Script" uid="uid://bl7r1j30x1cbr" path="res://scripts/Classes/States/Idle.gd" id="10_ncsxy"]
 [ext_resource type="Script" uid="uid://cp7mw2ou5e5x8" path="res://scripts/Classes/States/Chase.gd" id="11_ncsxy"]
+[ext_resource type="Script" uid="uid://iey46ompxkev" path="res://scripts/Classes/States/Search.gd" id="13_tqxsp"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_b64jn"]
 points = PackedVector2Array(52, -21, 56, -7, 56, 7, 52, 21, 44, 33, 0, 0, 44, -33)
@@ -90,9 +91,9 @@ position = Vector2(-5, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_inrn8")
 
-[node name="StateMachine" type="Node" parent="." unique_id=861745161 node_paths=PackedStringArray("start_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=861745161 node_paths=PackedStringArray("default_state")]
 script = ExtResource("9_07ig6")
-start_state = NodePath("Idle")
+default_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=493655404 node_paths=PackedStringArray("MyCharacter", "do_see")]
 script = ExtResource("10_ncsxy")
@@ -105,8 +106,14 @@ metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
 script = ExtResource("11_ncsxy")
 MyCharacter = NodePath("../..")
 do_see = NodePath("../../do_see")
-patience_time = 4.0
+patience_time = 2.0
 metadata/_custom_type_script = "uid://cp7mw2ou5e5x8"
+
+[node name="Search" type="Node" parent="StateMachine" unique_id=1879930859 node_paths=PackedStringArray("do_see")]
+script = ExtResource("13_tqxsp")
+do_see = NodePath("../../do_see")
+patience_time = 4.0
+metadata/_custom_type_script = "uid://iey46ompxkev"
 
 [connection signal="WhatIsThat" from="do_see" to="testGoblin" method="_on_do_see_what_is_that"]
 [connection signal="iCantHear" from="do_see" to="testGoblin" method="_on_do_see_i_cant_hear"]

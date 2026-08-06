@@ -9,6 +9,7 @@ signal iLost(target: Character)
 
 var target:Character
 var target_last_seen_position: Vector2
+var target_last_seen_velocity: Vector2
 var hear:bool = false
 var found:bool = false
 
@@ -50,6 +51,7 @@ func _on_timer_timeout() -> void:
 					iFound.emit(target)
 			else:
 				target_last_seen_position = target.global_position 
+				target_last_seen_velocity = target.velocity
 				iFound.emit(target)
 		elif found:
 			#Seen earlier, but lost
