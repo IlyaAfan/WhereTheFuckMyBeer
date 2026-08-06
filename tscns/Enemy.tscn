@@ -36,7 +36,6 @@ target_desired_distance = 2.0
 path_postprocessing = 1
 avoidance_enabled = true
 avoidance_mask = 7
-debug_enabled = true
 
 [node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_cb2tf")]
 visibility_layer = 7

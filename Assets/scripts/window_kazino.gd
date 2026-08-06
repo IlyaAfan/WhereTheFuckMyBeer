@@ -3,6 +3,7 @@ extends Popup
 var active = false
 var ivent:int
 var twist: bool
+var idle = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 	if active and Input.is_action_just_pressed("use_item"):
 		_machine_random()
 	if twist:
-		$Kazino.rotation += 0.1*PI
+		#$Kazino.rotation += 0.1*PI
+		$Kazino.rotation = lerp($Kazino.rotation,$Kazino.rotation+10*PI,PI/4)
 
 		
 func _on_button_pressed() -> void:
