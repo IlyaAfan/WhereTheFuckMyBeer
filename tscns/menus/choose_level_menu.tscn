@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dw7leftccwi7v"]
 
-[ext_resource type="Script" uid="uid://d23uywgwaggsy" path="res://Assets/scripts/choose_level_menu.gd" id="1_5wum5"]
+[ext_resource type="Script" uid="uid://d23uywgwaggsy" path="res://scripts/misc/choose_level_menu.gd" id="1_5wum5"]
 [ext_resource type="PackedScene" uid="uid://blowhkcf3gjq1" path="res://tscns/menus/level_button.tscn" id="2_5wum5"]
 
 [node name="Choose_level_menu" type="Control" unique_id=1119176650]

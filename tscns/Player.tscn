@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cmp7udr0sb02j"]
 
-[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://scripts/misc/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/Sprites/CharSprites/TestingSprite.png" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="3_2y7wr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2x4d"]
 radius = 4.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1695094296]
+[node name="Player" type="CharacterBody2D" unique_id=1695094296 groups=["Player"]]
 disable_mode = 1
 collision_mask = 7
 motion_mode = 1
@@ -26,6 +26,7 @@ target_desired_distance = 1.0
 avoidance_enabled = true
 avoidance_layers = 2
 avoidance_mask = 5
+debug_enabled = true
 
 [node name="destination" type="Sprite2D" parent="." unique_id=371947627]
 visible = false

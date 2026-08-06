@@ -6,6 +6,8 @@ func toggle_pause():
 
 func _ready():
 	get_tree().paused = false
+	if $Player:
+		$Player.caught.connect(_on_player_caught)
 
 func _on_player_caught() -> void:
 	$Camera2D/in_game_menu.toggle_menu($Camera2D/in_game_menu)

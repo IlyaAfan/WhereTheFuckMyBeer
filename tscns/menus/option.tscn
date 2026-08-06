@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drm2mwf1qhm74"]
 
-[ext_resource type="Script" uid="uid://c7nrk28s3rwi" path="res://Assets/scripts/option.gd" id="1_r8evk"]
+[ext_resource type="Script" uid="uid://c7nrk28s3rwi" path="res://scripts/misc/option.gd" id="1_r8evk"]
 
 [node name="Option" type="Control" unique_id=805156607]
 custom_minimum_size = Vector2(60, 60)

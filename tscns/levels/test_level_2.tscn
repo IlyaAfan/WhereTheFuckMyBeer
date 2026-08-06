@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dhfocppi34bj7"]
 
-[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://Assets/scripts/root.gd" id="1_6yft4"]
+[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://scripts/misc/root.gd" id="1_6yft4"]
 [ext_resource type="TileSet" uid="uid://418731k4flur" path="res://Assets/Tiles/Beers_Tiles.tres" id="2_km620"]
 [ext_resource type="PackedScene" uid="uid://dp4ati4agkdmp" path="res://tscns/Enemy.tscn" id="3_486hu"]
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="4_8mjju"]

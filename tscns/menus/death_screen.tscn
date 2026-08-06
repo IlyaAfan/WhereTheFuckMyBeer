@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cua7gmg2dc840"]
 
-[ext_resource type="Script" uid="uid://2ygnwqrx3twi" path="res://Assets/scripts/death_screen.gd" id="1_wbrwl"]
+[ext_resource type="Script" uid="uid://2ygnwqrx3twi" path="res://scripts/misc/death_screen.gd" id="1_wbrwl"]
 
 [node name="DeathScreen" type="Control" unique_id=466029685]
 z_index = 1000

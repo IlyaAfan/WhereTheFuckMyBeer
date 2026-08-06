@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://q3opbucxdib7"]
 
-[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://Assets/scripts/root.gd" id="1_yc63u"]
+[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://scripts/misc/root.gd" id="1_yc63u"]
 [ext_resource type="TileSet" uid="uid://418731k4flur" path="res://Assets/Tiles/Beers_Tiles.tres" id="2_nhk6u"]
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="3_x6wgu"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="4_1bkul"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="5_31eh4"]
-[ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://Assets/scripts/enemy_controller.gd" id="6_8ur4l"]
+[ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://scripts/misc/enemy_controller.gd" id="6_8ur4l"]
 [ext_resource type="PackedScene" uid="uid://gn5c5lg6ug3y" path="res://tscns/fart_smella.tscn" id="7_txd0v"]
 [ext_resource type="PackedScene" uid="uid://dp4ati4agkdmp" path="res://tscns/Enemy.tscn" id="8_osaum"]
 [ext_resource type="PackedScene" uid="uid://cv7qku6cjg3ol" path="res://tscns/Items/coffee.tscn" id="9_nhk6u"]
