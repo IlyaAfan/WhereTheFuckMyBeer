@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://7f8y7miyk6y7"]
+
+[ext_resource type="Script" uid="uid://cjrjgrygawayt" path="res://Assets/scripts/result.gd" id="1_xausg"]
+
+[node name="result" type="Control" unique_id=805156607]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_xausg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1331628119]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 1157.0
+offset_bottom = 645.0
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1738204617]
+layout_mode = 2
+
+[node name="Beer" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1344365807]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="gold" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1428863801]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="coffee" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1799694509]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="pipe" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=879217071]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="burger" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1577053805]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="cats" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1064517903]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="barbell" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1790658220]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "fuck off"
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=2074667301]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=451351348]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=900053333]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=773816459]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1093141056]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1192965991]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "fuck off"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=66582866]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

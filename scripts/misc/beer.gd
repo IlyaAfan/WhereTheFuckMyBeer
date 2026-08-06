@@ -4,5 +4,8 @@ extends Area2D
 
 func _on_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		ConfigOption.load_game_stat()
+		ConfigOption.beer += 1
+		ConfigOption.save_game_stat()
 		print("changing level")
 		get_tree().change_scene_to_file.bind(where_to).call_deferred()

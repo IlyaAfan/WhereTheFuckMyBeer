@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cvwd4erww0ssr" path="res://scripts/misc/enemy_controller.gd" id="6_3mml8"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_i4lxh"]
 [ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="8_3mml8"]
+[ext_resource type="PackedScene" uid="uid://c1s64bst4u0f2" path="res://tscns/kazino.tscn" id="10_82c75"]
+[ext_resource type="PackedScene" uid="uid://cv7qku6cjg3ol" path="res://tscns/Items/coffee.tscn" id="10_i4lxh"]
 
 [node name="TestLevel" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -55,5 +57,11 @@ position = Vector2(-40, -56)
 [node name="Torch4" parent="." unique_id=1186531541 instance=ExtResource("8_3mml8")]
 position = Vector2(39, 40)
 rotation = 3.1415927
+
+[node name="Kazino" parent="." unique_id=1787733872 instance=ExtResource("10_82c75")]
+position = Vector2(-88, 32)
+
+[node name="Coffee" parent="." unique_id=573625924 instance=ExtResource("10_i4lxh")]
+position = Vector2(-86, -24)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]

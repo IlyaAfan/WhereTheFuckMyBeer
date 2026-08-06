@@ -13,6 +13,7 @@ func get_caught():
 
 
 func _ready():
+	ConfigOption.load_game_stat()
 	add_to_group("Player")
 	navigated = false
 	Navigation_Agent_Used = $NavigationAgent2D
@@ -63,17 +64,23 @@ func use_item():
 		match name_item:
 			"coffee":
 				$"../Coffee"._use_coffee($".")
+				ConfigOption.coffee += 1
 				name_item = "empty"
 			"pipe":
 				$"../Pipe"._use_pipe()
 				name_item = "empty"
+				ConfigOption.pipe += 1
 			"cats":
 				$"../Cats)"._use_cats()
 				name_item = "empty"
+				ConfigOption.cats += 1
 			"burger":
 				$"../Burger"._use_burger($".")
 				name_item = "empty"
+				ConfigOption.burger += 1
 			"barbell":
 				$"../Barbell"._use_barbell()
 				name_item = "empty"
+				ConfigOption.barbell += 1
 		name_item = "empty"
+		ConfigOption.save_game_stat()

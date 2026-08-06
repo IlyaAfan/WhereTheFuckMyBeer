@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c1s64bst4u0f2"]
+
+[ext_resource type="Script" uid="uid://cgh5vqnixpeud" path="res://tscns/kazino.gd" id="1_cisny"]
+[ext_resource type="Texture2D" uid="uid://cmb80h30ckiqq" path="res://Тестовые_штуки/Kazino_Machine.png" id="3_6kjl7"]
+[ext_resource type="PackedScene" uid="uid://ck52mydnwx3j0" path="res://tscns/menus/window_kazino.tscn" id="4_u3kmn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_486hu"]
+height = 34.0
+
+[node name="Kazino" type="Node2D" unique_id=1787733872]
+script = ExtResource("1_cisny")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=598695401]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2757202]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_486hu")
+
+[node name="KazinoMachine" type="Sprite2D" parent="Area2D" unique_id=1558326351]
+position = Vector2(1, 0)
+texture = ExtResource("3_6kjl7")
+
+[node name="WindowKazino" parent="." unique_id=964459375 instance=ExtResource("4_u3kmn")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
