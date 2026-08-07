@@ -3,6 +3,7 @@ class_name Search
 
 var target_probable_position: Vector2
 var target_velocity: Vector2
+var target_addificator: Vector2
 
 func enter():
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On
@@ -21,12 +22,14 @@ func enter():
 func update(delta):
 	if patience_left > 0:
 		patience_left-= delta
-		
+		MyCharacter.heard_a_call(target_probable_position)
+		should_look_at = do_see.global_position.angle_to_point(target_probable_position+target_addificator)
 	else:
 		lost()
 
-func physics_update(_delta):
-	MyCharacter.velocity = target_velocity 
+func physics_update(delta):
+	target_addificator =  target_velocity*delta
+	target_probable_position += target_addificator
 	do_see.rotation = lerp_angle(do_see.rotation, should_look_at, MyCharacter.rotation_speed)
 
 

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cmp7udr0sb02j"]
 
-
-[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://scripts/misc/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://wuaxq0eg7cff" path="res://Assets/Sprites/CharSprites/Dwarf_Sprites.png" id="2_2y7wr"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="3_2y7wr"]
 [ext_resource type="Script" uid="uid://d3mlfwg7gp3xl" path="res://tscns/player_animation.gd" id="4_o6qfh"]
@@ -123,7 +122,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_5jcl5"]
 resource_name = "DwarfWalkDown"
-length = 0.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -132,7 +131,7 @@ tracks/0/path = NodePath("Gnom:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(12, 0, 12, 12), Rect2(12, 12, 12, 12), Rect2(12, 0, 12, 12), Rect2(12, 24, 12, 12)]
@@ -140,7 +139,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hgcxw"]
 resource_name = "DwarfWalkLeft"
-length = 0.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -149,7 +148,7 @@ tracks/0/path = NodePath("Gnom:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"times": PackedFloat32Array(0, 0.099999994, 0.3, 0.39999998),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(36, 0, 12, 12), Rect2(36, 12, 12, 12), Rect2(36, 0, 12, 12), Rect2(36, 24, 12, 12)]
@@ -157,7 +156,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_brabj"]
 resource_name = "DwarfWalkRight"
-length = 0.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -166,7 +165,7 @@ tracks/0/path = NodePath("Gnom:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333336, 0.099999994, 0.13333334),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.39999998),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(0, 0, 12, 12), Rect2(0, 12, 12, 12), Rect2(0, 0, 12, 12), Rect2(0, 24, 12, 12)]
@@ -174,7 +173,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vstqw"]
 resource_name = "DwarfWalkUp"
-length = 0.2
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -183,7 +182,7 @@ tracks/0/path = NodePath("Gnom:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"times": PackedFloat32Array(0, 0.099999994, 0.3, 0.39999998),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(24, 0, 12, 12), Rect2(24, 12, 12, 12), Rect2(24, 0, 12, 12), Rect2(24, 24, 12, 12)]
@@ -304,7 +303,6 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-61, -43)
 
 [node name="Player" type="CharacterBody2D" unique_id=1695094296]
-
 disable_mode = 1
 collision_mask = 7
 motion_mode = 1
@@ -312,6 +310,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_kpjcp")
 
 [node name="Gnom" type="Sprite2D" parent="." unique_id=693537573]
+position = Vector2(0, -2)
 texture = SubResource("AtlasTexture_kxyh8")
 
 [node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=801922039]
@@ -323,7 +322,6 @@ target_desired_distance = 1.0
 avoidance_enabled = true
 avoidance_layers = 2
 avoidance_mask = 5
-debug_enabled = true
 
 [node name="destination" type="Sprite2D" parent="." unique_id=371947627]
 visible = false

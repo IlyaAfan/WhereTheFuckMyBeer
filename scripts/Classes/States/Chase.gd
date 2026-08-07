@@ -21,7 +21,7 @@ func physics_update(delta):
 		should_look_at = do_see.global_position.angle_to_point(target.global_position)
 	else:
 		if MyCharacter.Navigation_Agent_Used.is_navigation_finished():
-			should_look_at = do_see.global_position.angle_to_point(do_see.target_last_seen_velocity)
+			should_look_at = do_see.global_position.angle_to_point(do_see.target_last_seen_position + do_see.target_last_seen_velocity*delta)
 		else:
 			should_look_at = do_see.global_position.angle_to_point(do_see.target_last_seen_position)
 	

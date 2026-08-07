@@ -6,7 +6,7 @@ func toggle_pause():
 
 func _ready():
 	get_tree().paused = false
-	if $Player:
+	if !$Player.is_connected("caught",_on_player_caught):
 		$Player.caught.connect(_on_player_caught)
 
 func _on_player_caught() -> void:

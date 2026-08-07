@@ -108,6 +108,9 @@ restart={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Obstacles"
 3d_physics/snap/snap_2d_transforms_to_pixel=false
 
 [physics]
