@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://wpgp1dmikho0"]
+
+[ext_resource type="Script" uid="uid://1h4l5h173oyu" path="res://teleport_2.gd" id="1_5xn10"]
+[ext_resource type="Texture2D" uid="uid://5pmtxxeoglff" path="res://Тестовые_штуки/teleport.png" id="1_t4nbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xn10"]
+size = Vector2(14.5, 16)
+
+[node name="teleport2" type="Node2D" unique_id=871374348]
+z_index = -1
+script = ExtResource("1_5xn10")
+
+[node name="Teleport" type="Sprite2D" parent="." unique_id=1775211899]
+texture = ExtResource("1_t4nbh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1572330689]
+z_index = -1
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=557572264]
+position = Vector2(0.75, 0)
+shape = SubResource("RectangleShape2D_5xn10")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
