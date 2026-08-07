@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 	if active and Input.is_action_just_pressed("use_item"):
 		_machine_random()
 	if twist:
-		#$Kazino.rotation += 0.1*PI
-		$Kazino.rotation = lerp($Kazino.rotation,$Kazino.rotation+10*PI,PI/4)
-
+		$Kazino.rotation += 8*PI * delta
+	else:
+		$Kazino.rotation = 0
 		
 func _on_button_pressed() -> void:
 	_machine_random()

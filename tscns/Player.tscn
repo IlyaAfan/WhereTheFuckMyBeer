@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cmp7udr0sb02j"]
 
-
-[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://Assets/scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://pmqoxukq5diq" path="res://scripts/misc/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://wuaxq0eg7cff" path="res://Assets/Sprites/CharSprites/Dwarf_Sprites.png" id="2_2y7wr"]
 [ext_resource type="Texture2D" uid="uid://b744j46ot3q31" path="res://Assets/Sprites/CharSprites/enemy/destination.png" id="3_2y7wr"]
-[ext_resource type="Script" uid="uid://d3mlfwg7gp3xl" path="res://tscns/player_animation.gd" id="4_o6qfh"]
+[ext_resource type="Script" uid="uid://d3mlfwg7gp3xl" path="res://scripts/misc/player_animation.gd" id="4_o6qfh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxyh8"]
 atlas = ExtResource("2_2y7wr")

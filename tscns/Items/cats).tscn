@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kiffcj5np8n6"]
 
-[ext_resource type="Script" uid="uid://dj3rl8720m5ix" path="res://tscns/Items/cats).gd" id="1_ik7h8"]
+[ext_resource type="Script" uid="uid://dj3rl8720m5ix" path="res://scripts/misc/cats).gd" id="1_ik7h8"]
 [ext_resource type="Texture2D" uid="uid://c6gl0ypwdp0mo" path="res://Assets/Sprites/ItemSprites/Cats).png" id="1_xynok"]
 [ext_resource type="PackedScene" uid="uid://b0fxfoo72ebuk" path="res://tscns/clone_player.tscn" id="2_sj1dj"]
 

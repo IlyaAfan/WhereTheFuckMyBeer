@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://b0fxfoo72ebuk"]
 
 [ext_resource type="Script" uid="uid://cj05sacbwvklx" path="res://clone_player.gd" id="1_ohnwp"]
-[ext_resource type="Texture2D" uid="uid://cpgqe6ig8isuk" path="res://Assets/Sprites/CharSprites/TestingSprite.png" id="2_2ccrs"]
+[ext_resource type="Texture2D" uid="uid://wuaxq0eg7cff" path="res://Assets/Sprites/CharSprites/Dwarf_Sprites.png" id="2_ohnwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ccrs"]
+atlas = ExtResource("2_ohnwp")
+region = Rect2(12, 0, 12, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11yjp"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 5.0
 
 [node name="clone_player" type="CharacterBody2D" unique_id=2100137637 groups=["Player"]]
 visible = false
@@ -14,7 +21,15 @@ collision_mask = 7
 script = ExtResource("1_ohnwp")
 
 [node name="Gnom" type="Sprite2D" parent="." unique_id=228702885 groups=["Player"]]
-texture = ExtResource("2_2ccrs")
+texture = SubResource("AtlasTexture_2ccrs")
 
 [node name="PlayerBox" type="CollisionShape2D" parent="." unique_id=1487755658]
 shape = SubResource("CircleShape2D_11yjp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2090488370]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=83696446]
+shape = SubResource("CircleShape2D_bhunq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
