@@ -302,6 +302,17 @@ states/Start/position = Vector2(202, 100)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_d5mvr"), "IDLE", "RUN", SubResource("AnimationNodeStateMachineTransition_vmoje"), "RUN", "IDLE", SubResource("AnimationNodeStateMachineTransition_o6qfh")]
 graph_offset = Vector2(-61, -43)
 
+[sub_resource type="Gradient" id="Gradient_o6qfh"]
+offsets = PackedFloat32Array(0, 0.81578946)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7o0af"]
+gradient = SubResource("Gradient_o6qfh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
 [node name="Player" type="CharacterBody2D" unique_id=1695094296]
 disable_mode = 1
 collision_mask = 7
@@ -310,6 +321,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_kpjcp")
 
 [node name="Gnom" type="Sprite2D" parent="." unique_id=693537573]
+light_mask = 6
 position = Vector2(0, -2)
 texture = SubResource("AtlasTexture_kxyh8")
 
@@ -344,3 +356,10 @@ parameters/RUN/blend_position = Vector2(-0.67007303, 0.07762551)
 [node name="PlayerAnimation" type="Node2D" parent="." unique_id=237866873 node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("4_o6qfh")
 animation_tree = NodePath("../AnimationTree")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=990006315]
+scale = Vector2(0.25, 0.25)
+color = Color(0.40215734, 0.20503357, 0.050280325, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_7o0af")

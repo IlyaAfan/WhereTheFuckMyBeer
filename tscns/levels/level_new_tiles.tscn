@@ -2,10 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://418731k4flur" path="res://Assets/Tiles/Beers_Tiles.tres" id="1_h3qcs"]
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="1_hcmmw"]
+[ext_resource type="Script" uid="uid://b004d0wyock6y" path="res://scripts/misc/root.gd" id="1_hfjs5"]
 [ext_resource type="PackedScene" uid="uid://bxlth1lsqc1nr" path="res://tscns/goblin.tscn" id="3_pfh2u"]
 [ext_resource type="PackedScene" uid="uid://cmp7udr0sb02j" path="res://tscns/Player.tscn" id="4_hfjs5"]
 
 [node name="Level_New_Tiles" type="Node2D" unique_id=87368904]
+script = ExtResource("1_hfjs5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1493429511 groups=["TileMap"]]
 light_mask = 3
@@ -13,9 +15,11 @@ tile_map_data = PackedByteArray("AAD1//r/AAAIAAAAAAD2//r/AAAKAAAAAAD2//v/AAAJAAI
 tile_set = ExtResource("1_h3qcs")
 
 [node name="Camera2D" parent="." unique_id=947555020 instance=ExtResource("1_hcmmw")]
+zoom = Vector2(2.62, 2.62)
 
 [node name="Goblin" parent="." unique_id=2007969219 instance=ExtResource("3_pfh2u")]
 position = Vector2(-8, -8)
+rotation = 0.010356682
 
 [node name="Player" parent="." unique_id=1695094296 instance=ExtResource("4_hfjs5")]
 position = Vector2(-66, -8)

@@ -2,10 +2,10 @@ extends State
 class_name Idle
 
 @export var patrol: bool = false
+@export var patrol_points: Line
 
 func enter():
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On
-
 	patience_left = patience_time
 	
 	if !do_see.is_connected("iFound", found):
@@ -13,6 +13,9 @@ func enter():
 	#if !do_see.is_connected("iHear", heard):
 		#do_see.iHear.connect(heard)
 	should_look_at = do_see.rotation
+	
+	var Sprite: Sprite2D = MyCharacter.find_child("testGoblin")
+	Sprite.texture = sprite
 
 
 func update(delta):
@@ -29,7 +32,7 @@ func update(delta):
 		var walkable_tiles = get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.position))
 		var tile_to_look_at = Vector2(walkable_tiles[randi_range(0, len(walkable_tiles))-1])
 		should_look_at = do_see.global_position.angle_to_point(MyCharacter.global_position + tile_to_look_at)
-		
+
 func physics_update(_delta):
 	do_see.rotation = lerp_angle(do_see.rotation, should_look_at,MyCharacter.rotation_speed)
 

@@ -25,7 +25,7 @@ position = Vector2(0, 8)
 position = Vector2(108, 9)
 
 [node name="Enemy2" parent="." unique_id=1537280484 groups=["Enemy"] instance=ExtResource("2_0anch")]
-position = Vector2(39, 36)
+position = Vector2(39, 22)
 
 [node name="Button" parent="." unique_id=961410626 node_paths=PackedStringArray("door") instance=ExtResource("3_4v0dt")]
 position = Vector2(40, -55)

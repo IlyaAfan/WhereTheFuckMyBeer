@@ -34,4 +34,3 @@ func _on_do_see_i_lost(target):
 	question.visible = true
 	exclamation.visible = false
 	exclamation2.visible = false
-	$destination.put_enemy_destination(target.global_position)

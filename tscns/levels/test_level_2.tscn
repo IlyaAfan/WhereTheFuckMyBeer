@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dhbv5nllcw66r" path="res://tscns/menus/camera_with_menus.tscn" id="5_oudig"]
 [ext_resource type="PackedScene" uid="uid://bug765rqul378" path="res://tscns/beer.tscn" id="6_n42k0"]
 [ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="7_km620"]
-[ext_resource type="PackedScene" uid="uid://be310r058eayu" path="res://tscns/teleport_1.tscn" id="8_8mjju"]
-[ext_resource type="PackedScene" uid="uid://wpgp1dmikho0" path="res://tscns/teleport_2.tscn" id="9_oudig"]
 
 [node name="TestLevel3" type="Node2D" unique_id=1476997527]
 script = ExtResource("1_6yft4")
@@ -52,11 +50,5 @@ height = 61.0
 
 [node name="Torch2" parent="." unique_id=1109233115 instance=ExtResource("7_km620")]
 position = Vector2(-14, -56)
-
-[node name="teleport1" parent="." unique_id=1111313219 instance=ExtResource("8_8mjju")]
-position = Vector2(-88, -28)
-
-[node name="teleport2" parent="." unique_id=871374348 instance=ExtResource("9_oudig")]
-position = Vector2(120, -26)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]
