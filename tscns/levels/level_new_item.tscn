@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cxd6ra58cpnbe" path="res://tscns/Items/burger.tscn" id="8_53ygh"]
 [ext_resource type="PackedScene" uid="uid://chixvufhdj5jb" path="res://tscns/Items/barbell.tscn" id="9_kl5jd"]
 [ext_resource type="PackedScene" uid="uid://kiffcj5np8n6" path="res://tscns/Items/cats).tscn" id="10_qn8fv"]
+[ext_resource type="PackedScene" uid="uid://be310r058eayu" path="res://tscns/teleport_1.tscn" id="11_53ygh"]
+[ext_resource type="PackedScene" uid="uid://wpgp1dmikho0" path="res://tscns/teleport_2.tscn" id="12_kl5jd"]
 
 [node name="Level_New_item" type="Node2D" unique_id=87368904]
 script = ExtResource("1_jw0i8")
@@ -72,3 +74,9 @@ position = Vector2(64, -62)
 
 [node name="Cats)3" parent="." unique_id=1929841400 instance=ExtResource("10_qn8fv")]
 position = Vector2(53, -53)
+
+[node name="teleport1" parent="." unique_id=1111313219 instance=ExtResource("11_53ygh")]
+position = Vector2(-95, 45)
+
+[node name="teleport2" parent="." unique_id=871374348 instance=ExtResource("12_kl5jd")]
+position = Vector2(144, -43)

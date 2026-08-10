@@ -7,6 +7,7 @@
 size = Vector2(14.5, 16)
 
 [node name="teleport1" type="Node2D" unique_id=1111313219]
+z_index = -1
 script = ExtResource("1_xbnj3")
 
 [node name="Teleport" type="Sprite2D" parent="." unique_id=1829659151]
