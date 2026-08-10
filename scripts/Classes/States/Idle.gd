@@ -2,7 +2,7 @@ extends State
 class_name Idle
 
 @export var patrol: bool = false
-@export var patrol_points: Line
+@export var patrol_points: Line2D
 
 func enter():
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On

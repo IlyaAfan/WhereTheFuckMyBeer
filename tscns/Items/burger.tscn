@@ -7,7 +7,6 @@
 radius = 4.1231055
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sn0t7"]
-radius = 8.062258
 
 [node name="Burger" type="Node2D" unique_id=763004578]
 script = ExtResource("1_rb55f")
@@ -28,7 +27,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPush" unique_id=1417054412]
-position = Vector2(0, 3)
+position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_sn0t7")
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

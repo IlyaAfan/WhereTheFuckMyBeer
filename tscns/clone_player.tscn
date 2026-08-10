@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0fxfoo72ebuk"]
 
-[ext_resource type="Script" uid="uid://cj05sacbwvklx" path="res://clone_player.gd" id="1_ohnwp"]
+[ext_resource type="Script" uid="uid://cj05sacbwvklx" path="res://scripts/misc/clone_player.gd" id="1_ohnwp"]
 [ext_resource type="Texture2D" uid="uid://wuaxq0eg7cff" path="res://Assets/Sprites/CharSprites/Dwarf_Sprites.png" id="2_ohnwp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ccrs"]

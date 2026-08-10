@@ -1,28 +1,26 @@
-extends Node2D
+extends item
 
-var have = false
-var activated = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var clone: CharacterBody2D
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if have == true and not activated:
-		position = $"../Player".position + Vector2(0,-7)
-	
+	located()
+	use_item()
 
 
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and body.name_item == "empty":
-		body.name_item = "cats"
-		have = true
-		$Area.collision_layer = 0
-		$Area.collision_mask = 0
-		
-func _use_cats():
+	get_up(body)
+
+func activate_item():
+	ConfigOption.cats += 1
+	active = true
 	$TextureCats.visible = false
-	activated = true
-	$clone_player.visible = true
-	$clone_player.global_position = $"../Player".global_position
+
+	# отвязываем клона от предмета, чтобы он не таскался вслед за игроком
+	# вместе с самим предметом (located() двигает узел Cats))
+	clone = $clone_player
+	remove_child(clone)
+	get_parent().add_child(clone)
+	clone.global_position = $"../Player".global_position
+	clone.visible = true
+	clone.active = true

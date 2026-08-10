@@ -1,56 +1,52 @@
-extends Node2D
+extends item
+var strong: bool = false
+var stunned_enemies: Dictionary = {} # body -> исходная speed
 
-var have = false
-var active = false
-var holding_a_dude = false
-var common_speed
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
+func _process(_delta: float) -> void:
+	located()
+	use_item()
+	check_area_attack() # добираем врагов, которые просто стоят в зоне
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if have == true:
-			position = $"../Player".position + Vector2(0,-7)
-	
+func check_area_attack() -> void:
+	if strong:
+		for body in $AreaAttack.get_overlapping_bodies():
+			if body.is_in_group("Enemies") and not stunned_enemies.has(body):
+				stun_enemy(body)
 
+func stun_enemy(body: Node2D) -> void:
+	stunned_enemies[body] = body.speed
+	body.speed = 0
+	await get_tree().create_timer(3).timeout #Время действия оглушения
+	if stunned_enemies.has(body): # враг мог быть удалён/убит за это время
+		body.speed = stunned_enemies[body]
+		stunned_enemies.erase(body)
 
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and body.name_item == "empty":
-		body.name_item = "barbell"
-		have = true
-		$Area.collision_layer = 0
-		$Area.collision_mask = 0
-		
-func _use_barbell():
-	#$"../Player/AnimatedSprite2D".play("train").
-	print("barbell")
-	$"../Player".speed = 0
-	await get_tree().create_timer(2.5).timeout #await $AnimationPlayer.animation_finished
-	visible = false
-	active = true
-	$"../Player".not_catchable = true
-	$"../Player".speed = 60
-	
-	await get_tree().create_timer(7).timeout
-	if !holding_a_dude:
-		$"../Player".not_catchable = false
-	active = false
-	
-	await get_tree().create_timer(3).timeout
-	$"../Player".not_catchable = false
-	queue_free()
-
+	get_up(body)
 
 func _on_area_2d_body_entered_attack(body: Node2D) -> void:
-	if active == true and body.is_in_group("Enemies"):
-		if !body.speed==0:
-			common_speed = body.speed
-			body.speed = 0
-		holding_a_dude = true
-		
-		await get_tree().create_timer(3).timeout #Время действия оглушения
+	if strong and body.is_in_group("Enemies") and not stunned_enemies.has(body):
+		stun_enemy(body)
 
-		body.speed = common_speed
-		holding_a_dude = false
+func activate_item():
+	ConfigOption.barbell += 1
+	active = true
+	print("barbell")
+	$"../Player".speed = 0
+	await get_tree().create_timer(2.5).timeout
+	strong = true
+	visible = false
+	$"../Player".not_catchable = true
+	$"../Player".speed = 50
+
+	await get_tree().create_timer(7).timeout
+	strong = false
+
+	while stunned_enemies.size() > 0:
+		await get_tree().create_timer(0.1).timeout
+
+	$"../Player".not_catchable = false
+	active = false

@@ -1,11 +1,15 @@
 extends Character
+
 var not_catchable = true
+var active: bool = false
+
 
 func _physics_process(delta: float) -> void:
-	if $"..".activated:
+	if active:
 		$PlayerBox.disabled = false
-		velocity.y = -$"../../Player".velocity.y
-		velocity.x = $"../../Player".velocity.x
+		var player = $"../Player"
+		velocity.x = player.velocity.x
+		velocity.y = -player.velocity.y
 	else:
 		$PlayerBox.disabled = true
 	move_and_slide()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wpgp1dmikho0"]
 
-[ext_resource type="Script" uid="uid://1h4l5h173oyu" path="res://teleport_2.gd" id="1_5xn10"]
+[ext_resource type="Script" uid="uid://1h4l5h173oyu" path="res://scripts/misc/teleport_2.gd" id="1_5xn10"]
 [ext_resource type="Texture2D" uid="uid://5pmtxxeoglff" path="res://Тестовые_штуки/teleport.png" id="1_t4nbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xn10"]

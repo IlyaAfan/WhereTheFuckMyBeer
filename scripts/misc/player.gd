@@ -3,7 +3,7 @@ extends Character
 signal caught
 var input_direction: Vector2
 var navigated: bool
-var name_item: String = "empty"
+var have_item: bool = false
 var not_catchable: bool = false
 
 func get_caught():
@@ -45,7 +45,6 @@ func _physics_process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 	else:
 		move_and_slide()
-		use_item()
 
 
 func input_movement() -> Vector2: 
@@ -58,29 +57,3 @@ func input_movement() -> Vector2:
 func put_destination(target):
 	$destination.position = target
 	$destination.visible = true
-
-func use_item():
-	if Input.is_action_just_pressed("use_item") and name_item != "empty":
-		match name_item:
-			"coffee":
-				$"../Coffee"._use_coffee($".")
-				ConfigOption.coffee += 1
-				name_item = "empty"
-			"pipe":
-				$"../Pipe"._use_pipe()
-				name_item = "empty"
-				ConfigOption.pipe += 1
-			"cats":
-				$"../Cats)"._use_cats()
-				name_item = "empty"
-				ConfigOption.cats += 1
-			"burger":
-				$"../Burger"._use_burger($".")
-				name_item = "empty"
-				ConfigOption.burger += 1
-			"barbell":
-				$"../Barbell"._use_barbell()
-				name_item = "empty"
-				ConfigOption.barbell += 1
-		name_item = "empty"
-		ConfigOption.save_game_stat()

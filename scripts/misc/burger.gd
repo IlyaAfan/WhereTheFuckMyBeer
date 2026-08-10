@@ -1,44 +1,35 @@
-extends Node2D
+extends item
 
-var have = false
-var active = false
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if have == true:
-		position = $"../Player".position + Vector2(0,-7)
+func _process(_delta: float) -> void:
+	located()
+	use_item()
 
 
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and body.name_item == "empty":
-		body.name_item = "burger"
-		have = true
+	get_up(body)
 		
-func _use_burger(body: Node2D) -> void:
+func activate_item():
+	ConfigOption.burger += 1
 	visible = false
 	active = true
-	body.speed /= 1.2
-	body.not_catchable = true
+	name_body.speed -= 10
+	name_body.not_catchable = true
 	$"../Player/Gnom".scale = Vector2(1.9,1.9)
 	await get_tree().create_timer(7).timeout
-	$"../Player/PlayerBox".scale = Vector2(1,1)
+	name_body.speed += 10
 	$"../Player/Gnom".scale = Vector2(1,1)
 	$"../Player".not_catchable = false
 	active = false
-	await get_tree().create_timer(1).timeout
-	queue_free()
 
 
 func _on_area_push_body_entered(body: Node2D) -> void:
-	var common_speed 
 	if active == true and body.is_in_group("Enemies"):
 		body.position -= ($"../Player".position - body.position).normalized() * 30
-		common_speed = body.speed
 		body.speed = 0
 		await get_tree().create_timer(0.5).timeout
-		body.speed = common_speed
-		
+		body.speed = 70

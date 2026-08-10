@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cxnoxo28no032" path="res://tscns/Items/pipe.tscn" id="11_66w77"]
 [ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="12_66w77"]
 [ext_resource type="PackedScene" uid="uid://kkdkxirlcyp4" path="res://tscns/light_for_level.tscn" id="12_ax47h"]
+[ext_resource type="PackedScene" uid="uid://kiffcj5np8n6" path="res://tscns/Items/cats).tscn" id="14_tr8su"]
 
 [node name="test_door_level" type="Node2D" unique_id=862735649]
 process_mode = 3
@@ -90,5 +91,11 @@ position = Vector2(85, 0)
 [node name="Beer" parent="." unique_id=5119092 instance=ExtResource("9_vybs1")]
 position = Vector2(120, 8)
 where_to = "res://tscns/menus/result.tscn"
+
+[node name="Cats)" parent="." unique_id=345333418 instance=ExtResource("14_tr8su")]
+position = Vector2(-102, 69)
+
+[node name="Cats)2" parent="." unique_id=1678394235 instance=ExtResource("14_tr8su")]
+position = Vector2(-89, 71)
 
 [connection signal="caught" from="Player" to="." method="_on_player_caught"]

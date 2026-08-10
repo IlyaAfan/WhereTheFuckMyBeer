@@ -1,30 +1,31 @@
-extends Node2D
+extends item
 
-var have = false
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if have == true:
-		position = $"../Player".position + Vector2(0,-7)
+	located()
+	use_item()
 
 
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and body.name_item == "empty":
-		body.name_item = "pipe"
-		have = true
+	get_up(body)
 		
-func _use_pipe():
+func activate_item():
+	ConfigOption.pipe += 1
+	active = true
+	print("Pipe")
 	visible = false
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		if "speed" in enemy:
-			enemy.speed /= 2
+			enemy.speed = 40
 	await get_tree().create_timer(5).timeout 
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		if "speed" in enemy:
-			enemy.speed *= 2
+			enemy.speed = 70
 	print("end")
-	queue_free()
+	active = false
+	
+	
