@@ -5,10 +5,12 @@ var input_direction: Vector2
 var navigated: bool
 var have_item: bool = false
 var not_catchable: bool = false
-var acceltration = 0.5
-var friction = 0.01
+var acceltration = 0.05
+var friction = 0.05
+var turn_accel = 0.03
 var now_velocity: Vector2
 var run_velocity: Vector2
+var coffee = false
 
 func get_caught():
 	caught.emit()
@@ -52,13 +54,22 @@ func _physics_process(_delta: float) -> void:
 	print(run_velocity)
 
 func input_movement() -> Vector2:
-	if Input.is_action_pressed("run") or run_velocity > input_direction * speed * get_tile_data("tile_speed") * 0.8 :
+	if Input.is_action_pressed("run") or run_velocity > input_direction * speed * get_tile_data("tile_speed") * 0.8 or coffee:
 		input_direction = Input.get_vector("left", "right", "up", "down")
 		var target_velocity = input_direction * speed * get_tile_data("tile_speed") * 1.5
+
 		if input_direction != Vector2.ZERO:
-			now_velocity = now_velocity.lerp(target_velocity, acceltration)
+			var target_speed = target_velocity.length()
+			var current_speed = now_velocity.length()
+			var new_speed = lerp(current_speed, target_speed, acceltration)
+
+			var current_dir = now_velocity.normalized() if now_velocity != Vector2.ZERO else target_velocity.normalized()
+			var target_dir = target_velocity.normalized()
+			var new_dir = current_dir.slerp(target_dir, turn_accel)
+
+			now_velocity = new_dir * new_speed
 		else:
-			now_velocity = now_velocity.lerp(Vector2.ZERO, friction)
+			now_velocity = now_velocity.slerp(Vector2.ZERO, friction)
 		return now_velocity
 	else :
 		run_velocity = Vector2.ZERO
@@ -66,9 +77,9 @@ func input_movement() -> Vector2:
 			input_direction = Input.get_vector("left", "right", "up", "down")
 		else:
 			input_direction = Vector2.ZERO
-		return input_direction * speed * get_tile_data("tile_speed")
+		now_velocity = input_direction * speed * get_tile_data("tile_speed")
+		return now_velocity
 
 func put_destination(target):
 	$destination.position = target
 	$destination.visible = true
-	

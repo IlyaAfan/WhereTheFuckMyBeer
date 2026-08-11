@@ -16,10 +16,12 @@ func _on_area_body_entered(body: Node2D) -> void:
 func activate_item():
 	ConfigOption.coffee += 1
 	active = true
+	name_body.coffee = true
 	visible = false
-	name_body.speed = 100
+	name_body.speed = 70
 	print("coffee")
 	await get_tree().create_timer(2.5).timeout 
 	name_body.speed = 50
 	print("end")
+	name_body.coffee = false
 	active = false
