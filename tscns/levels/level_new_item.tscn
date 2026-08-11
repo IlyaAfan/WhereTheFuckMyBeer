@@ -76,7 +76,7 @@ position = Vector2(64, -62)
 position = Vector2(53, -53)
 
 [node name="teleport1" parent="." unique_id=1111313219 instance=ExtResource("11_53ygh")]
-position = Vector2(-95, 45)
+position = Vector2(-86, -43)
 
 [node name="teleport2" parent="." unique_id=871374348 instance=ExtResource("12_kl5jd")]
 position = Vector2(144, -43)

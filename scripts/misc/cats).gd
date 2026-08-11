@@ -16,8 +16,6 @@ func activate_item():
 	active = true
 	$TextureCats.visible = false
 
-	# отвязываем клона от предмета, чтобы он не таскался вслед за игроком
-	# вместе с самим предметом (located() двигает узел Cats))
 	clone = $clone_player
 	remove_child(clone)
 	get_parent().add_child(clone)
