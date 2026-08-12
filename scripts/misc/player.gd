@@ -6,12 +6,8 @@ var navigated: bool
 var was_caught: bool = false
 var have_item: bool = false
 var not_catchable: bool = false
-var acceltration = 0.05
-var friction = 0.05
-var turn_accel = 0.03
-var now_velocity: Vector2
-var run_velocity: Vector2
-var coffee = false
+
+
 
 func get_caught():
 	caught.emit()
