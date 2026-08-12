@@ -11,6 +11,6 @@ func _ready():
 		$Player.caught.connect(_on_player_caught)
 
 func _on_player_caught() -> void:
-	$Camera2D/in_game_menu.toggle_menu($Camera2D/in_game_menu)
-	$Camera2D/death_screen.toggle_menu($Camera2D/death_screen)
+	find_child("death_screen").toggle_menu()
+	find_child("in_game_menu").toggle_menu()
 	toggle_pause()

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cxadxaumdthhw"]
+
+[ext_resource type="Script" uid="uid://c5d5qwsetaxgt" path="res://scripts/misc/main_game.gd" id="1_sjm3j"]
+
+[node name="GameRoot" type="Node" unique_id=702508358]
+process_mode = 3
+script = ExtResource("1_sjm3j")
+
+[node name="systems" type="Node" parent="." unique_id=837626177]
+
+[node name="World" type="Node2D" parent="." unique_id=583539134]
+process_mode = 1
+
+[node name="LevelRoot" type="Node2D" parent="World" unique_id=2057465897]
+
+[node name="Menus" type="CanvasLayer" parent="." unique_id=1360683286]
+process_mode = 1
+layer = 10
+
+[node name="Pause" type="CanvasLayer" parent="." unique_id=1682843064]
+process_mode = 2
+layer = 20
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=1162486403]
+process_mode = 3
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=906548468]
+process_mode = 3
+layer = 128

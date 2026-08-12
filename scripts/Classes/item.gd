@@ -24,7 +24,6 @@ func use_item():
 		await activate_item() 
 		ConfigOption.save_game_stat()
 		if active == false:
-			print(32)
 			queue_free()
 
 func activate_item():

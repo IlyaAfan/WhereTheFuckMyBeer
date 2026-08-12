@@ -8,7 +8,7 @@ func _physics_process(_delta: float) -> void:
 		toggle_menu($NinePatchRect/PopupMenu)
 		get_tree().paused = not get_tree().paused
 
-func toggle_menu(object: Control):
+func toggle_menu(object: Control = self):
 	object.visible = !object.visible
 
 func _on_resume_pressed() -> void:

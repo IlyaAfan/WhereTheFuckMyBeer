@@ -1,6 +1,6 @@
 extends Control
 
-func toggle_menu(object: Control):
+func toggle_menu(object: Control = self):
 	object.visible = !object.visible
 
 func _ready() -> void:

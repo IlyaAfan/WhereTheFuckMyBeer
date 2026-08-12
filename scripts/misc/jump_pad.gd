@@ -50,6 +50,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.transform = transform
 			active_body_speed = body.speed
 			body.speed = 0
+			body.velocity = Vector2.ZERO
 			body.stop_navigation()
 
 func _on_body_exited(body: Node2D) -> void:

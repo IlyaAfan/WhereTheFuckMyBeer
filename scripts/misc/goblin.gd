@@ -1,7 +1,7 @@
 extends Character
 
 @export var rotation_speed:float = 0.1
-@export var patrol_points: Curve2D
+@export var patrol: bool
 
 @onready var do_see = $do_see
 

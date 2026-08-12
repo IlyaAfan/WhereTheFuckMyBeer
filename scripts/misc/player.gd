@@ -3,6 +3,7 @@ extends Character
 signal caught
 var input_direction: Vector2
 var navigated: bool
+var was_caught: bool = false
 var have_item: bool = false
 var not_catchable: bool = false
 var acceltration = 0.05
@@ -14,7 +15,7 @@ var coffee = false
 
 func get_caught():
 	caught.emit()
-	get_tree().paused
+	was_caught = true
 	speed = 0
 
 func _ready():
@@ -27,7 +28,7 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 	if ConfigOption.type_control:
-		velocity = nav_movement() * 0.8
+		velocity = nav_movement()
 		
 		if Input.is_action_pressed("lmb"):
 			Navigation_Agent_Used.target_position = get_global_mouse_position()
@@ -38,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 			navigated = false
 			$destination.visible = false
 	else:
-		velocity = input_movement() * 0.8
+		velocity = input_movement()
 		
 	if Input.is_action_just_pressed("change_input_dev"):
 		velocity = Vector2.ZERO
@@ -51,10 +52,9 @@ func _physics_process(_delta: float) -> void:
 	else:
 		move_and_slide()
 	run_velocity = velocity
-	print(run_velocity)
 
 func input_movement() -> Vector2:
-	if Input.is_action_pressed("run") or run_velocity > input_direction * speed * get_tile_data("tile_speed") * 0.8 or coffee:
+	if coffee:
 		input_direction = Input.get_vector("left", "right", "up", "down")
 		var target_velocity = input_direction * speed * get_tile_data("tile_speed") * 1.5
 

@@ -26,10 +26,9 @@ radius = 3.0
 
 [node name="Goblin" type="CharacterBody2D" unique_id=2007969219 groups=["Enemies"]]
 light_mask = 7
-collision_layer = 4
+collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_thnai")
-speed = 40
 
 [node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("2_xw3cb")]
 
@@ -55,9 +54,6 @@ texture = ExtResource("4_inrn8")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="do_see" unique_id=1348185604]
 occluder = SubResource("OccluderPolygon2D_g4v7s")
 occluder_light_mask = 6
-
-[node name="WallDetector" type="RayCast2D" parent="do_see" unique_id=624115558]
-target_position = Vector2(56, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332576803]
 shape = SubResource("CircleShape2D_cb2tf")
@@ -117,7 +113,7 @@ metadata/_custom_type_script = "uid://cp7mw2ou5e5x8"
 script = ExtResource("10_inrn8")
 MyCharacter = NodePath("../..")
 do_see = NodePath("../../do_see")
-patience_time = 30.0
+patience_time = 3.0
 sprite = ExtResource("15_qxxcw")
 metadata/_custom_type_script = "uid://iey46ompxkev"
 

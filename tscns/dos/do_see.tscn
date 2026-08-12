@@ -17,7 +17,7 @@ autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1599647]
 target_position = Vector2(56, 0)
-collision_mask = 6
+collision_mask = 4
 
 [node name="AreaIndicator" type="Sprite2D" parent="." unique_id=1869260334]
 visible = false

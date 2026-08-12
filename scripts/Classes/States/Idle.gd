@@ -6,6 +6,7 @@ class_name Idle
 
 func enter():
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On
+	patrol = MyCharacter.patrol
 	patience_left = patience_time
 	
 	if !do_see.is_connected("iFound", found):
