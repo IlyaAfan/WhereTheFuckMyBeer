@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp4ati4agkdmp"]
 
 [ext_resource type="Script" uid="uid://dpr371qijq5j7" path="res://scripts/misc/enemy.gd" id="1_2msnq"]
-[ext_resource type="Texture2D" uid="uid://ds8guqcsomrhw" path="res://Assets/Sprites/CharSprites/TestingEnemy.png" id="2_h508e"]
+[ext_resource type="Texture2D" uid="uid://bjych5681wmj" path="res://Тестовые_штуки/New Piskel (16).png" id="2_j5okl"]
 [ext_resource type="Script" uid="uid://dybmojoagq43b" path="res://scripts/misc/DetectionLevels.gd" id="3_co0kn"]
 [ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="3_u8qfd"]
 [ext_resource type="PackedScene" uid="uid://jvjphvkbg7qb" path="res://tscns/destination.tscn" id="4_0rc6h"]
@@ -27,7 +27,8 @@ speed = 70
 
 [node name="TestingEnemy" type="Sprite2D" parent="." unique_id=1835231928]
 z_index = 101
-texture = ExtResource("2_h508e")
+position = Vector2(0, 1)
+texture = ExtResource("2_j5okl")
 script = ExtResource("3_co0kn")
 
 [node name="destination" parent="TestingEnemy" unique_id=1734225441 instance=ExtResource("4_0rc6h")]

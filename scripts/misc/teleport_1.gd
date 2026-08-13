@@ -15,5 +15,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if cooldawn == false:
 		body.position = $"../teleport2".position - Vector2(0,-5)
 		if body.is_in_group("Player"):
-			$"../Player".Navigation_Agent_Used.target_position = $"../Player".position
+			body.Navigation_Agent_Used.target_position = body.position
 	cooldawn = !cooldawn
