@@ -13,7 +13,6 @@ zoom = Vector2(4, 4)
 
 [node name="in_game_menu" parent="CanvasLayer" unique_id=942770950 instance=ExtResource("1_utwbs")]
 process_mode = 3
-visible = false
 z_as_relative = false
 offset_right = -1152.0
 offset_bottom = -648.0
