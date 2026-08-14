@@ -18,10 +18,10 @@ func activate_item():
 	active = true
 	name_body.coffee = true
 	visible = false
-	name_body.speed = 60
+	name_body.speed += 20
 	print("coffee")
 	await get_tree().create_timer(2.5).timeout 
-	name_body.speed = 50
+	name_body.speed -= 20
 	print("end")
 	name_body.coffee = false
 	active = false

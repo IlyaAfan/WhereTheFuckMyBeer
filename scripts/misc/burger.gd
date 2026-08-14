@@ -1,5 +1,7 @@
 extends item
 
+
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -29,7 +31,9 @@ func activate_item():
 
 func _on_area_push_body_entered(body: Node2D) -> void:
 	if active == true and body.is_in_group("Enemies"):
-		body.position -= ($"../Player".position - body.position).normalized() * 30
+		var to = body.position - ($"../Player".position - body.position).normalized() * 30
+		var hit = get_world_2d().direct_space_state.intersect_ray(PhysicsRayQueryParameters2D.create(body.global_position, to, 4))
+		body.position = hit.position if hit else to
 		body.speed = 0
 		await get_tree().create_timer(0.5).timeout
-		body.speed = 70
+		body.speed = body.save_speed

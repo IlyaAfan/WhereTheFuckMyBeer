@@ -52,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 func input_movement() -> Vector2:
 	if coffee:
 		input_direction = Input.get_vector("left", "right", "up", "down")
-		var target_velocity = input_direction * speed * get_tile_data("tile_speed") * 1.5
+		var target_velocity = input_direction * speed * get_tile_data("tile_speed") * 1.2
 
 		if input_direction != Vector2.ZERO:
 			var target_speed = target_velocity.length()

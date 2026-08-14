@@ -15,16 +15,19 @@ func _on_area_body_entered(body: Node2D) -> void:
 		
 func activate_item():
 	ConfigOption.pipe += 1
+	visible = false
+	name_body.speed = 0
+	await get_tree().create_timer(1).timeout
+	name_body.speed = name_body.save_speed
 	active = true
 	print("Pipe")
-	visible = false
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		if "speed" in enemy:
-			enemy.speed = 40
+			enemy.speed /= 2
 	await get_tree().create_timer(5).timeout 
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		if "speed" in enemy:
-			enemy.speed = 70
+			enemy.speed = enemy.save_speed
 	print("end")
 	active = false
 	

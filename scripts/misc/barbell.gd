@@ -17,7 +17,7 @@ func check_area_attack() -> void:
 				stun_enemy(body)
 
 func stun_enemy(body: Node2D) -> void:
-	stunned_enemies[body] = body.speed
+	stunned_enemies[body] = body.save_speed
 	body.speed = 0
 	await get_tree().create_timer(3).timeout #Время действия оглушения
 	if stunned_enemies.has(body): # враг мог быть удалён/убит за это время
@@ -35,12 +35,12 @@ func activate_item():
 	ConfigOption.barbell += 1
 	active = true
 	print("barbell")
-	$"../Player".speed = 0
+	name_body.speed = 0
 	await get_tree().create_timer(2.5).timeout
 	strong = true
 	visible = false
-	$"../Player".not_catchable = true
-	$"../Player".speed = 50
+	name_body.not_catchable = true
+	name_body.speed = name_body.save_speed
 
 	await get_tree().create_timer(7).timeout
 	strong = false
@@ -48,5 +48,5 @@ func activate_item():
 	while stunned_enemies.size() > 0:
 		await get_tree().create_timer(0.1).timeout
 
-	$"../Player".not_catchable = false
+	name_body.not_catchable = false
 	active = false

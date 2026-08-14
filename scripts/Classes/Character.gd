@@ -2,7 +2,8 @@ extends CharacterBody2D
 class_name Character
 
 @export var Navigation_Agent_Used: NavigationAgent2D
-@export var speed = 50 #стандартная скорость -- скорость игрока
+@export var speed = 50 #стандартная скорость -- скорость игрока\
+@export var save_speed = speed # скорость для сохранения
 var direction : Vector2
 var TileMap_I_Am_Standing_On: TileMapLayer
 var acceltration = 0.05
@@ -26,7 +27,7 @@ func get_tile_data(data_name: String): # вернёт значение нужн�
 func nav_movement() -> Vector2: # возвращает нужную скорость при движении используя навигацию, если у персонажа нет Navigation Agent вернёт нулевую скорость
 	if coffee:
 		direction = to_local(Navigation_Agent_Used.get_next_path_position()).normalized()
-		var target_velocity = direction * speed * get_tile_data("tile_speed") * 1.5
+		var target_velocity = direction * speed * get_tile_data("tile_speed") * 1.2
 
 		if direction != Vector2.ZERO:
 			var target_speed = target_velocity.length()
