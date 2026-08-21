@@ -9,12 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bxlth1lsqc1nr" path="res://tscns/goblin.tscn" id="7_haogv"]
 [ext_resource type="PackedScene" uid="uid://bry4ip3wuf8fo" path="res://tscns/Torch.tscn" id="8_y3okc"]
 
-[sub_resource type="Curve2D" id="Curve2D_haogv"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 2
-
 [node name="TestLevel" type="Node2D" unique_id=862735649]
 process_mode = 3
 script = ExtResource("1_haogv")
@@ -46,10 +40,8 @@ process_mode = 1
 script = ExtResource("6_7osfh")
 
 [node name="Goblin" parent="EnemyController" unique_id=2007969219 instance=ExtResource("7_haogv")]
-position = Vector2(104, -8)
-
-[node name="Path2D" type="Path2D" parent="EnemyController/Goblin" unique_id=1869940265]
-curve = SubResource("Curve2D_haogv")
+position = Vector2(88, -8)
+patrol = true
 
 [node name="Torch" parent="." unique_id=804697877 instance=ExtResource("8_y3okc")]
 position = Vector2(-40, 40)

@@ -64,6 +64,7 @@ target_desired_distance = 2.0
 path_postprocessing = 1
 avoidance_enabled = true
 avoidance_mask = 7
+debug_enabled = true
 
 [node name="testGoblin" type="Sprite2D" parent="." unique_id=1484806881]
 z_index = 101
@@ -97,7 +98,7 @@ default_state = NodePath("Idle")
 script = ExtResource("10_ncsxy")
 MyCharacter = NodePath("../..")
 do_see = NodePath("../../do_see")
-patience_time = 3.0
+patience_time = 1.0
 sprite = ExtResource("4_uk4ff")
 metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
 

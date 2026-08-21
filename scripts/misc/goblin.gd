@@ -2,6 +2,7 @@ extends Character
 
 @export var rotation_speed:float = 0.1
 @export var patrol: bool
+@export var patrol_points: Array
 
 @onready var do_see = $do_see
 

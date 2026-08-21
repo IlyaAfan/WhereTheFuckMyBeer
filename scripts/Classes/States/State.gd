@@ -40,8 +40,8 @@ func get_walkable_tiles_around(position: Vector2i) -> Array:
 			result.append(v)
 	return result
 
-func get_lookable_direction(direction: Vector2, pos:Vector2i = MyTiles.local_to_map(MyCharacter.global_position)) -> Vector2:
-	direction = direction - MyCharacter.global_position
+func get_lookable_direction(direction: Vector2,my_pos:Vector2 =MyCharacter.global_position, pos:Vector2i = MyTiles.local_to_map(my_pos)) -> Vector2:
+	direction = direction - my_pos
 	var walkable = get_walkable_tiles_around(pos)
 	var res: Vector2 = walkable[0] if not walkable.is_empty() else Vector2.ZERO
 	var max_dot = -INF

@@ -21,12 +21,6 @@ tile_set = ExtResource("1_h3qcs")
 position = Vector2(-8, -8)
 rotation = 0.010356682
 
-[node name="Player" parent="." unique_id=1695094296 instance=ExtResource("4_hfjs5")]
-position = Vector2(56, -72)
-
-[node name="Camera2D" parent="Player" unique_id=947555020 instance=ExtResource("1_hcmmw")]
-scale = Vector2(1.0000001, 1.0000001)
-
 [node name="Pipe" parent="." unique_id=1777342601 instance=ExtResource("7_as8qa")]
 position = Vector2(-136, -72)
 
@@ -76,3 +70,9 @@ position = Vector2(152, -120)
 
 [node name="Enemy3" parent="Enemies2" unique_id=611341111 instance=ExtResource("6_myc65")]
 position = Vector2(152, -24)
+
+[node name="Player" parent="." unique_id=1695094296 instance=ExtResource("4_hfjs5")]
+process_mode = 1
+position = Vector2(-200, 40)
+
+[node name="Camera2D" parent="Player" unique_id=947555020 instance=ExtResource("1_hcmmw")]

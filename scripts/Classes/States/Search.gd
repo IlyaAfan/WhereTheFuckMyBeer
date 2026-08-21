@@ -27,41 +27,24 @@ func enter():
 	
 	# Записываем послендние известные данные о цели, понимаем куда надо бежать
 	target_velocity = do_see.target_last_seen_velocity
-	target_probable_position = do_see.target_last_seen_position + target_velocity*0.1
-	my_direction = get_lookable_direction(target_probable_position)
-	
+	target_probable_position = do_see.target_last_seen_position + target_velocity*0.5
+	my_direction = get_lookable_direction(target_probable_position, do_see.target_last_seen_position)
+	print(target_probable_position, my_direction)
 	
 	# Здесь будут анимации, но пока что просто меняем спрайт
 	var Sprite: Sprite2D = MyCharacter.find_child("testGoblin")
 	Sprite.texture = sprite
-	
-	print(my_direction)
-
 
 
 func update(delta):
 	
-	if patience_left > 0: # Усли терпение ещё есть -- ищем игрока
+	if patience_left > 0: # Если терпение ещё есть -- ищем игрока
 		patience_left-= delta
-		
-		#if !going_to_a_fork:
 		MyCharacter.heard_a_call(MyCharacter.global_position + my_direction*Vector2(16,16))
 		
-		#Пока не упрёмся в стену -- запоминаем повороты.
-		#if paths_old != paths:
-			#if !turns.any(is_it_this_tile) and !turns_old.any(is_it_this_tile):
-				#turns.append(MyTiles.local_to_map(MyCharacter.global_position))
-		
-		## Когда упрёмся -- идём к последней развилке
 		if get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position)).count(Vector2i(my_direction)) == 0:
 			lost_interest()
-			#go_to_next_fork()
-		##Как дойдём до развилки -- выбираем новое направление и идём в него
-		#if going_to_a_fork and MyCharacter.Navigation_Agent_Used.is_navigation_finished():
-			#new_direction()
-		#paths_old = paths
-		#paths = get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position))
-		
+
 	else: # Если кончается терпение -- идём в Idle
 		lost_interest()
 
