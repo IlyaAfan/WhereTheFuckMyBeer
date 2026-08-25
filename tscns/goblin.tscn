@@ -28,6 +28,8 @@ radius = 3.0
 light_mask = 7
 collision_layer = 2
 collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_thnai")
 
 [node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("2_xw3cb")]
@@ -97,7 +99,7 @@ default_state = NodePath("Idle")
 script = ExtResource("10_ncsxy")
 MyCharacter = NodePath("../..")
 do_see = NodePath("../../do_see")
-patience_time = 3.0
+patience_time = 1.0
 sprite = ExtResource("4_uk4ff")
 metadata/_custom_type_script = "uid://bl7r1j30x1cbr"
 

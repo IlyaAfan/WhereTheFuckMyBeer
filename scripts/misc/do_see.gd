@@ -17,8 +17,7 @@ var found:bool = false
 
 var i = 0 as int 
 @export var grace_ticks:int = 3
-@export var radius = 56
-@export var AreaShape: Shape2D
+@export var AreaShape: Shape2D = preload("uid://bv45qp7qb3twh")
 @export var Do_Connect_Ears_On_Ready:bool = true
 
 func on_parent_ready():
@@ -29,8 +28,6 @@ func on_parent_ready():
 
 func _ready() -> void:
 	get_parent().connect("ready",on_parent_ready) 
-	
-	RayCast.target_position = Vector2 (radius, 0)
 
 
 func _on_timer_timeout() -> void:

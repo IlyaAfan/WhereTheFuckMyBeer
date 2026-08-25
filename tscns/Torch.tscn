@@ -5,7 +5,7 @@
 
 [node name="Torch" type="PointLight2D" unique_id=804697877]
 color = Color(0.57964355, 0.41907805, 0.08307219, 1)
-energy = 0.82
+energy = 1.2
 range_z_max = 10
 shadow_enabled = true
 shadow_filter = 2

@@ -303,7 +303,7 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-61, -43)
 
 [sub_resource type="Gradient" id="Gradient_o6qfh"]
-offsets = PackedFloat32Array(0, 0.81578946)
+offsets = PackedFloat32Array(0, 0.7781955)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7o0af"]
@@ -360,6 +360,7 @@ animation_tree = NodePath("../AnimationTree")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=990006315]
 scale = Vector2(0.25, 0.25)
 color = Color(0.40215734, 0.20503357, 0.050280325, 1)
+energy = 1.4
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_7o0af")
