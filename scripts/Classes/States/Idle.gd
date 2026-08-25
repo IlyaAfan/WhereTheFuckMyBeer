@@ -57,12 +57,12 @@ func update(delta):
 func physics_update(_delta):
 	if patrol:
 		if !MyCharacter.Navigation_Agent_Used.is_navigation_finished():
-			should_look_at = do_see.position.angle_to_point(get_lookable_direction(MyCharacter.Navigation_Agent_Used.target_position))
+			should_look_at = do_see.position.angle_to_point(MyCharacter.get_lookable_direction(MyCharacter.Navigation_Agent_Used.target_position))
 			
 	do_see.rotation = lerp_angle(do_see.rotation, should_look_at,MyCharacter.rotation_speed)
 
 func look_at_next_tile_():
-		var walkable_tiles = get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.position))
+		var walkable_tiles = MyCharacter.get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.position))
 		var tile_to_look_at = Vector2(walkable_tiles[randi_range(0, len(walkable_tiles))-1])
 		should_look_at = do_see.global_position.angle_to_point(MyCharacter.global_position + tile_to_look_at)
 
@@ -75,7 +75,7 @@ func patrol_func_():
 
 func patrol_end_():
 	var rotated_one = Vector2.ONE.from_angle(start_transform.get_rotation()-PI)
-	should_look_at = do_see.position.angle_to_point(get_lookable_direction(rotated_one))
+	should_look_at = do_see.position.angle_to_point(MyCharacter.get_lookable_direction(rotated_one))
 
 func heard():
 	patience_left = patience_time

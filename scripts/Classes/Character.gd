@@ -63,3 +63,32 @@ func heard_a_call(target): #должна вызываться когда кто-
 func connect_ears(emitter:Node2D, signl: String):#присоединяет метод выше к сигналу:
 	if !emitter.is_connected(signl, heard_a_call):
 		emitter.connect(signl, heard_a_call)
+		
+func get_walkable_tiles_around(position: Vector2i) -> Array:
+	var result: Array = []
+	#4 векторов обозначающих клетки вокруг
+	var positions_around_me = [
+		Vector2i(0,1),
+		Vector2i(1,0),
+		Vector2i(0,-1),
+		Vector2i(-1,0)
+		]
+	for v:Vector2i in positions_around_me:
+		if TileMap_I_Am_Standing_On.get_cell_tile_data(position + v).get_custom_data("tile_speed") > 0:
+			result.append(v)
+	return result
+
+func get_lookable_direction(direction: Vector2,my_pos:Vector2 = global_position, pos:Vector2i = TileMap_I_Am_Standing_On.local_to_map(my_pos)) -> Vector2:
+	direction = direction - my_pos
+	var walkable = get_walkable_tiles_around(pos)
+	var res: Vector2 = walkable[0] if not walkable.is_empty() else Vector2.ZERO
+	var max_dot = -INF
+	
+	for dir in walkable:
+		var normalized_wanted= direction.normalized()
+		var normalized_dir  = Vector2(dir).normalized()
+		var dot = normalized_dir.dot(normalized_wanted)
+		if dot > max_dot:
+			max_dot = dot
+			res = dir
+	return res

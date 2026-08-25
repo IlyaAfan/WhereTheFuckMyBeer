@@ -18,7 +18,7 @@ func enter():
 	turns_old = []
 	MyTiles = MyCharacter.TileMap_I_Am_Standing_On
 	patience_left = patience_time	
-	paths = get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position))
+	paths = MyCharacter.get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position))
 	if !do_see.is_connected("iFound", found):
 		do_see.iFound.connect(found)
 	if !do_see.is_connected("iHear", heard):
@@ -28,7 +28,7 @@ func enter():
 	# Записываем послендние известные данные о цели, понимаем куда надо бежать
 	target_velocity = do_see.target_last_seen_velocity
 	target_probable_position = do_see.target_last_seen_position + target_velocity*0.5
-	my_direction = get_lookable_direction(target_probable_position, do_see.target_last_seen_position)
+	my_direction = MyCharacter.get_lookable_direction(target_probable_position, do_see.target_last_seen_position)
 	print(target_probable_position, my_direction)
 	
 	# Здесь будут анимации, но пока что просто меняем спрайт
@@ -42,7 +42,7 @@ func update(delta):
 		patience_left-= delta
 		MyCharacter.heard_a_call(MyCharacter.global_position + my_direction*Vector2(16,16))
 		
-		if get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position)).count(Vector2i(my_direction)) == 0:
+		if MyCharacter.get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.global_position)).count(Vector2i(my_direction)) == 0:
 			lost_interest()
 
 	else: # Если кончается терпение -- идём в Idle
@@ -50,7 +50,7 @@ func update(delta):
 
 
 func physics_update(_delta):
-	should_look_at = do_see.position.angle_to_point(get_lookable_direction(MyCharacter.Navigation_Agent_Used.target_position))
+	should_look_at = do_see.position.angle_to_point(MyCharacter.get_lookable_direction(MyCharacter.Navigation_Agent_Used.target_position))
 	do_see.rotation = lerp_angle(do_see.rotation, should_look_at, MyCharacter.rotation_speed)
 
 
@@ -67,7 +67,7 @@ func go_to_next_fork():
 
 func new_direction():
 	going_to_a_fork = false
-	var walkable_tiles = get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.position))
+	var walkable_tiles = MyCharacter.get_walkable_tiles_around(MyTiles.local_to_map(MyCharacter.position))
 	#walkable_tiles.erase(Vector2i(my_direction))
 	if len(walkable_tiles):
 		my_direction = Vector2(walkable_tiles[randi_range(0, len(walkable_tiles))-1])

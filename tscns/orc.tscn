@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://h7smpq5kpvqr"]
+
+[ext_resource type="Script" uid="uid://d1pw830x24l75" path="res://scripts/enemies/orc.gd" id="1_dp0ga"]
+[ext_resource type="Texture2D" uid="uid://d1pstldpa3glj" path="res://Assets/Sprites/CharSprites/test_orc.png" id="2_ewty7"]
+[ext_resource type="Texture2D" uid="uid://bqyromcwnb74j" path="res://Assets/Sprites/CharSprites/test_orc_raging.png" id="3_qeslg"]
+[ext_resource type="PackedScene" uid="uid://cmkhqey7cniig" path="res://tscns/dos/do_see.tscn" id="4_7m1b3"]
+[ext_resource type="Texture2D" uid="uid://bmbueuq1slfj6" path="res://Assets/Sprites/SharpLightTexture.png" id="5_4pgsc"]
+[ext_resource type="PackedScene" uid="uid://bexlhxmsdw7sk" path="res://tscns/dos/do_catch.tscn" id="6_03j4y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp0ga"]
+radius = 112.0
+
+[node name="Orc" type="CharacterBody2D" unique_id=487171908 node_paths=PackedStringArray("Navigation_Agent_Used")]
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_dp0ga")
+SpriteCalm = ExtResource("2_ewty7")
+SpriteRage = ExtResource("3_qeslg")
+Navigation_Agent_Used = NodePath("NavigationAgent2D")
+speed = 180
+metadata/_custom_type_script = "uid://bwkiv0ra46tx1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643877986]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="do_see" parent="." unique_id=1184471678 instance=ExtResource("4_7m1b3")]
+AreaShape = SubResource("CircleShape2D_dp0ga")
+
+[node name="PointLight2D" type="PointLight2D" parent="do_see" unique_id=200999659]
+show_behind_parent = true
+light_mask = 2
+z_index = 1000
+texture_filter = 1
+energy = 0.3
+blend_mode = 1
+range_z_max = 100
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_filter = 1
+shadow_item_cull_mask = 2
+texture = ExtResource("5_4pgsc")
+texture_scale = 2.0
+
+[node name="do_catch" parent="." unique_id=545746488 instance=ExtResource("6_03j4y")]
+
+[node name="TestOrc" type="Sprite2D" parent="." unique_id=1173264219]
+position = Vector2(0, -1)
+texture = ExtResource("2_ewty7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=268824045]
+path_desired_distance = 8.0
+target_desired_distance = 2.0
+path_postprocessing = 1
+avoidance_enabled = true
+avoidance_mask = 7
+
+[node name="BonkDetector" type="RayCast2D" parent="." unique_id=1967544553]
+target_position = Vector2(8, 0)
+collision_mask = 4
