@@ -36,7 +36,7 @@ position = Vector2(-104, 0)
 
 [node name="Beer" parent="." unique_id=533000137 instance=ExtResource("6_une1h")]
 position = Vector2(120, 0)
-where_to = "res://tscns/levels/level_3.tscn"
+where_to = "res://tscns/levels/level_2_5.tscn"
 
 [node name="EnemyController" type="Node2D" parent="." unique_id=2123642731]
 process_mode = 1
